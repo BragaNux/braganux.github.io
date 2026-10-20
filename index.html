@@ -1,0 +1,939 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Brayan Martins</title>
+<meta name="description" content="Portfólio de Brayan Martins, desenvolvedor full-stack em Santa Maria, RS.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://braganux.github.io/">
+<meta property="og:title" content="Brayan Martins · Desenvolvedor full-stack">
+<meta property="og:description" content="Do banco de dados ao app no celular. Projetos, habilidades e trajetória.">
+<meta property="og:image" content="https://braganux.github.io/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#EDEFF3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0D1018" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/png" sizes="32x32" href="img/icone-32.png">
+<link rel="apple-touch-icon" href="img/icone-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+/* Layout: coluna editorial larga (até 1120px). Abertura tipográfica com o nome, gráfico de trajetória com os dados reais dos repositórios,
+   cases com fluxo de arquitetura, mapa de habilidades clicável e linha do tempo. Estrutura de "ficha técnica": metadado à esquerda, conteúdo à direita. */
+:root{
+  --paper:#EDEFF3; --surface:#F8F9FB; --raised:#FFFFFF; --ink:#11151F; --muted:#586174; --faint:#8A93A4; --line:#D2D8E1;
+  --accent:#2A44D2; --accent-soft:#E0E5FB; --gold:#8A5F00; --gold-soft:#F6EAC4; --ok:#1C9A5E; --lane:#C3CAD6;
+  --header:rgba(237,239,243,.88); --shadow:rgba(17,21,31,.30);
+  --l-cs:#6B48D6; --l-ts:#2F74E0; --l-dart:#14A0C2; --l-rust:#CF5F33; --l-go:#22A486; --l-js:#D4AA12; --l-py:#3C8A4B;
+  --l-sql:#8B6A50; --l-html:#CF4377; --l-java:#B03838; --l-asm:#5F6B7D; --l-docs:#9AA2B1;
+  --show-light:block; --show-dark:none;
+  --f-display:"Archivo","Arial Narrow",system-ui,sans-serif;
+  --f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#0D1018; --surface:#141924; --raised:#1A2030; --ink:#E7EAF1; --muted:#9AA3B6; --faint:#6E788C; --line:#262E3F;
+  --accent:#8FA2FF; --accent-soft:#1B2450; --gold:#EFC253; --gold-soft:#33290E; --ok:#3CCB86; --lane:#2C3549;
+  --header:rgba(13,16,24,.86); --shadow:rgba(0,0,0,.6);
+  --l-cs:#8B6CF0; --l-ts:#5591F0; --l-dart:#2CB6D6; --l-rust:#E07447; --l-go:#35BE9C; --l-js:#E3BC2A; --l-py:#52A862;
+  --l-sql:#A6846A; --l-html:#E25C8E; --l-java:#D25454; --l-asm:#8C97AA; --l-docs:#5B6477;
+  --show-light:none; --show-dark:block; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0D1018; --surface:#141924; --raised:#1A2030; --ink:#E7EAF1; --muted:#9AA3B6; --faint:#6E788C; --line:#262E3F;
+  --accent:#8FA2FF; --accent-soft:#1B2450; --gold:#EFC253; --gold-soft:#33290E; --ok:#3CCB86; --lane:#2C3549;
+  --header:rgba(13,16,24,.86); --shadow:rgba(0,0,0,.6);
+  --l-cs:#8B6CF0; --l-ts:#5591F0; --l-dart:#2CB6D6; --l-rust:#E07447; --l-go:#35BE9C; --l-js:#E3BC2A; --l-py:#52A862;
+  --l-sql:#A6846A; --l-html:#E25C8E; --l-java:#D25454; --l-asm:#8C97AA; --l-docs:#5B6477;
+  --show-light:none; --show-dark:block; color-scheme:dark}
+
+*{box-sizing:border-box}
+img{max-width:100%}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+h1,h2,h3,h4{font-family:var(--f-display);text-wrap:balance;margin:0}
+p{margin:0}
+.eyebrow{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0}
+.only-light{display:var(--show-light)}
+.only-dark{display:var(--show-dark)}
+
+/* topo */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--header);-webkit-backdrop-filter:saturate(1.4) blur(10px);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:56px}
+.brand{font-family:var(--f-display);font-weight:800;font-stretch:118%;letter-spacing:-.01em;text-transform:uppercase;font-size:.95rem;color:var(--ink);text-decoration:none;white-space:nowrap}
+.brand .short{display:none}
+.nav{display:flex;gap:18px;overflow-x:auto;scrollbar-width:none;font-family:var(--f-mono);font-size:.8rem;min-width:0}
+.nav::-webkit-scrollbar{display:none}
+.nav a{color:var(--muted);text-decoration:none;white-space:nowrap;padding-block:6px}
+.nav a:hover{color:var(--ink)}
+@media (max-width:520px){.brand .full{display:none}.brand .short{display:inline}.nav{gap:14px}}
+@media (max-width:400px){.nav a.opt{display:none}}
+
+/* abertura */
+.hero{--ns:clamp(2.4rem,11.2vw,8.6rem);padding-block:clamp(36px,7vw,84px) 36px;display:grid;gap:26px}
+.hero-head{display:flex;align-items:flex-end;justify-content:space-between;gap:clamp(12px,3vw,40px)}
+.portrait{flex:none;display:block;width:calc(var(--ns) * 1.72);height:calc(var(--ns) * 1.72);max-width:100%;object-fit:cover;border-radius:6px;border:1px solid var(--line);background:var(--surface)}
+.name{font-size:var(--ns);font-weight:850;font-stretch:125%;line-height:.86;letter-spacing:-.025em;text-transform:uppercase}
+.name span{display:block}
+.name span:last-child{color:var(--accent)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:28px 56px;align-items:start}
+.lede{font-size:clamp(1.12rem,2.1vw,1.42rem);line-height:1.5;max-width:40ch}
+.avail{display:inline-flex;align-items:center;gap:10px;font-family:var(--f-mono);font-size:.8rem;margin-top:18px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;background:var(--surface)}
+.pulse{width:8px;height:8px;border-radius:50%;background:var(--ok);flex:none}
+@media (prefers-reduced-motion:no-preference){.pulse{animation:pulse 2.4s ease-in-out infinite}@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.btn{font-family:var(--f-mono);font-size:.84rem;display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border:1px solid var(--ink);color:var(--ink);background:transparent;text-decoration:none;cursor:pointer;border-radius:3px}
+.btn:hover{background:var(--ink);color:var(--paper)}
+.btn.primary{background:var(--ink);color:var(--paper)}
+.btn.primary:hover{background:var(--accent);border-color:var(--accent);color:var(--paper)}
+.now{border-left:1px solid var(--line);padding-left:26px;display:grid;gap:12px}
+.now ul{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.now li{display:grid;gap:1px}
+.now b{font-weight:600}
+.now span{color:var(--muted);font-size:.93rem}
+.creds{list-style:none;margin:6px 0 0;padding:18px 0 0;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.creds li{display:grid;gap:2px;min-width:0}
+.creds b{font-family:var(--f-display);font-weight:750;font-stretch:108%;font-size:1.08rem;line-height:1.2}
+.creds span{font-family:var(--f-mono);font-size:.75rem;color:var(--muted)}
+@media (max-width:860px){.hero-grid{grid-template-columns:1fr}.now{border-left:0;padding-left:0;border-top:1px solid var(--line);padding-top:18px}.creds{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* seções */
+.sec{padding-block:72px 8px;scroll-margin-top:64px}
+.sec-head{display:grid;gap:10px;margin-bottom:30px;max-width:74ch}
+.sec-head h2{font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:800;font-stretch:112%;letter-spacing:-.015em;line-height:1}
+.sec-sub{color:var(--muted)}
+.sub{font-size:1.35rem;font-weight:750;font-stretch:108%;margin:52px 0 18px}
+
+/* gráfico */
+.chart{position:relative;margin:0;padding-block:18px 6px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+#chart-svg{display:block;width:100%;height:auto;overflow:visible}
+.ax{font:11px var(--f-mono);fill:var(--muted)}
+.axl{stroke:var(--line);stroke-width:1}
+.lane-t{font:11px var(--f-mono);fill:var(--ink)}
+.lane-b{fill:var(--lane)}
+.lane-b.acc{fill:var(--accent)}
+.today{stroke:var(--accent);stroke-width:1;stroke-dasharray:3 4}
+.today-t{fill:var(--accent)}
+.dotg{cursor:pointer}
+.dot{stroke:var(--paper);stroke-width:1.5}
+.ring{fill:none;stroke:var(--ink);stroke-width:1.4}
+.dotg:hover .dot{stroke:var(--ink)}
+@media (prefers-reduced-motion:no-preference){.dot.in{transform-box:fill-box;transform-origin:center;animation:pop .55s cubic-bezier(.2,.8,.2,1) both}
+@keyframes pop{from{opacity:.2;transform:scale(.35)}to{opacity:1;transform:none}}}
+.tip{position:absolute;z-index:3;width:max-content;max-width:min(270px,80vw);padding:10px 12px;background:var(--raised);border:1px solid var(--line);border-radius:6px;box-shadow:0 14px 34px -18px var(--shadow);font-size:.86rem;line-height:1.45;pointer-events:none;display:grid;gap:3px}
+.tip.pin{pointer-events:auto}
+.tip b{font-family:var(--f-mono);font-size:.8rem;font-weight:600;word-break:break-all}
+.tip .m{font-family:var(--f-mono);font-size:.72rem;color:var(--muted)}
+.tip .tl{display:flex;flex-wrap:wrap;gap:4px 14px;margin-top:4px;font-family:var(--f-mono);font-size:.78rem}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-family:var(--f-mono);font-size:.76rem;color:var(--muted);list-style:none;margin:14px 0 0;padding:0}
+.legend li{display:flex;align-items:center;gap:6px;font-variant-numeric:tabular-nums}
+.legend li::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--c)}
+.legend li.ringkey::before{background:transparent;box-shadow:inset 0 0 0 1.5px var(--ink)}
+.legend.sq li::before{border-radius:1px}
+.inside{display:grid;gap:10px;margin-top:34px}
+.bar{display:flex;height:14px;border-radius:2px;overflow:hidden;background:var(--line)}
+.bar i{display:block;height:100%}
+.bar.sm{height:6px}
+.note{font-size:.8rem;color:var(--muted)}
+details.index{margin-top:26px;border-top:1px solid var(--line);padding-top:14px}
+details.index summary{cursor:pointer;font-family:var(--f-mono);font-size:.86rem;color:var(--accent);list-style:none;width:max-content;max-width:100%}
+details.index summary::-webkit-details-marker{display:none}
+details.index summary::before{content:"+ "}
+details.index[open] summary::before{content:"− "}
+.table-wrap{overflow-x:auto;margin-top:14px}
+table{border-collapse:collapse;width:100%;min-width:680px;font-size:.88rem}
+th,td{text-align:left;padding:9px 14px 9px 0;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500}
+td.m{font-family:var(--f-mono);font-size:.8rem;white-space:nowrap;font-variant-numeric:tabular-nums}
+td.n{font-family:var(--f-mono);font-size:.82rem;word-break:break-all}
+.ldot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--c);margin-right:7px;vertical-align:1px}
+.muted{color:var(--muted)}
+
+/* cases */
+.case{display:grid;grid-template-columns:180px minmax(0,1fr);gap:20px 44px;padding-block:44px;border-top:1px solid var(--line);scroll-margin-top:64px}
+.case:last-of-type{border-bottom:1px solid var(--line)}
+.case-meta{display:grid;gap:4px;align-content:start;font-family:var(--f-mono);font-size:.78rem;color:var(--muted)}
+.case-meta .yr{font-size:1rem;color:var(--ink);font-weight:500}
+.badges{display:flex;flex-wrap:wrap;gap:6px}
+.badge{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.07em;text-transform:uppercase;padding:3px 8px;border-radius:3px;background:var(--accent-soft);color:var(--accent)}
+.badge.prize{background:var(--gold-soft);color:var(--gold);font-weight:600}
+.badge.lock{background:transparent;border:1px dashed var(--line);color:var(--muted)}
+.case h3{font-size:clamp(1.9rem,4.4vw,2.8rem);font-weight:800;font-stretch:112%;line-height:1;letter-spacing:-.015em;margin-top:14px}
+.pitch{font-size:1.08rem;max-width:64ch;margin-top:12px}
+.case-cols{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:26px 40px;margin-top:24px}
+.pts{margin:0;padding-left:18px;display:grid;gap:9px}
+.pts li::marker{color:var(--accent)}
+.side{display:grid;gap:10px;align-content:start;min-width:0}
+.side .eyebrow + *{margin-top:-2px}
+.side .eyebrow:not(:first-child){margin-top:8px}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:8px 6px}
+.node{font-family:var(--f-mono);font-size:.75rem;line-height:1.3;padding:6px 9px;border:1px solid var(--line);border-radius:4px;background:var(--surface);color:var(--ink)}
+.node.alt{border-style:dashed;background:transparent;color:var(--muted)}
+.arr{font-family:var(--f-mono);font-size:.8rem;color:var(--faint)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-family:var(--f-mono);font-size:.73rem;padding:3px 8px;border:1px solid var(--line);border-radius:3px;color:var(--muted);background:var(--surface)}
+.langs{display:grid;gap:6px;margin-top:6px}
+.langs .legend{margin-top:0;font-size:.72rem}
+.links{display:flex;flex-wrap:wrap;gap:4px 18px;font-family:var(--f-mono);font-size:.84rem;margin-top:4px}
+.phones{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:26px;max-width:880px}
+.phone{margin:0;display:grid;gap:8px;min-width:0}
+.screen{border-radius:24px;overflow:hidden;border:1px solid var(--line);background:var(--surface);aspect-ratio:420/937;max-width:100%;box-shadow:0 22px 44px -28px var(--shadow)}
+.screen img{width:100%;height:auto}
+.phone figcaption{font-family:var(--f-mono);font-size:.74rem;color:var(--muted)}
+@media (max-width:860px){
+  .case{grid-template-columns:1fr;gap:14px}
+  .case-meta{display:flex;flex-wrap:wrap;gap:4px 14px}
+  .case-cols{grid-template-columns:1fr}
+  .phones{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:44%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px}
+  .phone{scroll-snap-align:start}
+}
+.flash{animation:flash 1.8s ease-out}
+@keyframes flash{0%{box-shadow:inset 0 0 0 2px var(--accent)}100%{box-shadow:inset 0 0 0 2px transparent}}
+
+/* mais projetos */
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
+.filters button{font-family:var(--f-mono);font-size:.8rem;padding:6px 12px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.item{background:var(--paper);padding:22px;display:flex;flex-direction:column;gap:9px;min-width:0;scroll-margin-top:72px}
+.item .top-m{display:flex;justify-content:space-between;gap:10px;font-family:var(--f-mono);font-size:.72rem;color:var(--muted)}
+.item h3{font-size:1.22rem;font-weight:750;font-stretch:106%}
+.item p{color:var(--muted);font-size:.94rem}
+.item .chips{margin-top:auto;padding-top:6px}
+.item .repo{font-family:var(--f-mono);font-size:.78rem;word-break:break-all}
+.item .repo.priv{color:var(--muted)}
+.item div.repo{display:flex;flex-wrap:wrap;gap:4px 16px}
+@media (max-width:980px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:620px){.grid{grid-template-columns:1fr}}
+
+/* habilidades */
+.stack{border-top:1px solid var(--line)}
+.layer{display:grid;grid-template-columns:170px minmax(0,1fr);gap:10px 24px;padding-block:14px;border-bottom:1px solid var(--line);align-items:center}
+.layer-name{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.sk-row{display:flex;flex-wrap:wrap;gap:6px}
+.sk{font-family:var(--f-mono);font-size:.8rem;padding:6px 11px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:4px;cursor:pointer;display:inline-flex;align-items:center;gap:7px}
+.sk:hover{border-color:var(--ink)}
+.sk.daily::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.sk[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.sk[aria-pressed="true"].daily::before{background:var(--paper)}
+.sk-out{margin-top:16px;padding:14px 16px;border:1px solid var(--line);border-radius:6px;background:var(--surface);display:grid;gap:6px;min-height:84px}
+.sk-out .uses{display:flex;flex-wrap:wrap;gap:4px 16px;font-family:var(--f-mono);font-size:.86rem}
+@media (max-width:700px){.layer{grid-template-columns:1fr;gap:8px}}
+.soft{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.soft article{background:var(--paper);padding:22px;display:grid;gap:8px;align-content:start}
+.soft h4{font-size:1.15rem;font-weight:750;font-stretch:106%}
+.soft p{color:var(--muted);font-size:.95rem}
+.soft .ev{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+@media (max-width:900px){.soft{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.soft{grid-template-columns:1fr}}
+
+/* trajetória */
+.timeline{list-style:none;margin:0;padding:0;border-bottom:1px solid var(--line)}
+.timeline > li{display:grid;grid-template-columns:180px minmax(0,1fr);gap:6px 44px;padding-block:24px;border-top:1px solid var(--line);scroll-margin-top:72px}
+.when{font-family:var(--f-mono);font-size:.8rem;color:var(--muted);display:grid;gap:2px;align-content:start}
+.when b{color:var(--ink);font-weight:500;font-size:1rem;font-variant-numeric:tabular-nums}
+.timeline h3{font-size:1.32rem;font-weight:750;font-stretch:106%}
+.timeline p{margin-top:6px;max-width:66ch}
+.timeline .chips{margin-top:12px}
+.timeline .soft-line{margin-top:10px;font-size:.92rem;color:var(--muted)}
+.timeline > li.past h3{font-size:1.1rem}
+.timeline > li.past p{color:var(--muted)}
+@media (max-width:760px){.timeline > li{grid-template-columns:1fr}}
+
+/* conquistas */
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 56px}
+.two h3{font-size:1.05rem;font-weight:750;font-stretch:106%;margin-bottom:6px}
+.list{list-style:none;margin:0;padding:0}
+.list li{display:grid;grid-template-columns:56px minmax(0,1fr);gap:12px;padding-block:12px;border-top:1px solid var(--line)}
+.list .y{font-family:var(--f-mono);font-size:.82rem;color:var(--muted);font-variant-numeric:tabular-nums;padding-top:2px}
+.list b{font-weight:600}
+.list .d{display:block;color:var(--muted);font-size:.92rem}
+@media (max-width:760px){.two{grid-template-columns:1fr}}
+
+/* contato */
+.contact{padding-block:88px 36px;display:grid;gap:20px;scroll-margin-top:64px}
+.contact h2{font-size:clamp(2.4rem,9vw,5.6rem);font-weight:850;font-stretch:125%;text-transform:uppercase;line-height:.9;letter-spacing:-.02em}
+.contact p.big{font-size:clamp(1.05rem,2vw,1.25rem);max-width:52ch}
+.clist{margin:0;display:grid;border-top:1px solid var(--line);max-width:860px}
+.crow{display:grid;grid-template-columns:130px minmax(0,1fr);gap:6px 20px;align-items:center;padding-block:14px;border-bottom:1px solid var(--line)}
+.crow dt{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.crow dd{margin:0;display:flex;flex-wrap:wrap;align-items:center;gap:10px 12px;min-width:0}
+.cval{font-family:var(--f-mono);font-size:clamp(1rem,2.4vw,1.3rem);word-break:break-all}
+span.cval{user-select:all}
+.btn.sm{padding:6px 12px;font-size:.78rem}
+@media (max-width:560px){.crow{grid-template-columns:1fr}}footer .foot{padding-block:28px 40px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:8px 24px;flex-wrap:wrap;font-size:.82rem;color:var(--muted)}
+</style>
+
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio"><span class="full">Brayan Martins</span><span class="short">BM</span></a>
+    <nav class="nav" aria-label="Seções">
+      <a href="#projetos">Projetos</a>
+      <a class="opt" href="#habilidades">Habilidades</a>
+      <a href="#trajetoria">Trajetória</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+<section class="hero wrap" aria-label="Apresentação">
+  <p class="eyebrow">Desenvolvedor full-stack · Santa Maria, RS · @BragaNux</p>
+  <div class="hero-head">
+    <h1 class="name"><span>Brayan</span><span>Martins</span></h1>
+    <img class="portrait" src="img/brayan.webp" width="640" height="640" alt="Foto de Brayan Martins">
+  </div>
+  <div class="hero-grid">
+    <div style="min-width:0">
+      <p class="lede">Construo sistemas de ponta a ponta, do banco de dados ao app no celular. Sou desenvolvedor full-stack desde 2024, sócio-fundador de uma startup incubada e estou na reta final de Sistemas de Informação.</p>
+      <p class="avail"><span class="pulse" aria-hidden="true"></span>Aberto a oportunidades remotas, no Brasil e no exterior</p>
+      <div class="cta">
+        <a class="btn primary" href="#projetos">Ver projetos</a>
+        <a class="btn" href="#contato">Falar comigo</a>
+        <a class="btn" href="https://www.linkedin.com/in/bmartlns/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a class="btn" href="https://github.com/BragaNux" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </div>
+    <aside class="now" aria-label="Agora">
+      <p class="eyebrow">Agora</p>
+      <ul>
+        <li><b>Forza Clubes</b><span>Desenvolvedor full-stack, desde 2024</span></li>
+        <li><b>3Summa</b><span>Sócio-fundador de startup incubada no InovAMF</span></li>
+        <li><b>Antonio Meneghetti Faculdade</b><span>Sistemas de Informação, TCC em novembro de 2026</span></li>
+      </ul>
+    </aside>
+  </div>
+  <ul class="creds">
+    <li><b>Melhor usabilidade</b><span>Code Race AMF 2026</span></li>
+    <li><b>3 resumos expandidos</b><span>publicados na MICAMF</span></li>
+    <li><b>Monitor de Algoritmos I</b><span>AMF, 2023</span></li>
+    <li><b>49 repositórios</b><span>de 2022 a 2026</span></li>
+  </ul>
+</section>
+
+<section class="wrap sec" id="dados" aria-labelledby="h-dados">
+  <div class="sec-head">
+    <h2 id="h-dados">Trajetória em dados</h2>
+    <p class="sec-sub">Cada ponto é um repositório em que trabalhei, na data da última atualização e com a cor da linguagem principal. As faixas mostram onde eu estava em cada época. Passe o mouse ou toque num ponto para ver o projeto.</p>
+  </div>
+  <figure class="chart" id="chart" role="img" aria-label="Linha do tempo de 2021 a 2026. Um repositório em 2022 e os outros 48 entre 2024 e 2026, depois da entrada na Forza Clubes. Faixas: Exército Brasileiro de 2021 a 2022, logística de 2022 a 2024, Sistemas de Informação de 2022 a 2026 e Forza Clubes de 2024 até hoje.">
+    <svg id="chart-svg" aria-hidden="true"></svg>
+    <div class="tip" id="tip" hidden></div>
+  </figure>
+  <ul class="legend" aria-label="Repositórios por linguagem principal">
+    <li style="--c:var(--l-py)">Python 19</li><li style="--c:var(--l-docs)">Documentação 10</li><li style="--c:var(--l-js)">JavaScript 5</li><li style="--c:var(--l-java)">Java 4</li><li style="--c:var(--l-ts)">TypeScript 3</li><li style="--c:var(--l-cs)">C# 2</li><li style="--c:var(--l-rust)">Rust 2</li><li style="--c:var(--l-dart)">Dart 1</li><li style="--c:var(--l-go)">Go 1</li><li style="--c:var(--l-html)">HTML/CSS 1</li><li style="--c:var(--l-asm)">Assembly 1</li><li class="ringkey">Em destaque nesta página</li>
+  </ul>
+
+  <div class="inside">
+    <p class="eyebrow">O que tem dentro do código</p>
+    <div class="bar" role="img" aria-label="C# 18%, TypeScript 17%, Dart 11%, Rust 10%, Python 9%, Go 8%, JavaScript 8%, SQL 6%, HTML/CSS 5%, Java 5%, outros 3%">
+      <i style="width:18.4%;background:var(--l-cs)"></i><i style="width:17.2%;background:var(--l-ts)"></i><i style="width:11.2%;background:var(--l-dart)"></i><i style="width:9.7%;background:var(--l-rust)"></i><i style="width:9.4%;background:var(--l-py)"></i><i style="width:8.3%;background:var(--l-go)"></i><i style="width:7.5%;background:var(--l-js)"></i><i style="width:5.9%;background:var(--l-sql)"></i><i style="width:4.7%;background:var(--l-html)"></i><i style="width:4.6%;background:var(--l-java)"></i><i style="width:3.1%;background:var(--l-asm)"></i>
+    </div>
+    <ul class="legend sq">
+      <li style="--c:var(--l-cs)">C# 18%</li><li style="--c:var(--l-ts)">TypeScript 17%</li><li style="--c:var(--l-dart)">Dart 11%</li><li style="--c:var(--l-rust)">Rust 10%</li><li style="--c:var(--l-py)">Python 9%</li><li style="--c:var(--l-go)">Go 8%</li><li style="--c:var(--l-js)">JavaScript 8%</li><li style="--c:var(--l-sql)">SQL 6%</li><li style="--c:var(--l-html)">HTML/CSS 5%</li><li style="--c:var(--l-java)">Java 5%</li><li style="--c:var(--l-asm)">Infra, Assembly e outros 3%</li>
+    </ul>
+    <p class="note">Contagem de 1.380 arquivos de código nos repositórios, incluindo os projetos feitos em equipe.</p>
+  </div>
+
+  <details class="index" id="repositorios">
+    <summary>Ver todos os 49 repositórios</summary>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col">Atualizado</th><th scope="col">Repositório</th><th scope="col">O que é</th><th scope="col">Linguagem</th><th scope="col">Código</th></tr></thead>
+        <tbody id="repo-rows"></tbody>
+      </table>
+    </div>
+  </details>
+</section>
+
+<section class="wrap sec" id="projetos" aria-labelledby="h-proj">
+  <div class="sec-head">
+    <h2 id="h-proj">Projetos em destaque</h2>
+    <p class="sec-sub">Cinco projetos que mostram como eu penso um sistema inteiro: o problema, a arquitetura e o que foi entregue.</p>
+  </div>
+
+  <article class="case" id="panela">
+    <div class="case-meta"><span class="yr">2025 – 2026</span><span>TCC · autor</span><span>Entrega em nov/2026</span></div>
+    <div style="min-width:0">
+      <div class="badges"><span class="badge">Trabalho de conclusão</span><span class="badge">20 de 20 testes de API</span></div>
+      <h3>Panela</h3>
+      <p class="pitch">App de divisão de despesas em grupo que ajuda a planejar antes de gastar, etapa que Splitwise e Tricount deixam de lado. Tem orçamento por tipo de gasto, rateio, acerto via Pix e uma IA que resume a situação do grupo.</p>
+      <div class="phones" aria-label="Telas do aplicativo">
+        <figure class="phone"><div class="screen"><img class="only-light" src="img/panela-boas-vindas-claro.webp" width="420" height="937" loading="lazy" alt="Tela de boas-vindas do Panela com o lema Divida a conta, não a amizade"><img class="only-dark" src="img/panela-boas-vindas-escuro.webp" width="420" height="937" loading="lazy" alt="Tela de boas-vindas do Panela com o lema Divida a conta, não a amizade"></div><figcaption>Boas-vindas</figcaption></figure>
+        <figure class="phone"><div class="screen"><img class="only-light" src="img/panela-inicio-claro.webp" width="420" height="937" loading="lazy" alt="Tela inicial com saldo entre amigos, pendência para pagar via Pix e panelas abertas"><img class="only-dark" src="img/panela-inicio-escuro.webp" width="420" height="937" loading="lazy" alt="Tela inicial com saldo entre amigos, pendência para pagar via Pix e panelas abertas"></div><figcaption>Saldo e pendências</figcaption></figure>
+        <figure class="phone"><div class="screen"><img class="only-light" src="img/panela-planejamento-claro.webp" width="420" height="937" loading="lazy" alt="Tela de planejamento com evento, orçamento total e reservas por tipo de gasto"><img class="only-dark" src="img/panela-planejamento-escuro.webp" width="420" height="937" loading="lazy" alt="Tela de planejamento com evento, orçamento total e reservas por tipo de gasto"></div><figcaption>Planejamento</figcaption></figure>
+        <figure class="phone"><div class="screen"><img class="only-light" src="img/panela-resumo-ia-claro.webp" width="420" height="937" loading="lazy" alt="Resumo da panela gerado por IA, explicando quem deve pagar quanto"><img class="only-dark" src="img/panela-resumo-ia-escuro.webp" width="420" height="937" loading="lazy" alt="Resumo da panela gerado por IA, explicando quem deve pagar quanto"></div><figcaption>Resumo com IA</figcaption></figure>
+      </div>
+      <div class="case-cols">
+        <ul class="pts">
+          <li>Quatro formas de dividir: igual, por porcentagem, por valor fixo ou só de quem pagou. O acerto sugere o menor número de transferências.</li>
+          <li>Planejamento com orçamento e reservas por tipo de gasto, com alertas push em 80% do orçamento e ao passar de 100%.</li>
+          <li>IA para sugerir itens de orçamento, ler cupom fiscal e resumir o grupo em linguagem natural.</li>
+          <li>Testes funcionais automatizados da API: 20 de 20 casos e 90 verificações, incluindo as regras de permissão.</li>
+        </ul>
+        <div class="side">
+          <p class="eyebrow">Como funciona</p>
+          <div class="flow"><span class="node">App Flutter</span><span class="arr">→</span><span class="node">API ASP.NET Core</span><span class="arr">→</span><span class="node">PostgreSQL</span></div>
+          <div class="flow"><span class="node alt">Push com Firebase</span><span class="node alt">IA</span><span class="node alt">Busca de local (OpenStreetMap)</span><span class="node alt">Docker + Caddy</span></div>
+          <p class="eyebrow">Stack</p>
+          <div class="chips"><span class="chip">Flutter · Dart</span><span class="chip">ASP.NET Core 8</span><span class="chip">EF Core</span><span class="chip">PostgreSQL</span><span class="chip">JWT</span><span class="chip">Firebase Messaging</span><span class="chip">Docker · Caddy</span></div>
+          <div class="langs"><div class="bar sm"><i style="width:53.7%;background:var(--l-dart)"></i><i style="width:25.4%;background:var(--l-cs)"></i><i style="width:16.7%;background:var(--l-ts)"></i><i style="width:2.4%;background:var(--l-js)"></i><i style="width:1.8%;background:var(--l-html)"></i></div>
+            <ul class="legend sq"><li style="--c:var(--l-dart)">Dart 54%</li><li style="--c:var(--l-cs)">C# 25%</li><li style="--c:var(--l-ts)">TypeScript 17%, da versão anterior em React Native</li></ul></div>
+          <div class="links"><a href="https://github.com/BragaNux/Panela_Rateio" target="_blank" rel="noopener">Panela_Rateio ↗</a></div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="case" id="nexasystem">
+    <div class="case-meta"><span class="yr">2026</span><span>Startup · sócio-fundador</span><span>Em desenvolvimento</span></div>
+    <div style="min-width:0">
+      <div class="badges"><span class="badge">3Summa · incubada no InovAMF</span><span class="badge lock">Repositório privado</span></div>
+      <h3>NexaSystem</h3>
+      <p class="pitch">Plataforma de atendimento pelo WhatsApp, com a API oficial da Meta, inbox para a equipe e controle de custos em reais em tempo real. É o produto que construo na 3Summa com meus dois sócios. Na divisão do time, meu foco é o front-end.</p>
+      <div class="case-cols">
+        <ul class="pts">
+          <li>Webhook com validação de assinatura HMAC-SHA256 e gravação idempotente, já que a Meta reenvia eventos.</li>
+          <li>Painel de custos em reais, com tarifas configuráveis e cotação do dólar atualizada automaticamente.</li>
+          <li>Contas de atendente com Argon2id, sessões revogáveis, papéis de acesso e 2FA por e-mail.</li>
+          <li>Isolamento de dados por cliente no PostgreSQL no roadmap, para virar SaaS.</li>
+        </ul>
+        <div class="side">
+          <p class="eyebrow">Como funciona</p>
+          <div class="flow"><span class="node">Cliente no WhatsApp</span><span class="arr">→</span><span class="node">Meta Cloud API</span><span class="arr">→</span><span class="node">Webhook com HMAC</span><span class="arr">→</span><span class="node">API em Rust</span><span class="arr">→</span><span class="node">PostgreSQL</span><span class="arr">→</span><span class="node">Inbox em React</span></div>
+          <p class="eyebrow">Stack</p>
+          <div class="chips"><span class="chip">React 19 · TypeScript</span><span class="chip">Rust · Axum · SQLx</span><span class="chip">PostgreSQL 17</span><span class="chip">WhatsApp Cloud API</span><span class="chip">OpenAPI · Swagger</span></div>
+          <div class="langs"><div class="bar sm"><i style="width:46.5%;background:var(--l-rust)"></i><i style="width:36.5%;background:var(--l-ts)"></i><i style="width:14.5%;background:var(--l-sql)"></i><i style="width:2.5%;background:var(--l-html)"></i></div>
+            <ul class="legend sq"><li style="--c:var(--l-rust)">Rust 47%</li><li style="--c:var(--l-ts)">TypeScript 37%</li><li style="--c:var(--l-sql)">SQL 15%</li></ul></div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="case" id="nexa-solution">
+    <div class="case-meta"><span class="yr">2026</span><span>Code Race AMF · equipe</span><span>Competição</span></div>
+    <div style="min-width:0">
+      <div class="badges"><span class="badge prize">Prêmio de melhor usabilidade</span><span class="badge lock">Repositório privado</span></div>
+      <h3>Nexa Solution</h3>
+      <p class="pitch">SaaS de gestão para a cadeia do agronegócio gaúcho, do produtor à cooperativa. O diferencial é um agente de IA no WhatsApp que consulta e registra dados por mensagem.</p>      <div class="case-cols">
+        <ul class="pts">
+          <li>Agente com LangChain usando Llama 3.3 70B (Groq) e Claude, com ferramentas para estoque, lotes, clima e busca semântica.</li>
+          <li>Busca semântica com pgvector e embeddings, no mesmo PostgreSQL dos dados do negócio.</li>
+          <li>Estoque por lotes com FEFO e alertas, rastreabilidade por QR Code e LGPD com consentimentos versionados.</li>
+          <li>Migração incremental do back-end de Django para Rust, mantendo o mesmo contrato HTTP.</li>
+        </ul>
+        <div class="side">
+          <p class="eyebrow">Como funciona</p>
+          <div class="flow"><span class="node">Produtor no WhatsApp</span><span class="arr">→</span><span class="node">Serviço Node.js</span><span class="arr">→</span><span class="node">Agente de IA (LangChain)</span><span class="arr">→</span><span class="node">Estoque, lotes, clima, busca</span><span class="arr">→</span><span class="node">PostgreSQL + pgvector</span></div>
+          <p class="eyebrow">Stack</p>
+          <div class="chips"><span class="chip">React · TypeScript</span><span class="chip">Django 5 → Rust · Axum</span><span class="chip">FastAPI · LangChain</span><span class="chip">PostgreSQL · pgvector</span><span class="chip">Node.js</span><span class="chip">Nginx · Docker</span></div>
+          <div class="langs"><div class="bar sm"><i style="width:37.3%;background:var(--l-rust)"></i><i style="width:26.4%;background:var(--l-ts)"></i><i style="width:21.8%;background:var(--l-py)"></i><i style="width:11.8%;background:var(--l-sql)"></i><i style="width:2.7%;background:var(--l-js)"></i></div>
+            <ul class="legend sq"><li style="--c:var(--l-rust)">Rust 37%</li><li style="--c:var(--l-ts)">TypeScript 26%</li><li style="--c:var(--l-py)">Python 22%</li><li style="--c:var(--l-sql)">SQL 12%</li></ul></div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="case" id="up-espaco">
+    <div class="case-meta"><span class="yr">2026</span><span>Projeto em equipe</span><span>PO e front-end</span></div>
+    <div style="min-width:0">
+      <div class="badges"><span class="badge">Observabilidade desde o início</span></div>
+      <h3>Up Espaço</h3>
+      <p class="pitch">Plataforma que conecta a equipe de um espaço de desenvolvimento infantil às famílias: presença, feed de atividades com fotos, linha do tempo do dia de cada criança, marcos de desenvolvimento, agenda e comunicados.</p>
+      <div class="case-cols">
+        <ul class="pts">
+          <li>API REST em Go com Clean Architecture e os padrões Repository e Decorator, sem framework de injeção.</li>
+          <li>Cada responsável vê só os próprios filhos, e a equipe vê todos os alunos.</li>
+          <li>Prometheus e Grafana desde a primeira versão, com painéis de requisições, erros, CPU, memória e latência p95.</li>
+          <li>Os 10 requisitos planejados, 5 funcionais e 5 não funcionais, foram entregues e demonstrados.</li>
+          <li>Liderei o produto e o front-end: backlog, organização da equipe, orçamento e benchmarking.</li>
+        </ul>
+        <div class="side">
+          <p class="eyebrow">Como funciona</p>
+          <div class="flow"><span class="node">SPA em React</span><span class="arr">→</span><span class="node">API em Go</span><span class="arr">→</span><span class="node">PostgreSQL</span></div>
+          <div class="flow"><span class="node alt">Prometheus</span><span class="arr">→</span><span class="node alt">Grafana</span></div>
+          <p class="eyebrow">Stack</p>
+          <div class="chips"><span class="chip">Go · gorilla/mux</span><span class="chip">React 18 · Vite · Tailwind</span><span class="chip">PostgreSQL 15</span><span class="chip">JWT · bcrypt</span><span class="chip">Prometheus · Grafana</span><span class="chip">Docker Compose</span></div>
+          <div class="langs"><div class="bar sm"><i style="width:66.1%;background:var(--l-go)"></i><i style="width:20.7%;background:var(--l-sql)"></i><i style="width:9.2%;background:var(--l-js)"></i><i style="width:2.9%;background:var(--l-asm)"></i><i style="width:1.1%;background:var(--l-html)"></i></div>
+            <ul class="legend sq"><li style="--c:var(--l-go)">Go 66%</li><li style="--c:var(--l-sql)">SQL 21%</li><li style="--c:var(--l-js)">JavaScript 9%</li></ul></div>
+          <div class="links"><a href="https://github.com/BragaNux/up-space-aps" target="_blank" rel="noopener">up-space-aps ↗</a><a href="https://github.com/BragaNux/up-space-foil" target="_blank" rel="noopener">up-space-foil ↗</a></div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="case" id="bookguess">
+    <div class="case-meta"><span class="yr">2026</span><span>Acadêmico</span><span>Duas implementações</span></div>
+    <div style="min-width:0">
+      <div class="badges"><span class="badge">RAG</span><span class="badge">Deploy com Docker e Nginx</span></div>
+      <h3>BookGuess</h3>
+      <p class="pitch">Um Wordle literário. Todo dia sai um trecho de uma obra clássica, o jogador tenta adivinhar o livro ou o autor e pode pedir uma dica gerada por IA, que custa metade dos pontos.</p>
+      <div class="case-cols">
+        <ul class="pts">
+          <li>Dicas com RAG: a API busca trechos parecidos no pgvector e entrega esse contexto ao Claude.</li>
+          <li>Resposta validada no servidor com SSR, para o título nunca chegar ao navegador antes da hora.</li>
+          <li>Ranking em tempo real com Sorted Sets no Redis e cache do desafio do dia.</li>
+          <li>Só obras em domínio público. Uma versão em .NET com Clean Architecture e outra em Next.js + FastAPI, publicada com Docker, Nginx e SSL.</li>
+        </ul>
+        <div class="side">
+          <p class="eyebrow">Como funciona</p>
+          <div class="flow"><span class="node">Next.js com SSR</span><span class="arr">→</span><span class="node">FastAPI</span><span class="arr">→</span><span class="node">pgvector</span><span class="arr">→</span><span class="node">Claude</span></div>
+          <div class="flow"><span class="node alt">Redis para ranking e cache</span></div>
+          <p class="eyebrow">Stack</p>
+          <div class="chips"><span class="chip">Next.js 14 · shadcn/ui</span><span class="chip">FastAPI</span><span class="chip">.NET · Blazor</span><span class="chip">PostgreSQL · pgvector</span><span class="chip">Redis</span><span class="chip">Claude API</span><span class="chip">Docker · Nginx</span></div>
+          <div class="langs"><div class="bar sm"><i style="width:52.9%;background:var(--l-cs)"></i><i style="width:18.2%;background:var(--l-py)"></i><i style="width:12.3%;background:var(--l-ts)"></i><i style="width:10.7%;background:var(--l-html)"></i><i style="width:4.3%;background:var(--l-js)"></i><i style="width:1.6%;background:var(--l-asm)"></i></div>
+            <ul class="legend sq"><li style="--c:var(--l-cs)">C# 53%</li><li style="--c:var(--l-py)">Python 18%</li><li style="--c:var(--l-ts)">TypeScript 12%</li><li style="--c:var(--l-html)">HTML/CSS 11%</li></ul></div>
+          <div class="links"><a href="https://github.com/BragaNux/book-guess" target="_blank" rel="noopener">book-guess ↗</a><a href="https://github.com/BragaNux/lab-g2" target="_blank" rel="noopener">lab-g2 ↗</a></div>
+        </div>
+      </div>
+    </div>
+  </article>
+</section>
+
+<section class="wrap sec" id="mais" aria-labelledby="h-mais">
+  <div class="sec-head">
+    <h2 id="h-mais">Mais projetos</h2>
+    <p class="sec-sub">Visão computacional, machine learning, microsserviços, mobile, análise de sistemas e um jogo, alguns com vídeo de demonstração. A lista completa está em <a href="#repositorios" data-go="#repositorios">todos os repositórios</a>.</p>
+  </div>
+  <div class="filters" role="group" aria-label="Filtrar por área">
+    <button type="button" id="f-todos" data-f="todos" aria-pressed="true">Todos</button>
+    <button type="button" id="f-ia" data-f="ia" aria-pressed="false">IA e dados</button>
+    <button type="button" id="f-back" data-f="back" aria-pressed="false">Back-end e arquitetura</button>
+    <button type="button" id="f-web" data-f="web" aria-pressed="false">Web e mobile</button>
+  </div>
+  <div class="grid" id="grid">
+    <article class="item" id="ecoscan" data-a="ia">
+      <div class="top-m"><span>2026 · Visão computacional</span><span>Raspberry Pi</span></div>
+      <h3>EcoScan</h3>
+      <p>Classifica o lixo em 12 categorias pela câmera, em tempo real, para ficar instalado em cima da lixeira num Raspberry Pi. Treinado com cerca de 35 mil imagens de dois datasets, chegou a cerca de 92% de acurácia na validação.</p>
+      <div class="chips"><span class="chip">TensorFlow · MobileNetV2</span><span class="chip">OpenCV</span><span class="chip">TFLite</span></div>
+      <a class="repo" href="https://github.com/BragaNux/LLM_Identify_Trash" target="_blank" rel="noopener">LLM_Identify_Trash ↗</a>
+    </article>
+    <article class="item" id="ratos" data-a="ia">
+      <div class="top-m"><span>2026 · Machine learning</span><span>Em trio</span></div>
+      <h3>Ratos de Nova York</h3>
+      <p>Prevê se um chamado de avistamento de ratos vai ser resolvido rápido ou devagar, cruzando chamados, inspeções sanitárias e clima. AUC de 0,78 no teste e 84,5% de precisão entre os chamados que o modelo mais aponta como lentos, com validação temporal para checar se ele generaliza.</p>
+      <div class="chips"><span class="chip">Python · scikit-learn</span><span class="chip">pandas</span><span class="chip">NYC Open Data · NOAA</span></div>
+      <a class="repo" href="https://github.com/BragaNux/IA2_G1_RATS" target="_blank" rel="noopener">IA2_G1_RATS ↗</a>
+    </article>
+    <article class="item" id="sentinel" data-a="ia web">
+      <div class="top-m"><span>2025 · Extensão de navegador</span><span>Chrome</span></div>
+      <h3>Sentinel AI</h3>
+      <p>Pelo botão direito, analisa texto, links e imagens e devolve a autoria provável, o nível de risco e o motivo. Guarda histórico com exportação em CSV e usa um back-end próprio que alterna entre Gemini e um modelo local no Ollama.</p>
+      <div class="chips"><span class="chip">JavaScript</span><span class="chip">Node · Express</span><span class="chip">Gemini · Ollama</span><span class="chip">Docker</span></div>
+      <a class="repo" href="https://github.com/BragaNux/Sentinel-AI" target="_blank" rel="noopener">Sentinel-AI ↗</a>
+    </article>
+    <article class="item" id="culinaria" data-a="ia">
+      <div class="top-m"><span>2026 · RAG e automação</span><span>Telegram</span></div>
+      <h3>Assistente de Culinária</h3>
+      <p>Bot no Telegram que responde dúvidas de culinária e segurança alimentar com base em manuais em PDF, usando RAG com banco vetorial local, orquestração no n8n e alertas no Discord.</p>
+      <div class="chips"><span class="chip">Python</span><span class="chip">n8n</span><span class="chip">Banco vetorial</span><span class="chip">Telegram · Discord</span></div>
+      <a class="repo" href="https://github.com/BragaNux/trabalho_culinaria" target="_blank" rel="noopener">trabalho_culinaria ↗</a>
+    </article>
+    <article class="item" id="ecommerce" data-a="back">
+      <div class="top-m"><span>2025 · Arquitetura</span><span>5 serviços</span></div>
+      <h3>E-commerce em microsserviços</h3>
+      <p>Usuários, produtos, pedidos, pagamentos e notificações como serviços separados, atrás de um gateway Kong e conversando por Kafka, com métricas no Prometheus e no Grafana e testes de carga no K6.</p>
+      <div class="chips"><span class="chip">Node.js · Prisma</span><span class="chip">Kafka · Kong</span><span class="chip">PostgreSQL · MongoDB</span><span class="chip">K6</span></div>
+      <a class="repo" href="https://github.com/BragaNux/g2_arquitetura" target="_blank" rel="noopener">g2_arquitetura ↗</a>
+    </article>
+    <article class="item" id="catalogo" data-a="back">
+      <div class="top-m"><span>2025 · DevOps</span><span>Docker Compose</span></div>
+      <h3>Catálogo com observabilidade</h3>
+      <p>API em Node.js com PostgreSQL e front servido pelo Nginx, monitorados com Prometheus, cAdvisor e Grafana, com dados persistentes em volumes e imagens publicadas por CI no GitHub Container Registry.</p>
+      <div class="chips"><span class="chip">Docker Compose</span><span class="chip">Node.js · PostgreSQL</span><span class="chip">Prometheus · Grafana</span><span class="chip">CI · GHCR</span></div>
+      <a class="repo" href="https://github.com/BragaNux/docker_atividade_02_10" target="_blank" rel="noopener">docker_atividade_02_10 ↗</a>
+    </article>
+    <article class="item" id="bragaflow" data-a="back">
+      <div class="top-m"><span>2026 · Padrões de projeto</span><span>Java</span></div>
+      <h3>BragaFlow Atlas</h3>
+      <p>API em Java com MongoDB Atlas para fretes e entregas, organizada em camadas, com Factory Method para os tipos de transporte, Singleton nos caches e uma interface web para testar.</p>
+      <div class="chips"><span class="chip">Java</span><span class="chip">MongoDB Atlas</span><span class="chip">Factory Method · Singleton</span></div>
+      <a class="repo" href="https://github.com/BragaNux/bragaflow" target="_blank" rel="noopener">bragaflow ↗</a>
+    </article>
+    <article class="item" id="restaurante" data-a="back">
+      <div class="top-m"><span>2026 · Análise e projeto</span><span>Em equipe</span></div>
+      <h3>Atendimento para Restaurante</h3>
+      <p>Análise e projeto de um sistema que digitaliza o salão: pedido pelo tablet na mesa, envio automático para a cozinha, controle de mesas em tempo real e pagamento. Inclui requisitos, casos de uso e diagramas de classes, sequência e atividades.</p>
+      <div class="chips"><span class="chip">Requisitos</span><span class="chip">UML</span><span class="chip">Casos de uso</span></div>
+      <span class="repo priv">Documentação acadêmica</span>
+    </article>
+    <article class="item" id="maestro" data-a="web">
+      <div class="top-m"><span>2026 · Proposta de produto</span><span>Cliente real</span></div>
+      <h3>MaestroOS</h3>
+      <p>Proposta de transformação digital para uma marca de azeite: loja com Pix, atendimento pelo WhatsApp com um sommelier de IA, QR Code com a origem do produto e um painel de gestão com CRM e assinaturas.</p>
+      <div class="chips"><span class="chip">Next.js · TypeScript</span><span class="chip">Supabase</span><span class="chip">Vercel</span></div>
+      <a class="repo" href="https://github.com/BragaNux/ideia_principal_emporio_das_oliveiras" target="_blank" rel="noopener">ideia_principal_emporio_das_oliveiras ↗</a>
+    </article>
+    <article class="item" id="checkin" data-a="web">
+      <div class="top-m"><span>2025 · Mobile</span><span>Expo</span></div>
+      <h3>Check-in de Evento</h3>
+      <p>App para a equipe da portaria fazer o check-in de participantes lendo QR Code, com retorno por vibração e navegação em pilha.</p>
+      <div class="chips"><span class="chip">React Native · Expo</span><span class="chip">TypeScript</span><span class="chip">Expo Camera</span></div>
+      <a class="repo" href="https://github.com/BragaNux/trabalho_dev_2" target="_blank" rel="noopener">trabalho_dev_2 ↗</a>
+    </article>
+    <article class="item" id="unistore" data-a="web back">
+      <div class="top-m"><span>2025 · E-commerce</span><span>Full-stack</span></div>
+      <h3>UniStore</h3>
+      <p>Loja para estudantes com login, carrinho e pedidos salvos por usuário, pagamento simulado e rastreio de entrega por etapas, com back-end em Node.js e PostgreSQL.</p>
+      <div class="chips"><span class="chip">React + TypeScript</span><span class="chip">Node · Express</span><span class="chip">PostgreSQL</span></div>
+      <div class="repo"><a href="https://github.com/BragaNux/trabalho_d1_unistore" target="_blank" rel="noopener">trabalho_d1_unistore ↗</a><a href="https://www.youtube.com/watch?v=Dhc1uZoetas" target="_blank" rel="noopener">Vídeo da demo ↗</a></div>
+    </article>
+    <article class="item" id="algoritmo" data-a="web">
+      <div class="top-m"><span>2026 · Jogo educativo</span><span>Em grupo</span></div>
+      <h3>O Algoritmo</h3>
+      <p>Jogo em pixel art que atravessa 3.800 anos de história dos algoritmos, da Babilônia até hoje, e termina com a montagem de uma máquina. Vem com uma página interativa sobre cartões perfurados, com simulador. Feito para uma apresentação da disciplina de Inovação.</p>
+      <div class="chips"><span class="chip">Canvas · JavaScript</span><span class="chip">Web Audio</span><span class="chip">Vercel</span></div>
+      <div class="repo"><a href="https://inovacaoquinta.vercel.app/inovacao_game.html" target="_blank" rel="noopener">Jogar ↗</a><a href="https://inovacaoquinta.vercel.app/curiosidades.html" target="_blank" rel="noopener">Curiosidades ↗</a></div>
+    </article>
+    <article class="item" id="velha" data-a="ia">
+      <div class="top-m"><span>2024 · Aprendizado por reforço</span><span>Pygame</span></div>
+      <h3>IA no Jogo da Velha</h3>
+      <p>Rede neural treinada por reforço para não perder para um humano. Começou como uma IA de truco e mudou de rumo por causa dos blefes, decisão documentada no repositório.</p>
+      <div class="chips"><span class="chip">Python</span><span class="chip">TensorFlow</span><span class="chip">Pygame</span></div>
+      <a class="repo" href="https://github.com/BragaNux/trabalho_ia_2" target="_blank" rel="noopener">trabalho_ia_2 ↗</a>
+    </article>
+    <article class="item" id="farmacia" data-a="ia web">
+      <div class="top-m"><span>2024 · IA multimodal</span><span>Flask</span></div>
+      <h3>Especialista em Farmácia</h3>
+      <p>Interface web que junta transcrição de áudio com Whisper, descrição de imagens com CLIP, geração de texto e processamento de vídeo.</p>
+      <div class="chips"><span class="chip">Python · Flask</span><span class="chip">Whisper</span><span class="chip">CLIP</span></div>
+      <div class="repo"><a href="https://github.com/BragaNux/projeto_ia" target="_blank" rel="noopener">projeto_ia ↗</a><a href="https://www.youtube.com/watch?v=d2udt0eYibA" target="_blank" rel="noopener">Vídeo da demo ↗</a></div>
+    </article>
+    <article class="item" id="crawler" data-a="back">
+      <div class="top-m"><span>2024 · Algoritmos</span><span>Flask</span></div>
+      <h3>Crawler de e-commerce</h3>
+      <p>Coleta produtos de uma loja on-line e ordena por preço, com ordenação externa em blocos e arquivos temporários para volumes que não cabem na memória. Tem uma interface web para rodar a busca.</p>
+      <div class="chips"><span class="chip">Python · Flask</span><span class="chip">BeautifulSoup</span><span class="chip">Ordenação externa</span></div>
+      <div class="repo"><a href="https://github.com/BragaNux/trabalho_crawler" target="_blank" rel="noopener">trabalho_crawler ↗</a><a href="https://www.youtube.com/watch?v=I2O1biixYlI" target="_blank" rel="noopener">Vídeo da demo ↗</a></div>
+    </article>
+  </div>
+</section>
+
+<section class="wrap sec" id="habilidades" aria-labelledby="h-hab">
+  <div class="sec-head">
+    <h2 id="h-hab">Habilidades</h2>
+    <p class="sec-sub">Toque numa tecnologia para ver onde eu usei. As marcadas com um ponto fazem parte do meu dia a dia no trabalho.</p>
+  </div>
+  <div class="stack" id="skills">
+    <div class="layer"><span class="layer-name">Mobile</span><div class="sk-row">
+      <button type="button" class="sk daily" id="sk-flutter" data-u="panela forza">Flutter · Dart</button>
+      <button type="button" class="sk" id="sk-rn" data-u="checkin panela">React Native · Expo</button>
+    </div></div>
+    <div class="layer"><span class="layer-name">Web</span><div class="sk-row">
+      <button type="button" class="sk daily" id="sk-react" data-u="nexasystem nexasolution upespaco unistore forza">React</button>
+      <button type="button" class="sk daily" id="sk-ts" data-u="nexasystem nexasolution bookguess maestro checkin unistore forza">TypeScript</button>
+      <button type="button" class="sk daily" id="sk-js" data-u="sentinel ecommerce catalogo algoritmo forza">JavaScript</button>
+      <button type="button" class="sk daily" id="sk-blazor" data-u="bookguess forza">Blazor · Razor</button>
+      <button type="button" class="sk" id="sk-next" data-u="bookguess maestro">Next.js</button>
+      <button type="button" class="sk" id="sk-tailwind" data-u="upespaco bookguess maestro">Tailwind</button>
+    </div></div>
+    <div class="layer"><span class="layer-name">APIs e back-end</span><div class="sk-row">
+      <button type="button" class="sk daily" id="sk-csharp" data-u="panela bookguess forza" aria-pressed="true">C# · .NET</button>
+      <button type="button" class="sk daily" id="sk-aspnet" data-u="panela forza">ASP.NET Core</button>
+      <button type="button" class="sk" id="sk-go" data-u="upespaco">Go</button>
+      <button type="button" class="sk" id="sk-rust" data-u="nexasystem nexasolution">Rust · Axum</button>
+      <button type="button" class="sk" id="sk-python" data-u="ecoscan ratos culinaria bookguess nexasolution velha farmacia crawler">Python</button>
+      <button type="button" class="sk" id="sk-fastapi" data-u="bookguess nexasolution farmacia crawler">FastAPI · Django · Flask</button>
+      <button type="button" class="sk" id="sk-node" data-u="sentinel ecommerce catalogo unistore nexasolution">Node.js · Express</button>
+      <button type="button" class="sk" id="sk-java" data-u="bragaflow">Java</button>
+    </div></div>
+    <div class="layer"><span class="layer-name">Dados</span><div class="sk-row">
+      <button type="button" class="sk daily" id="sk-mysql" data-u="forza">MySQL</button>
+      <button type="button" class="sk" id="sk-pg" data-u="panela nexasystem nexasolution upespaco bookguess ecommerce catalogo unistore">PostgreSQL</button>
+      <button type="button" class="sk" id="sk-pgvector" data-u="nexasolution bookguess">pgvector</button>
+      <button type="button" class="sk" id="sk-mongo" data-u="ecommerce bragaflow">MongoDB</button>
+      <button type="button" class="sk" id="sk-redis" data-u="bookguess">Redis</button>
+    </div></div>
+    <div class="layer"><span class="layer-name">IA e machine learning</span><div class="sk-row">
+      <button type="button" class="sk" id="sk-llm" data-u="nexasolution bookguess culinaria sentinel panela">LLMs e RAG</button>
+      <button type="button" class="sk" id="sk-langchain" data-u="nexasolution">LangChain</button>
+      <button type="button" class="sk" id="sk-tf" data-u="ecoscan velha">TensorFlow</button>
+      <button type="button" class="sk" id="sk-sklearn" data-u="ratos">scikit-learn · pandas</button>
+      <button type="button" class="sk" id="sk-n8n" data-u="culinaria">n8n</button>
+    </div></div>
+    <div class="layer"><span class="layer-name">Infra e qualidade</span><div class="sk-row">
+      <button type="button" class="sk" id="sk-docker" data-u="panela nexasystem nexasolution upespaco bookguess ecommerce catalogo sentinel">Docker</button>
+      <button type="button" class="sk" id="sk-tests" data-u="panela nexasystem nexasolution bookguess forza">Testes automatizados</button>
+      <button type="button" class="sk" id="sk-obs" data-u="upespaco ecommerce catalogo">Prometheus · Grafana</button>
+      <button type="button" class="sk" id="sk-kafka" data-u="ecommerce">Kafka · Kong</button>
+      <button type="button" class="sk" id="sk-nginx" data-u="bookguess panela nexasolution catalogo">Nginx · Caddy · VPS</button>
+      <button type="button" class="sk" id="sk-ci" data-u="catalogo">CI/CD</button>
+      <button type="button" class="sk daily" id="sk-svn" data-u="forza">SVN</button>
+      <button type="button" class="sk" id="sk-git" data-u="repos">Git · GitHub</button>
+      <button type="button" class="sk" id="sk-linux" data-u="repos">Linux · Proxmox</button>
+    </div></div>
+    <div class="layer"><span class="layer-name">Engenharia de software</span><div class="sk-row">
+      <button type="button" class="sk" id="sk-uml" data-u="restaurante upespaco">Requisitos e UML</button>
+      <button type="button" class="sk" id="sk-patterns" data-u="bragaflow upespaco">Design patterns</button>
+      <button type="button" class="sk" id="sk-clean" data-u="upespaco bookguess">Clean Architecture</button>
+      <button type="button" class="sk daily" id="sk-review" data-u="forza">Code review</button>
+    </div></div>
+    <div class="layer"><span class="layer-name">Segurança</span><div class="sk-row">
+      <button type="button" class="sk daily" id="sk-jwt" data-u="panela upespaco forza">JWT</button>
+      <button type="button" class="sk" id="sk-hash" data-u="nexasystem upespaco">Argon2id · bcrypt</button>
+      <button type="button" class="sk" id="sk-hmac" data-u="nexasystem">HMAC e 2FA</button>
+      <button type="button" class="sk" id="sk-lgpd" data-u="nexasolution panela">LGPD</button>
+    </div></div>
+  </div>
+  <div class="sk-out" id="sk-out" aria-live="polite">
+    <p class="eyebrow">Onde usei</p>
+    <p><b>C# · .NET</b></p>
+    <div class="uses"><a href="#panela">Panela</a><a href="#bookguess">BookGuess</a><a href="#forza">Trabalho na Forza</a></div>
+  </div>
+
+  <h3 class="sub">Como eu trabalho</h3>
+  <div class="soft">
+    <article><p class="ev">Exército e faculdade</p><h4>Disciplina e resiliência</h4><p>Servi um ano no Exército Brasileiro e depois conciliei trabalho em tempo integral com a faculdade.</p></article>
+    <article><p class="ev">Dois anos na logística</p><h4>Organização e processos</h4><p>Cuidei de operações de abastecimento e distribuição. Levo essa organização de fluxo e prazo para os projetos de software.</p></article>
+    <article><p class="ev">Up Espaço e 3Summa</p><h4>Liderança e produto</h4><p>Fui PO e líder de front-end numa equipe de cinco e sou um dos três sócios-fundadores de uma startup incubada.</p></article>
+    <article><p class="ev">Code Race e Panela</p><h4>Foco em quem usa</h4><p>Ganhei o prêmio de melhor usabilidade no Code Race 2026. No Panela, o foco em planejar antes de gastar veio de uma lacuna dos apps do mercado, e a avaliação com usuários vai usar a escala SUS.</p></article>
+    <article><p class="ev">Monitoria e pesquisa</p><h4>Comunicação e didática</h4><p>Fui monitor de Algoritmos I, publiquei três resumos expandidos na MICAMF e documento os projetos para qualquer pessoa conseguir rodar e entender.</p></article>
+    <article><p class="ev">No dia a dia</p><h4>Qualidade e investigação</h4><p>Trabalho com code review, escrevo testes automatizados e procuro a causa raiz nos dados e no histórico de versões antes de mexer no código.</p></article>
+  </div>
+</section>
+
+<section class="wrap sec" id="trajetoria" aria-labelledby="h-traj">
+  <div class="sec-head">
+    <h2 id="h-traj">Experiência e formação</h2>
+  </div>
+  <ol class="timeline">
+    <li id="summa"><div class="when"><b>2026 – hoje</b><span>InovAMF · FOIL</span></div>
+      <div><h3>Sócio-fundador · 3Summa</h3><p>Startup incubada no InovAMF que quer tirar trabalho repetitivo da rotina de escritórios de contabilidade. Nosso produto é o NexaSystem.</p></div></li>
+    <li id="forza"><div class="when"><b>2024 – hoje</b><span>Santa Maria, RS · presencial</span></div>
+      <div><h3>Desenvolvedor full-stack · Forza Clubes</h3><p>Desenvolvo de ponta a ponta num sistema de gestão usado por clubes, passando por APIs, sistema web e aplicativo. Também criei a plataforma interna que a equipe usa para organizar conhecimento e documentação.</p>
+        <div class="chips"><span class="chip">C# · .NET</span><span class="chip">ASP.NET Core</span><span class="chip">Blazor</span><span class="chip">Flutter · Dart</span><span class="chip">React · TypeScript</span><span class="chip">MySQL</span><span class="chip">JWT</span><span class="chip">SVN</span></div>
+        <p class="soft-line">No dia a dia: code review, testes automatizados e investigação de causa raiz.</p></div></li>
+    <li><div class="when"><b>2022 – 2026</b><span>Antonio Meneghetti Faculdade</span></div>
+      <div><h3>Bacharelado em Sistemas de Informação</h3><p>TCC com o app Panela, com entrega em novembro de 2026. Monitor de Algoritmos I, três resumos expandidos na MICAMF e duas participações no Code Race, uma delas premiada.</p></div></li>
+    <li class="past"><div class="when"><b>2022 – 2024</b><span>Santa Maria, RS</span></div>
+      <div><h3>Administrador de logística · Modo Logística</h3><p>Operações de abastecimento e distribuição em tempo integral, nos primeiros anos da faculdade.</p></div></li>
+    <li class="past"><div class="when"><b>2021 – 2022</b><span>Santa Maria, RS</span></div>
+      <div><h3>Exército Brasileiro</h3><p>Um ano de serviço militar, de onde trouxe disciplina e resiliência.</p></div></li>
+    <li class="past"><div class="when"><b>2018 – 2019</b><span>Santa Maria, RS</span></div>
+      <div><h3>Jovem aprendiz · Beltrame Supermercados</h3><p>Primeiro emprego.</p></div></li>
+  </ol>
+</section>
+
+<section class="wrap sec" id="conquistas" aria-labelledby="h-conq">
+  <div class="sec-head"><h2 id="h-conq">Prêmios, pesquisa e cursos</h2></div>
+  <div class="two">
+    <div>
+      <h3>Prêmios, pesquisa e ensino</h3>
+      <ul class="list">
+        <li><span class="y">2026</span><span><b>Prêmio de melhor usabilidade</b><span class="d">Code Race AMF, com o Nexa Solution</span></span></li>
+        <li><span class="y">2025</span><span><b>Resumo expandido na MICAMF</b><span class="d">VITALITY, sistema gamificado para bem-estar digital</span></span></li>
+        <li><span class="y">2024</span><span><b>Resumo expandido na MICAMF</b><span class="d">Dispositivo tátil-sonoro para deficientes visuais</span></span></li>
+        <li><span class="y">2024</span><span><b>Resumo expandido na MICAMF</b><span class="d">Blockchain além das criptomoedas</span></span></li>
+        <li><span class="y">2024</span><span><b>Competidor no VIII Code Race AMF</b><span class="d">16 horas de competição</span></span></li>
+        <li><span class="y">2023</span><span><b>Monitor do Laboratório de Algoritmos I</b><span class="d">40 horas de monitoria</span></span></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Cursos e idiomas</h3>
+      <ul class="list">
+        <li><span class="y">2026</span><span><b>Introdução ao Linux</b><span class="d">Alfahelix</span></span></li>
+        <li><span class="y">2025</span><span><b>Alura</b><span class="d">Linguagem C (dois cursos), Figma e lógica de programação com JavaScript</span></span></li>
+        <li><span class="y">2025</span><span><b>Prompt de IA na prática</b><span class="d">Formação de prompts para inteligência artificial</span></span></li>
+        <li><span class="y">2024</span><span><b>Alura</b><span class="d">C#, Java, Quality Assurance e gestão de bugs</span></span></li>
+        <li><span class="y">2022</span><span><b>Backend Descomplicando com C#</b><span class="d">Tech Courses AMF, 16 horas</span></span></li>
+        <li><span class="y">2022</span><span><b>JavaScript, CSS e HTML</b><span class="d">Curso de aperfeiçoamento, 16 horas</span></span></li>
+        <li><span class="y">Idiomas</span><span><b>Português nativo</b><span class="d">Inglês em desenvolvimento, com meta de fluência</span></span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="wrap contact" id="contato" aria-labelledby="h-cont">
+  <h2 id="h-cont">Vamos conversar</h2>
+  <p class="big">Estou aberto a oportunidades remotas, no Brasil e no exterior, em times que valorizam qualidade de código, boas práticas e aprendizado contínuo.</p>
+  <dl class="clist">
+    <div class="crow"><dt>E-mail</dt><dd><span class="cval" id="mail">devbrayancomercial@gmail.com</span><button class="btn sm primary" type="button" id="copy-mail" data-copy="mail">Copiar</button></dd></div>
+    <div class="crow"><dt>WhatsApp</dt><dd><span class="cval" id="fone">+55 (55) 99205-3272</span><button class="btn sm" type="button" id="copy-fone" data-copy="fone">Copiar</button><a class="btn sm" href="https://wa.me/5555992053272" target="_blank" rel="noopener">Abrir no WhatsApp ↗</a></dd></div>
+    <div class="crow"><dt>Instagram</dt><dd><a class="cval" href="https://www.instagram.com/b.martlns/" target="_blank" rel="noopener">@b.martlns ↗</a></dd></div>
+  </dl>
+  <div class="cta" style="margin-top:4px">
+    <a class="btn" href="https://www.linkedin.com/in/bmartlns/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    <a class="btn" href="https://github.com/BragaNux" target="_blank" rel="noopener">GitHub ↗</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap"><div class="foot"><span>Brayan Martins · Santa Maria, RS · 2026</span><span>Projetos privados aparecem descritos, sem link para o código.</span></div></div>
+</footer>
+
+<script>
+(function(){
+  var R=[{"n":"TCC_Panela","o":"BragaNux","d":"2026-10","p":1,"l":"Dart","t":"TCC: app Panela (Flutter + ASP.NET Core) e monografia"},{"n":"NexaSystem","o":"gsantos-tech","d":"2026-10","p":1,"l":"Rust","t":"Plataforma de atendimento pelo WhatsApp da 3Summa"},{"n":"inovacao_quinta","o":"BragaNux","d":"2026-09","p":1,"l":"HTML/CSS","t":"Jogo em pixel art sobre a história dos algoritmos"},{"n":"IA2_G1_RATS","o":"BragaNux","d":"2026-09","p":0,"l":"Python","t":"Machine learning para priorizar chamados de ratos em Nova York"},{"n":"lab-g2","o":"BragaNux","d":"2026-06","p":0,"l":"Python","t":"BookGuess em Next.js + FastAPI com RAG"},{"n":"up-space-aps","o":"BragaNux","d":"2026-06","p":0,"l":"Go","t":"Up Espaço: API em Go, React e observabilidade"},{"n":"auxilio_apresentacao","o":"BragaNux","d":"2026-06","p":1,"l":"Docs","t":"Guia de apresentação da arquitetura de microsserviços"},{"n":"up-space-foil","o":"BragaNux","d":"2026-06","p":0,"l":"Docs","t":"Up Espaço: produto, orçamento e organização da equipe"},{"n":"book-guess","o":"BragaNux","d":"2026-06","p":0,"l":"C#","t":"BookGuess em .NET com Clean Architecture"},{"n":"20-nexasolution","o":"gsantos-tech","d":"2026-06","p":1,"l":"Rust","t":"Nexa Solution: SaaS para o agro com agente de IA (Code Race)"},{"n":"ideia_principal_emporio_das_oliveiras","o":"BragaNux","d":"2026-06","p":0,"l":"Docs","t":"Proposta de transformação digital do Empório das Oliveiras"},{"n":"proposta_emporio_oliveiras","o":"BragaNux","d":"2026-05","p":1,"l":"TypeScript","t":"MaestroOS: protótipo e proposta para o Empório"},{"n":"trabalho_culinaria","o":"BragaNux","d":"2026-05","p":0,"l":"Python","t":"Assistente de culinária com RAG, Telegram e n8n"},{"n":"bragaflow","o":"BragaNux","d":"2026-05","p":0,"l":"Java","t":"BragaFlow Atlas: Java + MongoDB com padrões de projeto"},{"n":"LLM_Identify_Trash","o":"BragaNux","d":"2026-04","p":0,"l":"Python","t":"EcoScan: classificação de lixo por visão computacional"},{"n":"Sentinel-AI","o":"BragaNux","d":"2025-12","p":0,"l":"JavaScript","t":"Extensão do Chrome que avalia autoria e risco de conteúdo"},{"n":"g2_arquitetura","o":"BragaNux","d":"2025-12","p":0,"l":"JavaScript","t":"E-commerce em microsserviços com Kafka e Kong"},{"n":"Panela_Rateio","o":"BragaNux","d":"2025-12","p":0,"l":"Docs","t":"Documentação pública do app Panela"},{"n":"g1_arquitetura","o":"BragaNux","d":"2025-11","p":0,"l":"JavaScript","t":"Primeira versão dos microsserviços, com coleção Postman"},{"n":"teste_vercel","o":"BragaNux","d":"2025-10","p":0,"l":"JavaScript","t":"App React com deploy na Vercel"},{"n":"abi-event","o":"BragaNux","d":"2025-10","p":0,"l":"Docs","t":"Proposta de item para um evento do jogo Arena Breakout"},{"n":"docker_atividade_02_10","o":"BragaNux","d":"2025-10","p":0,"l":"JavaScript","t":"Catálogo de filmes com Docker, Prometheus, Grafana e CI"},{"n":"trabalho_dev_2","o":"BragaNux","d":"2025-08","p":0,"l":"TypeScript","t":"App de check-in de eventos (Expo + TypeScript)"},{"n":"trabalho_d1_unistore","o":"BragaNux","d":"2025-06","p":0,"l":"Docs","t":"UniStore: e-commerce acadêmico"},{"n":"ForzaTools","o":"BragaNux","d":"2025-06","p":1,"l":"C#","t":"Plataforma interna da equipe da Forza (v1)"},{"n":"pratica_proxmox_completo","o":"BragaNux","d":"2025-06","p":0,"l":"Docs","t":"Laboratório de virtualização com Proxmox"},{"n":"exercicios_asm","o":"BragaNux","d":"2025-06","p":0,"l":"Assembly","t":"Exercícios em Assembly"},{"n":"pratica_proxmox","o":"BragaNux","d":"2025-06","p":0,"l":"Docs","t":"Instalação e configuração do Proxmox"},{"n":"TempDev1","o":"BragaNux","d":"2025-04","p":1,"l":"Docs","t":"Avaliação de React + TypeScript (projetos em branches)"},{"n":"Trabalho-Avaliativo-TypeScript","o":"BragaNux","d":"2025-03","p":1,"l":"TypeScript","t":"Trabalho avaliativo em TypeScript"},{"n":"Estudo_POO","o":"BragaNux","d":"2024-12","p":0,"l":"Java","t":"Estudos de orientação a objetos em Java"},{"n":"trabalho_ia_2","o":"BragaNux","d":"2024-12","p":0,"l":"Python","t":"IA que joga Jogo da Velha com aprendizado por reforço"},{"n":"noticias_ia","o":"BragaNux","d":"2024-11","p":0,"l":"Docs","t":"Resumo semanal de notícias de IA"},{"n":"RoboDosRObo","o":"BragaNux","d":"2024-11","p":0,"l":"Java","t":"Exercício em Java"},{"n":"trabalho_2_cpd","o":"BragaNux","d":"2024-11","p":0,"l":"Python","t":"Mini-Steam: busca de jogos com árvore binária"},{"n":"exer_em_aula_18_11","o":"BragaNux","d":"2024-11","p":0,"l":"Python","t":"Exercícios de Classificação e Pesquisa de Dados"},{"n":"exer_aula_11","o":"BragaNux","d":"2024-11","p":0,"l":"Python","t":"Exercícios de Classificação e Pesquisa de Dados"},{"n":"exer_aula_10","o":"BragaNux","d":"2024-11","p":0,"l":"Python","t":"Exercícios de Classificação e Pesquisa de Dados"},{"n":"exercicios_cpd_aula_08","o":"BragaNux","d":"2024-11","p":0,"l":"Python","t":"Exercícios de Classificação e Pesquisa de Dados"},{"n":"trabalho_crawler","o":"BragaNux","d":"2024-10","p":0,"l":"Python","t":"Crawler de e-commerce com ordenação externa"},{"n":"projeto_ia","o":"BragaNux","d":"2024-10","p":0,"l":"Python","t":"Especialista em Farmácia: Flask com Whisper e CLIP"},{"n":"poo","o":"BragaNux","d":"2024-09","p":0,"l":"Java","t":"Exercícios de orientação a objetos em Java"},{"n":"cpd","o":"BragaNux","d":"2024-09","p":0,"l":"Python","t":"Classificação e Pesquisa de Dados"},{"n":"trab2","o":"BragaNux","d":"2024-06","p":0,"l":"Python","t":"Trabalho de estrutura de dados em dupla"},{"n":"recursividade","o":"BragaNux","d":"2024-06","p":0,"l":"Python","t":"Exercícios de recursividade"},{"n":"exercicios_pilhas-filas","o":"BragaNux","d":"2024-04","p":0,"l":"Python","t":"Exercícios de pilhas e filas"},{"n":"g1-ed","o":"BragaNux","d":"2024-04","p":0,"l":"Python","t":"Avaliação G1 de Estrutura de Dados"},{"n":"Estrutura_de_Dados","o":"BragaNux","d":"2024-04","p":0,"l":"Python","t":"Exercícios de Estrutura de Dados"},{"n":"Linux","o":"BragaNux","d":"2022-12","p":0,"l":"Python","t":"Primeiro repositório"}];
+  var LC={"C#":"--l-cs","TypeScript":"--l-ts","Dart":"--l-dart","Rust":"--l-rust","Go":"--l-go","JavaScript":"--l-js","Python":"--l-py","Java":"--l-java","HTML/CSS":"--l-html","Assembly":"--l-asm","Docs":"--l-docs"};
+  var LN={"Docs":"Documentação"};
+  var MES=["jan","fev","mar","abr","mai","jun","jul","ago","set","out","nov","dez"];
+  var ANCHOR={"TCC_Panela":"#panela","Panela_Rateio":"#panela","NexaSystem":"#nexasystem","20-nexasolution":"#nexa-solution","up-space-aps":"#up-espaco","up-space-foil":"#up-espaco","book-guess":"#bookguess","lab-g2":"#bookguess","LLM_Identify_Trash":"#ecoscan","IA2_G1_RATS":"#ratos","Sentinel-AI":"#sentinel","trabalho_culinaria":"#culinaria","g2_arquitetura":"#ecommerce","g1_arquitetura":"#ecommerce","docker_atividade_02_10":"#catalogo","bragaflow":"#bragaflow","ideia_principal_emporio_das_oliveiras":"#maestro","proposta_emporio_oliveiras":"#maestro","trabalho_dev_2":"#checkin","inovacao_quinta":"#algoritmo","trabalho_ia_2":"#velha","projeto_ia":"#farmacia","ForzaTools":"#forza","trabalho_d1_unistore":"#unistore","trabalho_crawler":"#crawler"};
+  var FEAT={"TCC_Panela":1,"NexaSystem":1,"20-nexasolution":1,"up-space-aps":1,"book-guess":1,"lab-g2":1};
+  var START=2021, MONTHS=72, NOW=(2026-START)*12+9;
+  var LANES=[
+    {t:"Exército Brasileiro",s:"Exército",a:"2021-03",b:"2022-02"},
+    {t:"Logística · Modo Logística",s:"Logística",a:"2022-05",b:"2024-08"},
+    {t:"Sistemas de Informação · AMF",s:"Sistemas de Informação",a:"2022-02",b:"2026-11"},
+    {t:"Desenvolvedor full-stack · Forza Clubes",s:"Forza Clubes",a:"2024-07",b:"2026-10",acc:true}
+  ];
+  var reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function mi(s){var p=s.split("-");return (+p[0]-START)*12+(+p[1]-1);}
+  function fmt(s){var p=s.split("-");return MES[+p[1]-1]+"/"+p[0];}
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+
+  /* nome e foto sempre cabem lado a lado: reduz o tamanho do nome só se faltar espaço */
+  var heroEl=document.querySelector(".hero"), headEl=document.querySelector(".hero-head"), nameEl=document.querySelector(".name"), fr=0;
+  function fitName(){
+    heroEl.style.removeProperty("--ns");
+    var ns=parseFloat(getComputedStyle(nameEl).fontSize), w=0, sp=nameEl.querySelectorAll("span");
+    for(var i=0;i<sp.length;i++){var rg=document.createRange();rg.selectNodeContents(sp[i]);w=Math.max(w,rg.getBoundingClientRect().width);}
+    var gap=parseFloat(getComputedStyle(headEl).columnGap)||16, W=headEl.clientWidth, fit=(W-gap-4)/(w/ns+1.72);
+    if(fit<ns) heroEl.style.setProperty("--ns",fit.toFixed(1)+"px");
+  }
+  fitName();
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(fitName);
+  window.addEventListener("resize",function(){cancelAnimationFrame(fr);fr=requestAnimationFrame(fitName);});
+
+  /* navegação até um projeto */
+  function go(h){
+    var t=document.querySelector(h); if(!t) return;
+    if(t.tagName==="DETAILS"){t.open=true;}
+    if(t.closest&&t.closest("#grid")) setFilter("todos");
+    t.scrollIntoView({behavior:reduce?"auto":"smooth",block:"start"});
+    t.classList.remove("flash"); void t.offsetWidth; t.classList.add("flash");
+  }
+  document.addEventListener("click",function(e){
+    var a=e.target.closest&&e.target.closest("a[data-go]");
+    if(a){e.preventDefault();go(a.getAttribute("data-go"));}
+  });
+
+  /* gráfico */
+  var NS="http://www.w3.org/2000/svg";
+  var wrap=document.getElementById("chart"), svg=document.getElementById("chart-svg"), tip=document.getElementById("tip");
+  var first=true, pinned=null, lastW=0;
+  function el(n,at,par){var e=document.createElementNS(NS,n);for(var k in at) e.setAttribute(k,at[k]);if(par) par.appendChild(e);return e;}
+  function hide(){tip.hidden=true;tip.classList.remove("pin");}
+  function show(rp,cx,cy,pin){
+    var h="<b>"+esc(rp.n)+"</b><span class=\"m\">"+fmt(rp.d)+" · "+esc(LN[rp.l]||rp.l)+(rp.p?" · privado":"")+"</span><span>"+esc(rp.t)+"</span>";
+    if(pin){
+      var l=[], a=ANCHOR[rp.n];
+      if(a) l.push("<a href=\""+a+"\" data-go=\""+a+"\">Ver no portfólio ↓</a>");
+      if(!rp.p) l.push("<a href=\"https://github.com/"+esc(rp.o)+"/"+esc(rp.n)+"\" target=\"_blank\" rel=\"noopener\">GitHub ↗</a>");
+      if(l.length) h+="<span class=\"tl\">"+l.join("")+"</span>";
+    }
+    tip.innerHTML=h; tip.hidden=false; tip.classList.toggle("pin",!!pin);
+    var sb=svg.getBoundingClientRect(), wb=wrap.getBoundingClientRect();
+    var k=sb.width/lastW, x=(sb.left-wb.left)+cx*k, y=(sb.top-wb.top)+cy*k;
+    var tw=tip.offsetWidth, th=tip.offsetHeight, left=x+14;
+    if(left+tw>wrap.clientWidth) left=x-tw-14;
+    if(left<0) left=Math.max(0,Math.min(wrap.clientWidth-tw,x-tw/2));
+    var top=y-th-12; if(top<0) top=y+14;
+    tip.style.left=left+"px"; tip.style.top=top+"px";
+  }
+  function render(){
+    var W=Math.max(280,Math.round(wrap.clientWidth)); lastW=W;
+    var narrow=W<640, bin=narrow?3:1, nb=MONTHS/bin, padL=2, padR=2, pw=W-padL-padR, bw=pw/nb;
+    function xm(m){return padL+(m/MONTHS)*pw;}
+    var r=Math.max(3.2,Math.min(6.4,bw*0.4)), step=2*r+2.2;
+    var bins={}, keys=[];
+    R.slice().sort(function(a,b){return a.d<b.d?-1:a.d>b.d?1:0;}).forEach(function(rp){var b=Math.floor(mi(rp.d)/bin);if(!bins[b]){bins[b]=[];keys.push(b);}bins[b].push(rp);});
+    var maxS=1; keys.forEach(function(b){if(bins[b].length>maxS) maxS=bins[b].length;});
+    var top=26, axisY=top+maxS*step+8, laneTop=axisY+42, laneGap=34, H=laneTop+(LANES.length-1)*laneGap+16;
+    svg.setAttribute("viewBox","0 0 "+W+" "+H); svg.setAttribute("width",W); svg.setAttribute("height",H);
+    while(svg.firstChild) svg.removeChild(svg.firstChild);
+    el("line",{x1:padL,x2:W-padR,y1:axisY,y2:axisY,"class":"axl"},svg);
+    for(var y=START;y<START+6;y++){
+      var x=xm((y-START)*12);
+      el("line",{x1:x,x2:x,y1:axisY,y2:axisY+6,"class":"axl"},svg);
+      var t=el("text",{x:x+4,y:axisY+18,"class":"ax"},svg); t.textContent=y;
+    }
+    var xn=xm(NOW+0.5);
+    el("line",{x1:xn,x2:xn,y1:top-8,y2:H-4,"class":"today"},svg);
+    var tt=el("text",{x:xn-5,y:top-12,"class":"ax today-t","text-anchor":"end"},svg); tt.textContent="hoje";
+    LANES.forEach(function(L,i){
+      var ly=laneTop+i*laneGap, x1=xm(mi(L.a)), x2=xm(mi(L.b)+1);
+      el("rect",{x:x1,y:ly,width:Math.max(4,x2-x1),height:7,rx:3.5,"class":"lane-b"+(L.acc?" acc":"")},svg);
+      var lt=el("text",{x:x1,y:ly-7,"class":"lane-t"},svg); lt.textContent=narrow?L.s:L.t;
+      var w=lt.getComputedTextLength(); if(x1+w>W-padR) lt.setAttribute("x",Math.max(padL,W-padR-w));
+    });
+    keys.sort(function(a,b){return a-b;});
+    var idx=0;
+    keys.forEach(function(b){
+      var cx=padL+(b+0.5)*bw;
+      bins[b].forEach(function(rp,k){
+        var cy=axisY-6-r-k*step;
+        var g=el("g",{"class":"dotg"},svg);
+        if(FEAT[rp.n]) el("circle",{cx:cx,cy:cy,r:r+2.6,"class":"ring"},g);
+        var c=el("circle",{cx:cx,cy:cy,r:r,"class":"dot"},g);
+        c.style.fill="var("+(LC[rp.l]||"--l-docs")+")";
+        if(first&&!reduce){c.classList.add("in");c.style.animationDelay=(idx*16)+"ms";}
+        g.addEventListener("pointerenter",function(){if(!pinned) show(rp,cx,cy,false);});
+        g.addEventListener("pointerleave",function(){if(!pinned) hide();});
+        g.addEventListener("click",function(e){e.stopPropagation();pinned=rp;show(rp,cx,cy,true);});
+        idx++;
+      });
+    });
+    first=false;
+  }
+  document.addEventListener("click",function(e){if(pinned&&!tip.contains(e.target)){pinned=null;hide();}});
+  tip.addEventListener("click",function(e){var a=e.target.closest("a[data-go]");if(a){pinned=null;hide();}});
+  render();
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(function(){render();});
+  var raf=0;
+  if(window.ResizeObserver){new ResizeObserver(function(){cancelAnimationFrame(raf);raf=requestAnimationFrame(function(){if(Math.round(wrap.clientWidth)!==lastW){pinned=null;hide();render();}});}).observe(wrap);}
+
+  /* lista completa de repositórios */
+  var rows=document.getElementById("repo-rows"), html="";
+  R.forEach(function(rp){
+    var link=rp.p?"<span class=\"muted\">privado</span>":"<a href=\"https://github.com/"+esc(rp.o)+"/"+esc(rp.n)+"\" target=\"_blank\" rel=\"noopener\">GitHub ↗</a>";
+    html+="<tr><td class=\"m\">"+fmt(rp.d)+"</td><td class=\"n\">"+esc(rp.n)+"</td><td>"+esc(rp.t)+"</td><td style=\"white-space:nowrap\"><span class=\"ldot\" style=\"--c:var("+(LC[rp.l]||"--l-docs")+")\"></span>"+esc(LN[rp.l]||rp.l)+"</td><td>"+link+"</td></tr>";
+  });
+  rows.innerHTML=html;
+
+  /* filtros de mais projetos */
+  var fbtns=document.querySelectorAll(".filters button"), items=document.querySelectorAll("#grid .item");
+  function setFilter(f){
+    for(var i=0;i<fbtns.length;i++) fbtns[i].setAttribute("aria-pressed",fbtns[i].getAttribute("data-f")===f?"true":"false");
+    for(var j=0;j<items.length;j++){var a=items[j].getAttribute("data-a").split(" ");items[j].hidden=!(f==="todos"||a.indexOf(f)>-1);}
+  }
+  for(var i=0;i<fbtns.length;i++) fbtns[i].addEventListener("click",function(){setFilter(this.getAttribute("data-f"));});
+
+  /* mapa de habilidades */
+  var PROJ={panela:["Panela","#panela"],nexasystem:["NexaSystem","#nexasystem"],nexasolution:["Nexa Solution","#nexa-solution"],upespaco:["Up Espaço","#up-espaco"],bookguess:["BookGuess","#bookguess"],ecoscan:["EcoScan","#ecoscan"],ratos:["Ratos de Nova York","#ratos"],sentinel:["Sentinel AI","#sentinel"],culinaria:["Assistente de Culinária","#culinaria"],ecommerce:["E-commerce em microsserviços","#ecommerce"],catalogo:["Catálogo com observabilidade","#catalogo"],bragaflow:["BragaFlow Atlas","#bragaflow"],maestro:["MaestroOS","#maestro"],checkin:["Check-in de Evento","#checkin"],algoritmo:["O Algoritmo","#algoritmo"],velha:["IA no Jogo da Velha","#velha"],farmacia:["Especialista em Farmácia","#farmacia"],unistore:["UniStore","#unistore"],crawler:["Crawler de e-commerce","#crawler"],restaurante:["Atendimento para Restaurante","#restaurante"],forza:["Trabalho na Forza","#forza"],repos:["Lista de repositórios","#repositorios"]};
+  var sks=document.querySelectorAll(".sk"), out=document.getElementById("sk-out");
+  function pick(btn){
+    for(var i=0;i<sks.length;i++) sks[i].setAttribute("aria-pressed",sks[i]===btn?"true":"false");
+    var u=btn.getAttribute("data-u").split(" "), links=u.map(function(k){var p=PROJ[k];return "<a href=\""+p[1]+"\" data-go=\""+p[1]+"\">"+esc(p[0])+"</a>";}).join("");
+    out.innerHTML="<p class=\"eyebrow\">Onde usei</p><p><b>"+esc(btn.textContent)+"</b>"+(btn.classList.contains("daily")?" <span class=\"muted\">· uso no dia a dia</span>":"")+"</p><div class=\"uses\">"+links+"</div>";
+  }
+  for(var s=0;s<sks.length;s++){if(!sks[s].hasAttribute("aria-pressed")) sks[s].setAttribute("aria-pressed","false");sks[s].addEventListener("click",function(){pick(this);});}
+  pick(document.getElementById("sk-csharp"));
+
+  /* copiar e-mail e telefone */
+  var cps=document.querySelectorAll("[data-copy]");
+  for(var c=0;c<cps.length;c++) cps[c].addEventListener("click",function(){
+    var b=this, src=document.getElementById(b.getAttribute("data-copy")), orig=b.textContent;
+    function sel(){var rg=document.createRange();rg.selectNodeContents(src);var sl=window.getSelection();sl.removeAllRanges();sl.addRange(rg);}
+    var p=(navigator.clipboard&&navigator.clipboard.writeText)?navigator.clipboard.writeText(src.textContent.trim()):Promise.reject();
+    p.then(function(){b.textContent="Copiado";setTimeout(function(){b.textContent=orig;},1600);},sel);
+  });
+
+  /* abre a lista se o link vier com #repositorios */
+  if(location.hash==="#repositorios"){document.getElementById("repositorios").open=true;}
+})();
+</script>
+</body>
+</html>
