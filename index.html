@@ -491,19 +491,19 @@ main{counter-reset:sec}
     <div style="min-width:0">
       <div class="badges"><span class="badge">Equipe Nexa Solution · incubado no InovAMF</span><span class="badge lock">Repositório privado</span></div>
       <h3>3Summa</h3>
-      <p class="pitch">Produto para escritórios de contabilidade que construo com meus dois sócios na equipe Nexa Solution. A base é o atendimento pelo WhatsApp, com a API oficial da Meta, inbox para a equipe e controle de custos em reais em tempo real. Na divisão do time, meu foco é o front-end.</p>
+      <p class="pitch">Produto para escritórios de contabilidade que construo com meus dois sócios na equipe Nexa Solution. A base é o atendimento pelo WhatsApp, com inbox para a equipe e controle de custos em reais em tempo real. Na divisão do time, meu foco é o front-end.</p>
       <div class="case-cols">
         <ul class="pts">
-          <li>Webhook com validação de assinatura HMAC-SHA256 e gravação idempotente, já que a Meta reenvia eventos.</li>
+          <li>Mensagens recebidas por webhook com validação de assinatura HMAC-SHA256 e gravação idempotente, para não processar o mesmo evento duas vezes.</li>
           <li>Painel de custos em reais, com tarifas configuráveis e cotação do dólar atualizada automaticamente.</li>
           <li>Contas de atendente com Argon2id, sessões revogáveis, papéis de acesso e 2FA por e-mail.</li>
           <li>Isolamento de dados por cliente no PostgreSQL no roadmap, para virar SaaS.</li>
         </ul>
         <div class="side">
           <p class="eyebrow">Como funciona</p>
-          <div class="flow"><span class="node">Cliente no WhatsApp</span><span class="arr">→</span><span class="node">Meta Cloud API</span><span class="arr">→</span><span class="node">Webhook com HMAC</span><span class="arr">→</span><span class="node">API em Rust</span><span class="arr">→</span><span class="node">PostgreSQL</span><span class="arr">→</span><span class="node">Inbox em React</span></div>
+          <div class="flow"><span class="node">Cliente no WhatsApp</span><span class="arr">→</span><span class="node">Webhook com HMAC</span><span class="arr">→</span><span class="node">API em Rust</span><span class="arr">→</span><span class="node">PostgreSQL</span><span class="arr">→</span><span class="node">Inbox em React</span></div>
           <p class="eyebrow">Stack</p>
-          <div class="chips"><span class="chip">React 19 · TypeScript</span><span class="chip">Rust · Axum · SQLx</span><span class="chip">PostgreSQL 17</span><span class="chip">WhatsApp Cloud API</span><span class="chip">OpenAPI · Swagger</span></div>
+          <div class="chips"><span class="chip">React 19 · TypeScript</span><span class="chip">Rust · Axum · SQLx</span><span class="chip">PostgreSQL 17</span><span class="chip">Integração com WhatsApp</span><span class="chip">OpenAPI · Swagger</span></div>
           <div class="langs"><div class="bar sm"><i style="width:46.5%;background:var(--l-rust)"></i><i style="width:36.5%;background:var(--l-ts)"></i><i style="width:14.5%;background:var(--l-sql)"></i><i style="width:2.5%;background:var(--l-html)"></i></div>
             <ul class="legend sq"><li style="--c:var(--l-rust)">Rust 47%</li><li style="--c:var(--l-ts)">TypeScript 37%</li><li style="--c:var(--l-sql)">SQL 15%</li></ul></div>
         </div>
