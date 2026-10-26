@@ -1,0 +1,1156 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Brayan Martins</title>
+<meta name="description" content="Portfolio of Brayan Martins, full-stack developer in Santa Maria, Brazil.">
+<link rel="canonical" href="https://braganux.github.io/en/">
+<link rel="alternate" hreflang="pt-BR" href="https://braganux.github.io/">
+<link rel="alternate" hreflang="en" href="https://braganux.github.io/en/">
+<link rel="alternate" hreflang="x-default" href="https://braganux.github.io/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://braganux.github.io/en/">
+<meta property="og:title" content="Brayan Martins · Full-stack developer">
+<meta property="og:description" content="From the database to the mobile app. Projects, skills and background.">
+<meta property="og:image" content="https://braganux.github.io/img/og-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#EDEFF3" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0D1018" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/png" sizes="32x32" href="../img/icone-32.png">
+<link rel="apple-touch-icon" href="../img/icone-180.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+/* Layout: coluna editorial larga (até 1120px). Abertura tipográfica com o nome, gráfico de trajetória com os dados reais dos repositórios,
+   cases com fluxo de arquitetura, mapa de habilidades clicável e linha do tempo. Estrutura de "ficha técnica": metadado à esquerda, conteúdo à direita. */
+:root{
+  --paper:#EDEFF3; --surface:#F8F9FB; --raised:#FFFFFF; --ink:#11151F; --muted:#586174; --faint:#8A93A4; --line:#D2D8E1;
+  --accent:#2A44D2; --accent-soft:#E0E5FB; --gold:#8A5F00; --gold-soft:#F6EAC4; --ok:#1C9A5E; --lane:#C3CAD6;
+  --header:rgba(237,239,243,.88); --shadow:rgba(17,21,31,.30);
+  --l-cs:#6B48D6; --l-ts:#2F74E0; --l-dart:#14A0C2; --l-rust:#CF5F33; --l-go:#22A486; --l-js:#D4AA12; --l-py:#3C8A4B;
+  --l-sql:#8B6A50; --l-html:#CF4377; --l-java:#B03838; --l-asm:#5F6B7D; --l-docs:#9AA2B1;
+  --show-light:block; --show-dark:none;
+  --f-display:"Archivo","Arial Narrow",system-ui,sans-serif;
+  --f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#0D1018; --surface:#141924; --raised:#1A2030; --ink:#E7EAF1; --muted:#9AA3B6; --faint:#6E788C; --line:#262E3F;
+  --accent:#8FA2FF; --accent-soft:#1B2450; --gold:#EFC253; --gold-soft:#33290E; --ok:#3CCB86; --lane:#2C3549;
+  --header:rgba(13,16,24,.86); --shadow:rgba(0,0,0,.6);
+  --l-cs:#8B6CF0; --l-ts:#5591F0; --l-dart:#2CB6D6; --l-rust:#E07447; --l-go:#35BE9C; --l-js:#E3BC2A; --l-py:#52A862;
+  --l-sql:#A6846A; --l-html:#E25C8E; --l-java:#D25454; --l-asm:#8C97AA; --l-docs:#5B6477;
+  --show-light:none; --show-dark:block; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0D1018; --surface:#141924; --raised:#1A2030; --ink:#E7EAF1; --muted:#9AA3B6; --faint:#6E788C; --line:#262E3F;
+  --accent:#8FA2FF; --accent-soft:#1B2450; --gold:#EFC253; --gold-soft:#33290E; --ok:#3CCB86; --lane:#2C3549;
+  --header:rgba(13,16,24,.86); --shadow:rgba(0,0,0,.6);
+  --l-cs:#8B6CF0; --l-ts:#5591F0; --l-dart:#2CB6D6; --l-rust:#E07447; --l-go:#35BE9C; --l-js:#E3BC2A; --l-py:#52A862;
+  --l-sql:#A6846A; --l-html:#E25C8E; --l-java:#D25454; --l-asm:#8C97AA; --l-docs:#5B6477;
+  --show-light:none; --show-dark:block; color-scheme:dark}
+
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+a{color:var(--accent);text-underline-offset:3px}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+h1,h2,h3,h4{font-family:var(--f-display);text-wrap:balance;margin:0}
+p{margin:0}
+.eyebrow{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:0}
+.only-light{display:var(--show-light)}
+.only-dark{display:var(--show-dark)}
+
+/* topo */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--header);-webkit-backdrop-filter:saturate(1.4) blur(10px);backdrop-filter:saturate(1.4) blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:56px}
+.brand{font-family:var(--f-display);font-weight:800;font-stretch:118%;letter-spacing:-.01em;text-transform:uppercase;font-size:.95rem;color:var(--ink);text-decoration:none;white-space:nowrap}
+.brand .short{display:none}
+.nav{display:flex;gap:18px;overflow-x:auto;scrollbar-width:none;font-family:var(--f-mono);font-size:.8rem;min-width:0}
+.nav::-webkit-scrollbar{display:none}
+.nav a{color:var(--muted);text-decoration:none;white-space:nowrap;padding-block:6px}
+.nav a:hover{color:var(--ink)}
+@media (max-width:520px){.brand .full{display:none}.brand .short{display:inline}.nav{gap:14px}}
+@media (max-width:400px){.nav a.opt{display:none}}
+
+/* abertura */
+.hero{--ns:clamp(2.4rem,11.2vw,8.6rem);padding-block:clamp(36px,7vw,84px) 36px;display:grid;gap:26px}
+.hero-head{display:flex;align-items:flex-end;justify-content:space-between;gap:clamp(12px,3vw,40px)}
+.portrait{flex:none;display:block;width:calc(var(--ns) * 1.72);height:calc(var(--ns) * 1.72);max-width:100%;object-fit:cover;border-radius:6px;border:1px solid var(--line);background:var(--surface)}
+.name{font-size:var(--ns);font-weight:850;font-stretch:125%;line-height:.86;letter-spacing:-.025em;text-transform:uppercase}
+.name > span{display:block;white-space:nowrap}
+.name > span:last-child{color:var(--accent)}
+.name .ch{display:inline-block}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:28px 56px;align-items:start}
+.lede{font-size:clamp(1.12rem,2.1vw,1.42rem);line-height:1.5;max-width:40ch}
+.avail{display:inline-flex;align-items:center;gap:10px;font-family:var(--f-mono);font-size:.8rem;margin-top:18px;padding:6px 12px;border:1px solid var(--line);border-radius:999px;background:var(--surface)}
+.pulse{width:8px;height:8px;border-radius:50%;background:var(--ok);flex:none}
+@media (prefers-reduced-motion:no-preference){.pulse{animation:pulse 2.4s ease-in-out infinite}@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.btn{font-family:var(--f-mono);font-size:.84rem;display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border:1px solid var(--ink);color:var(--ink);background:transparent;text-decoration:none;cursor:pointer;border-radius:3px;transition:background-color .2s,color .2s,border-color .2s}
+.btn:hover{background:var(--ink);color:var(--paper)}
+.btn.primary{background:var(--ink);color:var(--paper)}
+.btn.primary:hover{background:var(--accent);border-color:var(--accent);color:var(--paper)}
+.now{border-left:1px solid var(--line);padding-left:26px;display:grid;gap:12px}
+.now ul{list-style:none;margin:0;padding:0;display:grid;gap:14px}
+.now li{display:grid;gap:1px}
+.now b{font-weight:600}
+.now span{color:var(--muted);font-size:.93rem}
+.creds{list-style:none;margin:6px 0 0;padding:18px 0 0;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.creds li{display:grid;gap:2px;min-width:0}
+.creds b{font-family:var(--f-display);font-weight:750;font-stretch:108%;font-size:1.08rem;line-height:1.2}
+.creds span{font-family:var(--f-mono);font-size:.75rem;color:var(--muted)}
+@media (max-width:860px){.hero-grid{grid-template-columns:1fr}.now{border-left:0;padding-left:0;border-top:1px solid var(--line);padding-top:18px}.creds{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* seções */
+.sec{padding-block:72px 8px;scroll-margin-top:64px}
+.sec-head{display:grid;gap:10px;margin-bottom:30px;max-width:74ch}
+.sec-head h2{font-size:clamp(1.9rem,4.6vw,2.9rem);font-weight:800;font-stretch:112%;letter-spacing:-.015em;line-height:1}
+.sec-sub{color:var(--muted)}
+.sub{font-size:1.35rem;font-weight:750;font-stretch:108%;margin:52px 0 18px}
+
+/* gráfico */
+.chart{position:relative;margin:0;padding-block:18px 6px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+#chart-svg{display:block;width:100%;height:auto;overflow:visible}
+.ax{font:11px var(--f-mono);fill:var(--muted)}
+.axl{stroke:var(--line);stroke-width:1}
+.lane-t{font:11px var(--f-mono);fill:var(--ink)}
+.lane-b{fill:var(--lane)}
+.lane-b.acc{fill:var(--accent)}
+.today{stroke:var(--accent);stroke-width:1;stroke-dasharray:3 4}
+.today-t{fill:var(--accent)}
+.dotg{cursor:pointer}
+.dot{stroke:var(--paper);stroke-width:1.5}
+.ring{fill:none;stroke:var(--ink);stroke-width:1.4}
+.dotg:hover .dot{stroke:var(--ink)}
+@media (prefers-reduced-motion:no-preference){.dotg.pre,.lane-b.pre,.tday.pre{opacity:0}
+.dotg.in{transform-box:fill-box;transform-origin:center;animation:pop .55s cubic-bezier(.2,.8,.2,1) both}
+.lane-b.in{transform-box:fill-box;transform-origin:0 50%;animation:laneGrow 1s cubic-bezier(.2,.8,.2,1) both}
+.tday.in{animation:fadeIn .6s ease 1.1s both}
+@keyframes pop{from{opacity:.2;transform:scale(.35)}to{opacity:1;transform:none}}
+@keyframes laneGrow{from{transform:scaleX(0)}}}
+.tip{position:absolute;z-index:3;width:max-content;max-width:min(270px,80vw);padding:10px 12px;background:var(--raised);border:1px solid var(--line);border-radius:6px;box-shadow:0 14px 34px -18px var(--shadow);font-size:.86rem;line-height:1.45;pointer-events:none;display:grid;gap:3px}
+.tip.pin{pointer-events:auto}
+.tip b{font-family:var(--f-mono);font-size:.8rem;font-weight:600;word-break:break-all}
+.tip .m{font-family:var(--f-mono);font-size:.72rem;color:var(--muted)}
+.tip .tl{display:flex;flex-wrap:wrap;gap:4px 14px;margin-top:4px;font-family:var(--f-mono);font-size:.78rem}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-family:var(--f-mono);font-size:.76rem;color:var(--muted);list-style:none;margin:14px 0 0;padding:0}
+.legend li{display:flex;align-items:center;gap:6px;font-variant-numeric:tabular-nums}
+.legend li::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--c)}
+.legend li.ringkey::before{background:transparent;box-shadow:inset 0 0 0 1.5px var(--ink)}
+.legend.sq li::before{border-radius:1px}
+.inside{display:grid;gap:10px;margin-top:34px}
+.bar{display:flex;height:14px;border-radius:2px;overflow:hidden;background:var(--line)}
+.bar i{display:block;height:100%}
+.bar.sm{height:6px}
+.note{font-size:.8rem;color:var(--muted)}
+details.index{margin-top:26px;border-top:1px solid var(--line);padding-top:14px}
+details.index summary{cursor:pointer;font-family:var(--f-mono);font-size:.86rem;color:var(--accent);list-style:none;width:max-content;max-width:100%}
+details.index summary::-webkit-details-marker{display:none}
+details.index summary::before{content:"+ "}
+details.index[open] summary::before{content:"− "}
+.table-wrap{overflow-x:auto;margin-top:14px}
+table{border-collapse:collapse;width:100%;min-width:680px;font-size:.88rem}
+th,td{text-align:left;padding:9px 14px 9px 0;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:500}
+td.m{font-family:var(--f-mono);font-size:.8rem;white-space:nowrap;font-variant-numeric:tabular-nums}
+td.n{font-family:var(--f-mono);font-size:.82rem;word-break:break-all}
+.ldot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--c);margin-right:7px;vertical-align:1px}
+.muted{color:var(--muted)}
+
+/* cases */
+.case{display:grid;grid-template-columns:180px minmax(0,1fr);gap:20px 44px;padding-block:44px;border-top:1px solid var(--line);scroll-margin-top:64px}
+.case:last-of-type{border-bottom:1px solid var(--line)}
+.case-meta{display:grid;gap:4px;align-content:start;font-family:var(--f-mono);font-size:.78rem;color:var(--muted)}
+.case-meta .yr{font-size:1rem;color:var(--ink);font-weight:500}
+.badges{display:flex;flex-wrap:wrap;gap:6px}
+.badge{font-family:var(--f-mono);font-size:.68rem;letter-spacing:.07em;text-transform:uppercase;padding:3px 8px;border-radius:3px;background:var(--accent-soft);color:var(--accent)}
+.badge.prize{background:var(--gold-soft);color:var(--gold);font-weight:600}
+.badge.lock{background:transparent;border:1px dashed var(--line);color:var(--muted)}
+.case h3{font-size:clamp(1.9rem,4.4vw,2.8rem);font-weight:800;font-stretch:112%;line-height:1;letter-spacing:-.015em;margin-top:14px}
+.pitch{font-size:1.08rem;max-width:64ch;margin-top:12px}
+.case-cols{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:26px 40px;margin-top:24px}
+.pts{margin:0;padding-left:18px;display:grid;gap:9px;align-content:start}
+.pts li::marker{color:var(--accent)}
+.side{display:grid;gap:10px;align-content:start;min-width:0}
+.side .eyebrow + *{margin-top:-2px}
+.side .eyebrow:not(:first-child){margin-top:8px}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:8px 6px}
+.node{font-family:var(--f-mono);font-size:.75rem;line-height:1.3;padding:6px 9px;border:1px solid var(--line);border-radius:4px;background:var(--surface);color:var(--ink)}
+.node.alt{border-style:dashed;background:transparent;color:var(--muted)}
+.arr{font-family:var(--f-mono);font-size:.8rem;color:var(--faint)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font-family:var(--f-mono);font-size:.73rem;padding:3px 8px;border:1px solid var(--line);border-radius:3px;color:var(--muted);background:var(--surface)}
+.langs{display:grid;gap:6px;margin-top:6px}
+.langs .legend{margin-top:0;font-size:.72rem}
+.links{display:flex;flex-wrap:wrap;gap:4px 18px;font-family:var(--f-mono);font-size:.84rem;margin-top:4px}
+.phones{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px;margin-top:26px;max-width:880px}
+.phone{margin:0;display:grid;gap:8px;min-width:0}
+.screen{border-radius:24px;overflow:hidden;border:1px solid var(--line);background:var(--surface);aspect-ratio:420/937;max-width:100%;box-shadow:0 22px 44px -28px var(--shadow)}
+.screen img{width:100%;height:auto}
+.phone figcaption{font-family:var(--f-mono);font-size:.74rem;color:var(--muted)}
+@media (max-width:860px){
+  .case{grid-template-columns:1fr;gap:14px}
+  .case-meta{display:flex;flex-wrap:wrap;gap:4px 14px}
+  .case-cols{grid-template-columns:1fr}
+  .phones{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:44%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px}
+  .phone{scroll-snap-align:start}
+}
+.flash{animation:flash 1.8s ease-out}
+@keyframes flash{0%{box-shadow:inset 0 0 0 2px var(--accent)}100%{box-shadow:inset 0 0 0 2px transparent}}
+
+/* mais projetos */
+.filters{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:18px}
+.filters button{font-family:var(--f-mono);font-size:.8rem;padding:6px 12px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.item{background:var(--paper);padding:22px;display:flex;flex-direction:column;gap:9px;min-width:0;scroll-margin-top:72px}
+.item .top-m{display:flex;justify-content:space-between;gap:10px;font-family:var(--f-mono);font-size:.72rem;color:var(--muted)}
+.item h3{font-size:1.22rem;font-weight:750;font-stretch:106%}
+.item p{color:var(--muted);font-size:.94rem}
+.item .chips{margin-top:auto;padding-top:6px}
+.item .repo{font-family:var(--f-mono);font-size:.78rem;word-break:break-all}
+.item .repo.priv{color:var(--muted)}
+.item div.repo{display:flex;flex-wrap:wrap;gap:4px 16px}
+@media (max-width:980px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:620px){.grid{grid-template-columns:1fr}}
+
+/* habilidades */
+.stack{border-top:1px solid var(--line)}
+.layer{display:grid;grid-template-columns:170px minmax(0,1fr);gap:10px 24px;padding-block:14px;border-bottom:1px solid var(--line);align-items:center}
+.layer-name{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.sk-row{display:flex;flex-wrap:wrap;gap:6px}
+.sk{font-family:var(--f-mono);font-size:.8rem;padding:6px 11px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:4px;cursor:pointer;display:inline-flex;align-items:center;gap:7px}
+.sk:hover{border-color:var(--ink)}
+.sk.daily::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.sk[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.sk[aria-pressed="true"].daily::before{background:var(--paper)}
+.sk-out{margin-top:16px;padding:14px 16px;border:1px solid var(--line);border-radius:6px;background:var(--surface);display:grid;gap:6px;min-height:84px}
+.sk-out .uses{display:flex;flex-wrap:wrap;gap:4px 16px;font-family:var(--f-mono);font-size:.86rem}
+@media (max-width:700px){.layer{grid-template-columns:1fr;gap:8px}}
+.soft{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line)}
+.soft article{background:var(--paper);padding:22px;display:grid;gap:8px;align-content:start}
+.soft h4{font-size:1.15rem;font-weight:750;font-stretch:106%}
+.soft p{color:var(--muted);font-size:.95rem}
+.soft .ev{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent)}
+@media (max-width:900px){.soft{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.soft{grid-template-columns:1fr}}
+
+/* trajetória */
+.timeline{list-style:none;margin:0;padding:0;border-bottom:1px solid var(--line)}
+.timeline > li{display:grid;grid-template-columns:180px minmax(0,1fr);gap:6px 44px;padding-block:24px;border-top:1px solid var(--line);scroll-margin-top:72px}
+.when{font-family:var(--f-mono);font-size:.8rem;color:var(--muted);display:grid;gap:2px;align-content:start}
+.when b{color:var(--ink);font-weight:500;font-size:1rem;font-variant-numeric:tabular-nums}
+.timeline h3{font-size:1.32rem;font-weight:750;font-stretch:106%}
+.timeline p{margin-top:6px;max-width:66ch}
+.timeline .chips{margin-top:12px}
+.timeline .soft-line{margin-top:10px;font-size:.92rem;color:var(--muted)}
+.timeline > li.past h3{font-size:1.1rem}
+.timeline > li.past p{color:var(--muted)}
+@media (max-width:760px){.timeline > li{grid-template-columns:1fr}}
+
+/* conquistas */
+.two{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:28px 56px}
+.two h3{font-size:1.05rem;font-weight:750;font-stretch:106%;margin-bottom:6px}
+.list{list-style:none;margin:0;padding:0}
+.list li{display:grid;grid-template-columns:76px minmax(0,1fr);gap:12px;padding-block:12px;border-top:1px solid var(--line)}
+.list .y{font-family:var(--f-mono);font-size:.82rem;color:var(--muted);font-variant-numeric:tabular-nums;padding-top:2px}
+.list b{font-weight:600}
+.list .d{display:block;color:var(--muted);font-size:.92rem}
+@media (max-width:760px){.two{grid-template-columns:1fr}}
+
+/* contato */
+.contact{padding-block:88px 36px;display:grid;gap:20px;scroll-margin-top:64px}
+.contact h2{font-size:clamp(2.4rem,9vw,5.6rem);font-weight:850;font-stretch:125%;text-transform:uppercase;line-height:.9;letter-spacing:-.02em}
+.contact p.big{font-size:clamp(1.05rem,2vw,1.25rem);max-width:52ch}
+.clist{margin:0;display:grid;border-top:1px solid var(--line);max-width:860px}
+.crow{display:grid;grid-template-columns:130px minmax(0,1fr);gap:6px 20px;align-items:center;padding-block:14px;border-bottom:1px solid var(--line)}
+.crow dt{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.crow dd{margin:0;display:flex;flex-wrap:wrap;align-items:center;gap:10px 12px;min-width:0}
+.cval{font-family:var(--f-mono);font-size:clamp(1rem,2.4vw,1.3rem);word-break:break-all}
+span.cval{user-select:all}
+.btn.sm{padding:6px 12px;font-size:.78rem}
+@media (max-width:560px){.crow{grid-template-columns:1fr}}footer .foot{padding-block:28px 40px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:8px 24px;flex-wrap:wrap;font-size:.82rem;color:var(--muted)}
+
+/* ---------- movimento: as mesmas animações do README do perfil ---------- */
+img{max-width:100%}
+main{counter-reset:sec}
+.sec-head h2::before{counter-increment:sec;content:counter(sec,decimal-leading-zero);display:block;font:500 .74rem/1 var(--f-mono);letter-spacing:.14em;color:var(--accent);margin-bottom:14px}
+.top::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:2px;background:var(--accent);transform:scaleX(var(--sp,0));transform-origin:0 50%;pointer-events:none}
+.nav a{position:relative}
+.nav a::after{content:"";position:absolute;left:0;right:0;bottom:1px;height:1.5px;background:var(--accent);transform:scaleX(0);transform-origin:0 50%;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.nav a[aria-current]{color:var(--ink)}
+.nav a[aria-current]::after{transform:scaleX(1)}
+.nav a.lang{border:1px solid var(--line);border-radius:999px;padding:3px 10px;margin-block:3px;color:var(--ink);font-weight:500;letter-spacing:.04em}
+.nav a.lang:hover{border-color:var(--accent)}
+.nav a.lang::after{display:none}
+
+/* abertura: letras do nome, frase digitada, faixa de linguagens */
+.typed{display:flex;align-items:center;gap:.7ch;margin:-8px 0 0;min-height:1.7em;font-family:var(--f-mono);font-size:clamp(.78rem,3.3vw,1.08rem);color:var(--ink);white-space:nowrap;overflow:hidden}
+.typed .pr{color:var(--accent);font-weight:500}
+.typed .tx{min-width:0}
+.typed .caret{flex:none;width:2px;height:1.2em;margin-left:-.5ch;background:var(--accent)}
+.strip{display:flex;height:6px;border-radius:3px;overflow:hidden;margin-top:4px}
+.strip i{display:block;height:100%;width:var(--w);background:var(--c)}
+.creds{border-top:0;padding-top:0;margin-top:0}
+.creds b span{font:inherit;color:inherit}
+.now .eyebrow{display:flex;align-items:center;gap:10px}
+.now .eyebrow::before{content:"";flex:none;width:7px;height:7px;border-radius:50%;background:var(--ok)}
+@media (prefers-reduced-motion:no-preference){
+  .hero > .eyebrow{animation:fadeIn .8s ease both}
+  .name .ch{animation:chRise .8s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i) * 50ms + 60ms)}
+  .name > span + span .ch{animation-delay:calc(var(--i) * 50ms + 260ms)}
+  .portrait{animation:portIn 1s cubic-bezier(.2,.8,.2,1) .45s both}
+  .typed{animation:fadeIn .6s ease .75s both}
+  .typed .caret{animation:blink 1s steps(1) infinite}
+  .typed.busy .caret{animation:none}
+  .hero-grid > *{animation:riseIn .8s cubic-bezier(.2,.8,.2,1) both}
+  .hero-grid > :first-child{animation-delay:.85s}
+  .hero-grid > :last-child{animation-delay:1s}
+  .strip i{transform-origin:0 50%;animation:growX 1s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--k) * 70ms + 1.05s)}
+  .creds{animation:riseIn .8s cubic-bezier(.2,.8,.2,1) 1.2s both}
+  .now .eyebrow::before{animation:ping 2.4s cubic-bezier(0,0,.2,1) infinite}
+}
+@keyframes chRise{from{opacity:0;transform:translateY(.45em)}to{opacity:1;transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes riseIn{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+@keyframes portIn{from{opacity:0;transform:scale(1.05)}to{opacity:1;transform:none}}
+@keyframes growX{from{transform:scaleX(0)}to{transform:none}}
+@keyframes blink{50%{opacity:0}}
+@keyframes ping{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--ok) 55%,transparent)}80%,100%{box-shadow:0 0 0 9px transparent}}
+
+/* revelar ao rolar (só com JS e sem movimento reduzido) */
+.js .rv{opacity:0;transform:translateY(20px);transition:opacity .8s cubic-bezier(.2,.8,.2,1),transform .8s cubic-bezier(.2,.8,.2,1);transition-delay:var(--d,0s)}
+.js .rv.in{opacity:1;transform:none}
+.js .bar.rvb i{transform:scaleX(0);transform-origin:0 50%;transition:transform 1s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--k,0) * 70ms + .15s)}
+.js .bar.rvb.in i{transform:none}
+.js .flow.rvf > *{opacity:0;transform:translateX(-10px);transition:opacity .5s ease,transform .6s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--k,0) * 90ms + .1s)}
+.js .flow.rvf.in > *{opacity:1;transform:none}
+.js .flow.rvf.in .arr{animation:wave 2.8s ease-in-out infinite;animation-delay:calc(var(--k,0) * 140ms + 1.2s)}
+@keyframes wave{0%,55%,100%{color:var(--faint)}25%{color:var(--accent)}}
+.js .rvl .ch{display:inline-block;opacity:0;transform:translateY(.45em);transition:opacity .7s ease,transform .8s cubic-bezier(.2,.8,.2,1);transition-delay:calc(var(--i) * 40ms + var(--w0,0ms))}
+.js .rvl.in .ch{opacity:1;transform:none}
+.contact h2 .w{white-space:nowrap}
+.contact h2 .ch{display:inline-block}
+@media print{.js .rv,.js .rvl .ch,.js .flow.rvf > *{opacity:1!important;transform:none!important}.js .bar.rvb i{transform:none!important}}
+
+/* cards com luz que segue o mouse e linha de destaque */
+.item{position:relative}
+.item::before{content:"";position:absolute;left:0;right:0;top:0;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:0 50%;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.item:hover::before,.item:focus-within::before{transform:scaleX(1)}
+@media (hover:hover){
+  .item:hover,.soft article:hover{background:radial-gradient(440px circle at var(--mx,50%) var(--my,50%),var(--accent-soft),transparent 70%),var(--paper)}
+}
+
+/* linha do tempo que se desenha conforme a rolagem */
+.timeline{position:relative}
+.timeline::before,.timeline::after{content:"";position:absolute;top:0;bottom:0;left:202px;width:2px;margin-left:-1px;background:var(--line)}
+.timeline::after{background:var(--accent);transform:scaleY(var(--tp,0));transform-origin:50% 0}
+.timeline > li{position:relative}
+.timeline > li::before{content:"";position:absolute;z-index:1;left:202px;top:31px;width:12px;height:12px;margin-left:-6px;border-radius:50%;background:var(--paper);border:2px solid var(--lane);box-sizing:border-box;transition:background-color .3s,border-color .3s,box-shadow .3s}
+.timeline > li.on::before{background:var(--accent);border-color:var(--accent);box-shadow:0 0 0 4px var(--accent-soft)}
+@media (max-width:760px){.timeline::before,.timeline::after,.timeline > li::before{left:6px}.timeline > li{padding-left:30px}}
+
+/* cobrinha do GitHub */
+.snake{display:block;padding:clamp(12px,2.4vw,24px);border:1px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);text-decoration:none;transition:border-color .2s}
+.snake:hover{border-color:var(--accent)}
+.snake img{width:100%;height:auto}
+.snake-foot{display:flex;justify-content:space-between;gap:12px;margin-top:12px;font-family:var(--f-mono);font-size:.8rem;color:var(--muted)}
+.snake:hover .snake-foot span:last-child{color:var(--accent)}
+</style>
+</head>
+<body>
+<script>(function(d){try{if(!matchMedia("(prefers-reduced-motion: reduce)").matches&&"IntersectionObserver" in window)d.classList.add("js")}catch(e){}})(document.documentElement)</script>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#inicio"><span class="full">Brayan Martins</span><span class="short">BM</span></a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#projetos">Projects</a>
+      <a class="opt" href="#habilidades">Skills</a>
+      <a href="#trajetoria">Experience</a>
+      <a href="#contato">Contact</a>
+      <a class="lang" href="../" hreflang="pt-BR" lang="pt-BR" title="Ler em português" aria-label="Versão em português">PT</a>
+    </nav>
+  </div>
+</header>
+
+<main id="inicio">
+<section class="hero wrap" aria-label="Introduction">
+  <p class="eyebrow">Full-stack developer · Santa Maria, Brazil · @BragaNux</p>
+  <div class="hero-head">
+    <h1 class="name" aria-label="Brayan Martins"><span aria-hidden="true"><span class="ch" style="--i:0">B</span><span class="ch" style="--i:1">r</span><span class="ch" style="--i:2;margin-right:-0.134em">a</span><span class="ch" style="--i:3;margin-right:-0.134em">y</span><span class="ch" style="--i:4">a</span><span class="ch" style="--i:5">n</span></span> <span aria-hidden="true"><span class="ch" style="--i:0">M</span><span class="ch" style="--i:1">a</span><span class="ch" style="--i:2;margin-right:-0.01em">r</span><span class="ch" style="--i:3">t</span><span class="ch" style="--i:4">i</span><span class="ch" style="--i:5">n</span><span class="ch" style="--i:6">s</span></span></h1>
+    <img class="portrait" src="../img/brayan.webp" width="640" height="640" alt="Photo of Brayan Martins">
+  </div>
+  <p class="typed" aria-hidden="true"><span class="pr">&gt;</span><span class="tx">from the database to the mobile app</span><span class="caret"></span></p>
+  <div class="hero-grid">
+    <div style="min-width:0">
+      <p class="lede">I build systems end to end, from the database to the mobile app. I've been a full-stack developer since 2024. I co-founded an incubated startup and I'm in the final stretch of my Information Systems degree.</p>
+      <p class="avail"><span class="pulse" aria-hidden="true"></span>Open to remote opportunities, in Brazil and abroad</p>
+      <div class="cta">
+        <a class="btn primary" href="#projetos">See projects</a>
+        <a class="btn" href="#contato">Get in touch</a>
+        <a class="btn" href="https://www.linkedin.com/in/bmartlns/" target="_blank" rel="noopener">LinkedIn ↗</a>
+        <a class="btn" href="https://github.com/BragaNux" target="_blank" rel="noopener">GitHub ↗</a>
+      </div>
+    </div>
+    <aside class="now" aria-label="Now">
+      <p class="eyebrow">Now</p>
+      <ul>
+        <li><b>Forza Clubes</b><span>Full-stack developer since 2024</span></li>
+        <li><b>3Summa</b><span>Co-founder, product incubated at InovAMF</span></li>
+        <li><b>Antonio Meneghetti Faculdade</b><span>Information Systems, capstone due November 2026</span></li>
+      </ul>
+    </aside>
+  </div>
+  <div class="strip" aria-hidden="true"><i style="--w:18.4%;--c:var(--l-cs);--k:0"></i><i style="--w:17.2%;--c:var(--l-ts);--k:1"></i><i style="--w:11.2%;--c:var(--l-dart);--k:2"></i><i style="--w:9.7%;--c:var(--l-rust);--k:3"></i><i style="--w:9.4%;--c:var(--l-py);--k:4"></i><i style="--w:8.3%;--c:var(--l-go);--k:5"></i><i style="--w:7.5%;--c:var(--l-js);--k:6"></i><i style="--w:5.9%;--c:var(--l-sql);--k:7"></i><i style="--w:4.7%;--c:var(--l-html);--k:8"></i><i style="--w:4.6%;--c:var(--l-java);--k:9"></i><i style="--w:3.1%;--c:var(--l-asm);--k:10"></i></div>
+  <ul class="creds">
+    <li><b>Best usability</b><span>Code Race AMF 2026</span></li>
+    <li><b>3 expanded abstracts</b><span>published at MICAMF</span></li>
+    <li><b>Algorithms I TA</b><span>AMF, 2023</span></li>
+    <li><b><span data-count="49">49</span> repositories</b><span>from 2022 to 2026</span></li>
+  </ul>
+</section>
+
+<section class="wrap sec" id="dados" aria-labelledby="h-dados">
+  <div class="sec-head">
+    <h2 id="h-dados">Career timeline</h2>
+    <p class="sec-sub">Each dot is a repository I worked on, placed at its last update and colored by its main language. The bands show where I was at each point. Hover over or tap a dot to see the project.</p>
+  </div>
+  <figure class="chart" id="chart" role="img" aria-label="Timeline from 2021 to 2026. One repository in 2022 and the other 48 between 2024 and 2026, after joining Forza Clubes. Bands: Brazilian Army from 2021 to 2022, logistics from 2022 to 2024, Information Systems from 2022 to 2026 and Forza Clubes from 2024 to today.">
+    <svg id="chart-svg" aria-hidden="true"></svg>
+    <div class="tip" id="tip" hidden></div>
+  </figure>
+  <ul class="legend" aria-label="Repositories by main language">
+    <li style="--c:var(--l-py)">Python 19</li><li style="--c:var(--l-docs)">Documentation 10</li><li style="--c:var(--l-js)">JavaScript 5</li><li style="--c:var(--l-java)">Java 4</li><li style="--c:var(--l-ts)">TypeScript 3</li><li style="--c:var(--l-cs)">C# 2</li><li style="--c:var(--l-rust)">Rust 2</li><li style="--c:var(--l-dart)">Dart 1</li><li style="--c:var(--l-go)">Go 1</li><li style="--c:var(--l-html)">HTML/CSS 1</li><li style="--c:var(--l-asm)">Assembly 1</li><li class="ringkey">Featured on this page</li>
+  </ul>
+
+  <div class="inside">
+    <p class="eyebrow">What's in the code</p>
+    <div class="bar" role="img" aria-label="C# 18%, TypeScript 17%, Dart 11%, Rust 10%, Python 9%, Go 8%, JavaScript 8%, SQL 6%, HTML/CSS 5%, Java 5%, other 3%">
+      <i style="width:18.4%;background:var(--l-cs)"></i><i style="width:17.2%;background:var(--l-ts)"></i><i style="width:11.2%;background:var(--l-dart)"></i><i style="width:9.7%;background:var(--l-rust)"></i><i style="width:9.4%;background:var(--l-py)"></i><i style="width:8.3%;background:var(--l-go)"></i><i style="width:7.5%;background:var(--l-js)"></i><i style="width:5.9%;background:var(--l-sql)"></i><i style="width:4.7%;background:var(--l-html)"></i><i style="width:4.6%;background:var(--l-java)"></i><i style="width:3.1%;background:var(--l-asm)"></i>
+    </div>
+    <ul class="legend sq">
+      <li style="--c:var(--l-cs)">C# 18%</li><li style="--c:var(--l-ts)">TypeScript 17%</li><li style="--c:var(--l-dart)">Dart 11%</li><li style="--c:var(--l-rust)">Rust 10%</li><li style="--c:var(--l-py)">Python 9%</li><li style="--c:var(--l-go)">Go 8%</li><li style="--c:var(--l-js)">JavaScript 8%</li><li style="--c:var(--l-sql)">SQL 6%</li><li style="--c:var(--l-html)">HTML/CSS 5%</li><li style="--c:var(--l-java)">Java 5%</li><li style="--c:var(--l-asm)">Infra, Assembly and other 3%</li>
+    </ul>
+    <p class="note">Based on 1,380 code files across the repositories, including team projects.</p>
+  </div>
+
+  <details class="index" id="repositorios">
+    <summary>See all 49 repositories</summary>
+    <p class="note" style="margin-top:12px">Coursework exercises are collected in <a href="https://github.com/BragaNux/estudos-faculdade" target="_blank" rel="noopener">estudos-faculdade</a>.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th scope="col">Updated</th><th scope="col">Repository</th><th scope="col">What it is</th><th scope="col">Language</th><th scope="col">Code</th></tr></thead>
+        <tbody id="repo-rows"></tbody>
+      </table>
+    </div>
+  </details>
+</section>
+
+<section class="wrap sec" id="projetos" aria-labelledby="h-proj">
+  <div class="sec-head">
+    <h2 id="h-proj">Featured projects</h2>
+    <p class="sec-sub">Five projects that show how I think through a whole system: the problem, the architecture and what was delivered.</p>
+  </div>
+
+  <article class="case" id="panela">
+    <div class="case-meta"><span class="yr">2025 – 2026</span><span>Capstone · author</span><span>Due Nov 2026</span></div>
+    <div style="min-width:0">
+      <div class="badges"><span class="badge">Capstone project</span><span class="badge">20 of 20 API tests</span></div>
+      <h3>Panela</h3>
+      <p class="pitch">A group expense-splitting app that helps people plan before they spend, a step Splitwise and Tricount leave out. It has budgets by spending category, cost splitting, settlement through Pix, the Brazilian instant payment system, and an AI that sums up where the group stands.</p>
+      <div class="phones" aria-label="App screens">
+        <figure class="phone"><div class="screen"><img class="only-light" src="../img/panela-boas-vindas-claro.webp" width="420" height="937" loading="lazy" alt="Panela welcome screen with the tagline Divida a conta, não a amizade, or split the bill, not the friendship"><img class="only-dark" src="../img/panela-boas-vindas-escuro.webp" width="420" height="937" loading="lazy" alt="Panela welcome screen with the tagline Divida a conta, não a amizade, or split the bill, not the friendship"></div><figcaption>Welcome</figcaption></figure>
+        <figure class="phone"><div class="screen"><img class="only-light" src="../img/panela-inicio-claro.webp" width="420" height="937" loading="lazy" alt="Home screen with the balance between friends, a pending Pix payment and open groups"><img class="only-dark" src="../img/panela-inicio-escuro.webp" width="420" height="937" loading="lazy" alt="Home screen with the balance between friends, a pending Pix payment and open groups"></div><figcaption>Balances and debts</figcaption></figure>
+        <figure class="phone"><div class="screen"><img class="only-light" src="../img/panela-planejamento-claro.webp" width="420" height="937" loading="lazy" alt="Planning screen with an event, the total budget and reserves by spending category"><img class="only-dark" src="../img/panela-planejamento-escuro.webp" width="420" height="937" loading="lazy" alt="Planning screen with an event, the total budget and reserves by spending category"></div><figcaption>Planning</figcaption></figure>
+        <figure class="phone"><div class="screen"><img class="only-light" src="../img/panela-resumo-ia-claro.webp" width="420" height="937" loading="lazy" alt="AI-generated group summary explaining who owes how much"><img class="only-dark" src="../img/panela-resumo-ia-escuro.webp" width="420" height="937" loading="lazy" alt="AI-generated group summary explaining who owes how much"></div><figcaption>AI summary</figcaption></figure>
+      </div>
+      <div class="case-cols">
+        <ul class="pts">
+          <li>Four ways to split: equally, by percentage, by fixed amount or payer only. Settlement suggests the fewest possible transfers.</li>
+          <li>Planning with budgets and reserves by spending category, with push alerts at 80% of the budget and when it goes past 100%.</li>
+          <li>AI to suggest budget items, read receipts and summarize the group in plain language.</li>
+          <li>Automated functional API tests: 20 of 20 cases and 90 checks, including the permission rules.</li>
+        </ul>
+        <div class="side">
+          <p class="eyebrow">How it works</p>
+          <div class="flow"><span class="node">Flutter app</span><span class="arr">→</span><span class="node">ASP.NET Core API</span><span class="arr">→</span><span class="node">PostgreSQL</span></div>
+          <div class="flow"><span class="node alt">Push via Firebase</span><span class="node alt">AI</span><span class="node alt">Place search (OpenStreetMap)</span><span class="node alt">Docker + Caddy</span></div>
+          <p class="eyebrow">Stack</p>
+          <div class="chips"><span class="chip">Flutter · Dart</span><span class="chip">ASP.NET Core 8</span><span class="chip">EF Core</span><span class="chip">PostgreSQL</span><span class="chip">JWT</span><span class="chip">Firebase Messaging</span><span class="chip">Docker · Caddy</span></div>
+          <div class="langs"><div class="bar sm"><i style="width:53.7%;background:var(--l-dart)"></i><i style="width:25.4%;background:var(--l-cs)"></i><i style="width:16.7%;background:var(--l-ts)"></i><i style="width:2.4%;background:var(--l-js)"></i><i style="width:1.8%;background:var(--l-html)"></i></div>
+            <ul class="legend sq"><li style="--c:var(--l-dart)">Dart 54%</li><li style="--c:var(--l-cs)">C# 25%</li><li style="--c:var(--l-ts)">TypeScript 17%, from the earlier React Native version</li></ul></div>
+          <div class="links"><a href="https://github.com/BragaNux/Panela_Rateio" target="_blank" rel="noopener">Panela_Rateio ↗</a></div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="case" id="summa-produto">
+    <div class="case-meta"><span class="yr">2026</span><span>Product · co-founder</span><span>In development</span></div>
+    <div style="min-width:0">
+      <div class="badges"><span class="badge">Nexa Solution team · incubated at InovAMF</span><span class="badge lock">Private repository</span></div>
+      <h3>3Summa</h3>
+      <p class="pitch">A product for accounting firms that I'm building with my two partners on the Nexa Solution team. It's built around client service over WhatsApp, with a shared inbox for the team and real-time cost tracking in Brazilian reais. Within the team, my focus is the front end.</p>
+      <div class="case-cols">
+        <ul class="pts">
+          <li>Incoming messages arrive by webhook with HMAC-SHA256 signature validation and idempotent writes, so the same event is never processed twice.</li>
+          <li>Cost dashboard in reais, with configurable rates and an automatically updated dollar exchange rate.</li>
+          <li>Agent accounts with Argon2id, revocable sessions, access roles and email-based 2FA.</li>
+          <li>Per-client data isolation in PostgreSQL is on the roadmap, on the way to becoming SaaS.</li>
+        </ul>
+        <div class="side">
+          <p class="eyebrow">How it works</p>
+          <div class="flow"><span class="node">Client on WhatsApp</span><span class="arr">→</span><span class="node">Webhook with HMAC</span><span class="arr">→</span><span class="node">Rust API</span><span class="arr">→</span><span class="node">PostgreSQL</span><span class="arr">→</span><span class="node">React inbox</span></div>
+          <p class="eyebrow">Stack</p>
+          <div class="chips"><span class="chip">React 19 · TypeScript</span><span class="chip">Rust · Axum · SQLx</span><span class="chip">PostgreSQL 17</span><span class="chip">WhatsApp integration</span><span class="chip">OpenAPI · Swagger</span></div>
+          <div class="langs"><div class="bar sm"><i style="width:46.5%;background:var(--l-rust)"></i><i style="width:36.5%;background:var(--l-ts)"></i><i style="width:14.5%;background:var(--l-sql)"></i><i style="width:2.5%;background:var(--l-html)"></i></div>
+            <ul class="legend sq"><li style="--c:var(--l-rust)">Rust 47%</li><li style="--c:var(--l-ts)">TypeScript 37%</li><li style="--c:var(--l-sql)">SQL 15%</li></ul></div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="case" id="nexa-solution">
+    <div class="case-meta"><span class="yr">2026</span><span>Code Race AMF · Nexa Solution team</span><span>Competition</span></div>
+    <div style="min-width:0">
+      <div class="badges"><span class="badge prize">Best usability award</span><span class="badge lock">Private repository</span></div>
+      <h3>Agribusiness SaaS</h3>
+      <p class="pitch">A management system for the agribusiness chain in Rio Grande do Sul, from farmer to cooperative. What sets it apart is an AI agent on WhatsApp that looks up and records data by message.</p>      <div class="case-cols">
+        <ul class="pts">
+          <li>LangChain agent using Llama 3.3 70B (Groq) and Claude, with tools for inventory, batches, weather and semantic search.</li>
+          <li>Semantic search with pgvector and embeddings, in the same PostgreSQL as the business data.</li>
+          <li>Batch inventory with FEFO and alerts, QR code traceability, and compliance with LGPD, the Brazilian data protection law, through versioned consents.</li>
+          <li>Incremental back-end migration from Django to Rust, keeping the same HTTP contract.</li>
+        </ul>
+        <div class="side">
+          <p class="eyebrow">How it works</p>
+          <div class="flow"><span class="node">Farmer on WhatsApp</span><span class="arr">→</span><span class="node">Node.js service</span><span class="arr">→</span><span class="node">AI agent (LangChain)</span><span class="arr">→</span><span class="node">Inventory, batches, weather, search</span><span class="arr">→</span><span class="node">PostgreSQL + pgvector</span></div>
+          <p class="eyebrow">Stack</p>
+          <div class="chips"><span class="chip">React · TypeScript</span><span class="chip">Django 5 → Rust · Axum</span><span class="chip">FastAPI · LangChain</span><span class="chip">PostgreSQL · pgvector</span><span class="chip">Node.js</span><span class="chip">Nginx · Docker</span></div>
+          <div class="langs"><div class="bar sm"><i style="width:37.3%;background:var(--l-rust)"></i><i style="width:26.4%;background:var(--l-ts)"></i><i style="width:21.8%;background:var(--l-py)"></i><i style="width:11.8%;background:var(--l-sql)"></i><i style="width:2.7%;background:var(--l-js)"></i></div>
+            <ul class="legend sq"><li style="--c:var(--l-rust)">Rust 37%</li><li style="--c:var(--l-ts)">TypeScript 26%</li><li style="--c:var(--l-py)">Python 22%</li><li style="--c:var(--l-sql)">SQL 12%</li></ul></div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="case" id="up-espaco">
+    <div class="case-meta"><span class="yr">2026</span><span>Team project</span><span>PO and front end</span></div>
+    <div style="min-width:0">
+      <div class="badges"><span class="badge">Observability from day one</span></div>
+      <h3>Up Espaço</h3>
+      <p class="pitch">A platform that connects the staff of an early childhood development center with families: attendance, an activity feed with photos, a daily timeline for each child, developmental milestones, a calendar and announcements.</p>
+      <div class="case-cols">
+        <ul class="pts">
+          <li>REST API in Go with Clean Architecture and the Repository and Decorator patterns, with no dependency injection framework.</li>
+          <li>Each guardian sees only their own children, and the staff sees every student.</li>
+          <li>Prometheus and Grafana from the first version, with dashboards for requests, errors, CPU, memory and p95 latency.</li>
+          <li>All 10 planned requirements, 5 functional and 5 non-functional, were delivered and demonstrated.</li>
+          <li>I led product and front end: backlog, team organization, budget and benchmarking.</li>
+        </ul>
+        <div class="side">
+          <p class="eyebrow">How it works</p>
+          <div class="flow"><span class="node">React SPA</span><span class="arr">→</span><span class="node">Go API</span><span class="arr">→</span><span class="node">PostgreSQL</span></div>
+          <div class="flow"><span class="node alt">Prometheus</span><span class="arr">→</span><span class="node alt">Grafana</span></div>
+          <p class="eyebrow">Stack</p>
+          <div class="chips"><span class="chip">Go · gorilla/mux</span><span class="chip">React 18 · Vite · Tailwind</span><span class="chip">PostgreSQL 15</span><span class="chip">JWT · bcrypt</span><span class="chip">Prometheus · Grafana</span><span class="chip">Docker Compose</span></div>
+          <div class="langs"><div class="bar sm"><i style="width:66.1%;background:var(--l-go)"></i><i style="width:20.7%;background:var(--l-sql)"></i><i style="width:9.2%;background:var(--l-js)"></i><i style="width:2.9%;background:var(--l-asm)"></i><i style="width:1.1%;background:var(--l-html)"></i></div>
+            <ul class="legend sq"><li style="--c:var(--l-go)">Go 66%</li><li style="--c:var(--l-sql)">SQL 21%</li><li style="--c:var(--l-js)">JavaScript 9%</li></ul></div>
+          <div class="links"><a href="https://github.com/BragaNux/up-espaco" target="_blank" rel="noopener">up-espaco ↗</a><a href="https://github.com/BragaNux/up-espaco/tree/main/docs/produto" target="_blank" rel="noopener">Product documentation ↗</a></div>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <article class="case" id="bookguess">
+    <div class="case-meta"><span class="yr">2026</span><span>Academic</span><span>Two implementations</span></div>
+    <div style="min-width:0">
+      <div class="badges"><span class="badge">RAG</span><span class="badge">Deployed with Docker and Nginx</span></div>
+      <h3>BookGuess</h3>
+      <p class="pitch">A literary Wordle. Every day there's a new excerpt from a classic book; players try to guess the book or the author and can ask for an AI-generated hint, which costs half their points.</p>
+      <div class="case-cols">
+        <ul class="pts">
+          <li>RAG hints: the API finds similar excerpts in pgvector and passes that context to Claude.</li>
+          <li>Answers are checked on the server with SSR, so the title never reaches the browser too early.</li>
+          <li>Real-time leaderboard with Redis Sorted Sets and a cached daily challenge.</li>
+          <li>Public domain works only. One version in .NET with Clean Architecture and another in Next.js + FastAPI, deployed with Docker, Nginx and SSL.</li>
+        </ul>
+        <div class="side">
+          <p class="eyebrow">How it works</p>
+          <div class="flow"><span class="node">Next.js with SSR</span><span class="arr">→</span><span class="node">FastAPI</span><span class="arr">→</span><span class="node">pgvector</span><span class="arr">→</span><span class="node">Claude</span></div>
+          <div class="flow"><span class="node alt">Redis for leaderboard and cache</span></div>
+          <p class="eyebrow">Stack</p>
+          <div class="chips"><span class="chip">Next.js 14 · shadcn/ui</span><span class="chip">FastAPI</span><span class="chip">.NET · Blazor</span><span class="chip">PostgreSQL · pgvector</span><span class="chip">Redis</span><span class="chip">Claude API</span><span class="chip">Docker · Nginx</span></div>
+          <div class="langs"><div class="bar sm"><i style="width:52.9%;background:var(--l-cs)"></i><i style="width:18.2%;background:var(--l-py)"></i><i style="width:12.3%;background:var(--l-ts)"></i><i style="width:10.7%;background:var(--l-html)"></i><i style="width:4.3%;background:var(--l-js)"></i><i style="width:1.6%;background:var(--l-asm)"></i></div>
+            <ul class="legend sq"><li style="--c:var(--l-cs)">C# 53%</li><li style="--c:var(--l-py)">Python 18%</li><li style="--c:var(--l-ts)">TypeScript 12%</li><li style="--c:var(--l-html)">HTML/CSS 11%</li></ul></div>
+          <div class="links"><a href="https://github.com/BragaNux/bookguess-dotnet" target="_blank" rel="noopener">bookguess-dotnet ↗</a><a href="https://github.com/BragaNux/bookguess-nextjs" target="_blank" rel="noopener">bookguess-nextjs ↗</a></div>
+        </div>
+      </div>
+    </div>
+  </article>
+</section>
+
+<section class="wrap sec" id="mais" aria-labelledby="h-mais">
+  <div class="sec-head">
+    <h2 id="h-mais">More projects</h2>
+    <p class="sec-sub">Computer vision, machine learning, microservices, mobile, systems analysis and a game, some with demo videos. The full list is in <a href="#repositorios" data-go="#repositorios">all repositories</a>.</p>
+  </div>
+  <div class="filters" role="group" aria-label="Filter by area">
+    <button type="button" id="f-todos" data-f="todos" aria-pressed="true">All</button>
+    <button type="button" id="f-ia" data-f="ia" aria-pressed="false">AI and data</button>
+    <button type="button" id="f-back" data-f="back" aria-pressed="false">Back end and architecture</button>
+    <button type="button" id="f-web" data-f="web" aria-pressed="false">Web and mobile</button>
+  </div>
+  <div class="grid" id="grid">
+    <article class="item" id="ecoscan" data-a="ia">
+      <div class="top-m"><span>2026 · Computer vision</span><span>Raspberry Pi</span></div>
+      <h3>EcoScan</h3>
+      <p>Sorts trash into 12 categories through the camera, in real time, built to run on a Raspberry Pi mounted above the bin. Trained on about 35,000 images from two datasets, it reached about 92% validation accuracy.</p>
+      <div class="chips"><span class="chip">TensorFlow · MobileNetV2</span><span class="chip">OpenCV</span><span class="chip">TFLite</span></div>
+      <a class="repo" href="https://github.com/BragaNux/ecoscan" target="_blank" rel="noopener">ecoscan ↗</a>
+    </article>
+    <article class="item" id="ratos" data-a="ia">
+      <div class="top-m"><span>2026 · Machine learning</span><span>Team of three</span></div>
+      <h3>NYC Rat Sightings</h3>
+      <p>Predicts whether a rat sighting complaint will be resolved quickly or slowly, combining 311 requests, health inspections and weather. 0.78 AUC on the test set and 84.5% precision on the requests the model ranks as most likely to be slow, with temporal validation to check that it generalizes.</p>
+      <div class="chips"><span class="chip">Python · scikit-learn</span><span class="chip">pandas</span><span class="chip">NYC Open Data · NOAA</span></div>
+      <a class="repo" href="https://github.com/BragaNux/ratos-nova-york" target="_blank" rel="noopener">ratos-nova-york ↗</a>
+    </article>
+    <article class="item" id="sentinel" data-a="ia web">
+      <div class="top-m"><span>2025 · Browser extension</span><span>Chrome</span></div>
+      <h3>Sentinel AI</h3>
+      <p>From the right-click menu, it analyzes text, links and images and returns the likely authorship, the risk level and the reason. It keeps a history with CSV export and uses its own back end, which switches between Gemini and a local model on Ollama.</p>
+      <div class="chips"><span class="chip">JavaScript</span><span class="chip">Node · Express</span><span class="chip">Gemini · Ollama</span><span class="chip">Docker</span></div>
+      <a class="repo" href="https://github.com/BragaNux/Sentinel-AI" target="_blank" rel="noopener">Sentinel-AI ↗</a>
+    </article>
+    <article class="item" id="culinaria" data-a="ia">
+      <div class="top-m"><span>2026 · RAG and automation</span><span>Telegram</span></div>
+      <h3>Cooking Assistant</h3>
+      <p>Telegram bot that answers cooking and food safety questions based on PDF manuals, using RAG with a local vector database, orchestration in n8n and alerts on Discord.</p>
+      <div class="chips"><span class="chip">Python</span><span class="chip">n8n</span><span class="chip">Vector database</span><span class="chip">Telegram · Discord</span></div>
+      <a class="repo" href="https://github.com/BragaNux/assistente-culinaria" target="_blank" rel="noopener">assistente-culinaria ↗</a>
+    </article>
+    <article class="item" id="ecommerce" data-a="back">
+      <div class="top-m"><span>2025 · Architecture</span><span>5 services</span></div>
+      <h3>Microservices e-commerce</h3>
+      <p>Users, products, orders, payments and notifications as separate services, behind a Kong gateway and talking over Kafka, with metrics in Prometheus and Grafana and load tests in K6.</p>
+      <div class="chips"><span class="chip">Node.js · Prisma</span><span class="chip">Kafka · Kong</span><span class="chip">PostgreSQL · MongoDB</span><span class="chip">K6</span></div>
+      <a class="repo" href="https://github.com/BragaNux/ecommerce-microsservicos" target="_blank" rel="noopener">ecommerce-microsservicos ↗</a>
+    </article>
+    <article class="item" id="catalogo" data-a="back">
+      <div class="top-m"><span>2025 · DevOps</span><span>Docker Compose</span></div>
+      <h3>Catalog with observability</h3>
+      <p>Node.js API with PostgreSQL and a front end served by Nginx, monitored with Prometheus, cAdvisor and Grafana, with data persisted in volumes.</p>
+      <div class="chips"><span class="chip">Docker Compose</span><span class="chip">Node.js · PostgreSQL</span><span class="chip">Prometheus · Grafana</span><span class="chip">Nginx · cAdvisor</span></div>
+      <a class="repo" href="https://github.com/BragaNux/catalogo-observabilidade" target="_blank" rel="noopener">catalogo-observabilidade ↗</a>
+    </article>
+    <article class="item" id="bragaflow" data-a="back">
+      <div class="top-m"><span>2026 · Design patterns</span><span>Java</span></div>
+      <h3>BragaFlow Atlas</h3>
+      <p>Java API with MongoDB Atlas for freight and deliveries, organized in layers, with Factory Method for the transport types, Singleton for the caches and a web interface for testing.</p>
+      <div class="chips"><span class="chip">Java</span><span class="chip">MongoDB Atlas</span><span class="chip">Factory Method · Singleton</span></div>
+      <a class="repo" href="https://github.com/BragaNux/bragaflow" target="_blank" rel="noopener">bragaflow ↗</a>
+    </article>
+    <article class="item" id="restaurante" data-a="back">
+      <div class="top-m"><span>2026 · Analysis and design</span><span>Team project</span></div>
+      <h3>Restaurant Service System</h3>
+      <p>Analysis and design of a system that digitizes the dining room: ordering from a tablet at the table, automatic routing to the kitchen, real-time table management and payment. Includes requirements, use cases and class, sequence and activity diagrams.</p>
+      <div class="chips"><span class="chip">Requirements</span><span class="chip">UML</span><span class="chip">Use cases</span></div>
+      <span class="repo priv">Academic documentation</span>
+    </article>
+    <article class="item" id="maestro" data-a="web">
+      <div class="top-m"><span>2026 · Product proposal</span><span>Real client</span></div>
+      <h3>MaestroOS</h3>
+      <p>Digital transformation proposal for an olive oil brand: an online store with Pix, WhatsApp service with an AI sommelier, QR codes showing where the product comes from and a management dashboard with CRM and subscriptions.</p>
+      <div class="chips"><span class="chip">Next.js · TypeScript</span><span class="chip">Supabase</span><span class="chip">Vercel</span></div>
+      <span class="repo priv">Client proposal</span>
+    </article>
+    <article class="item" id="checkin" data-a="web">
+      <div class="top-m"><span>2025 · Mobile</span><span>Expo</span></div>
+      <h3>Event Check-in</h3>
+      <p>App for the door staff to check attendees in by scanning QR codes, with haptic feedback and stack navigation.</p>
+      <div class="chips"><span class="chip">React Native · Expo</span><span class="chip">TypeScript</span><span class="chip">Expo Camera</span></div>
+      <a class="repo" href="https://github.com/BragaNux/checkin-evento" target="_blank" rel="noopener">checkin-evento ↗</a>
+    </article>
+    <article class="item" id="unistore" data-a="web back">
+      <div class="top-m"><span>2025 · E-commerce</span><span>Full-stack</span></div>
+      <h3>UniStore</h3>
+      <p>A store for students with login, a cart and orders saved per user, simulated payment and step-by-step delivery tracking, with a Node.js and PostgreSQL back end.</p>
+      <div class="chips"><span class="chip">React + TypeScript</span><span class="chip">Node · Express</span><span class="chip">PostgreSQL</span></div>
+      <div class="repo"><a href="https://github.com/BragaNux/unistore" target="_blank" rel="noopener">unistore ↗</a><a href="https://www.youtube.com/watch?v=Dhc1uZoetas" target="_blank" rel="noopener">Demo video ↗</a></div>
+    </article>
+    <article class="item" id="algoritmo" data-a="web">
+      <div class="top-m"><span>2026 · Educational game</span><span>Group project</span></div>
+      <h3>O Algoritmo</h3>
+      <p>A pixel-art game, in Portuguese, that spans 3,800 years of the history of algorithms, from Babylon to today, and ends with building a machine. It comes with an interactive page on punched cards, with a simulator. Made for a presentation in the Innovation course.</p>
+      <div class="chips"><span class="chip">Canvas · JavaScript</span><span class="chip">Web Audio</span><span class="chip">Vercel</span></div>
+      <div class="repo"><a href="https://inovacaoquinta.vercel.app/inovacao_game.html" target="_blank" rel="noopener">Play ↗</a><a href="https://inovacaoquinta.vercel.app/curiosidades.html" target="_blank" rel="noopener">Fun facts ↗</a></div>
+    </article>
+    <article class="item" id="velha" data-a="ia">
+      <div class="top-m"><span>2024 · Reinforcement learning</span><span>Pygame</span></div>
+      <h3>Tic-Tac-Toe AI</h3>
+      <p>A neural network trained with reinforcement learning so it never loses to a human. It started as an AI for truco, a Brazilian card game, and changed course because of the bluffing, a decision documented in the repository.</p>
+      <div class="chips"><span class="chip">Python</span><span class="chip">TensorFlow</span><span class="chip">Pygame</span></div>
+      <a class="repo" href="https://github.com/BragaNux/ia-jogo-da-velha" target="_blank" rel="noopener">ia-jogo-da-velha ↗</a>
+    </article>
+    <article class="item" id="farmacia" data-a="ia web">
+      <div class="top-m"><span>2024 · Multimodal AI</span><span>Flask</span></div>
+      <h3>Pharmacy Specialist</h3>
+      <p>Web interface that combines audio transcription with Whisper, image description with CLIP, text generation and video processing.</p>
+      <div class="chips"><span class="chip">Python · Flask</span><span class="chip">Whisper</span><span class="chip">CLIP</span></div>
+      <div class="repo"><a href="https://github.com/BragaNux/especialista-farmacia" target="_blank" rel="noopener">especialista-farmacia ↗</a><a href="https://www.youtube.com/watch?v=d2udt0eYibA" target="_blank" rel="noopener">Demo video ↗</a></div>
+    </article>
+    <article class="item" id="crawler" data-a="back">
+      <div class="top-m"><span>2024 · Algorithms</span><span>Flask</span></div>
+      <h3>E-commerce crawler</h3>
+      <p>Collects products from an online store and sorts them by price, using external sorting in blocks with temporary files for volumes that do not fit in memory. It has a web interface to run the search.</p>
+      <div class="chips"><span class="chip">Python · Flask</span><span class="chip">BeautifulSoup</span><span class="chip">External sorting</span></div>
+      <div class="repo"><a href="https://github.com/BragaNux/crawler-ecommerce" target="_blank" rel="noopener">crawler-ecommerce ↗</a><a href="https://www.youtube.com/watch?v=I2O1biixYlI" target="_blank" rel="noopener">Demo video ↗</a></div>
+    </article>
+  </div>
+</section>
+
+<section class="wrap sec" id="habilidades" aria-labelledby="h-hab">
+  <div class="sec-head">
+    <h2 id="h-hab">Skills</h2>
+    <p class="sec-sub">Tap a technology to see where I used it. The ones marked with a dot are part of my daily work.</p>
+  </div>
+  <div class="stack" id="skills">
+    <div class="layer"><span class="layer-name">Mobile</span><div class="sk-row">
+      <button type="button" class="sk daily" id="sk-flutter" data-u="panela forza">Flutter · Dart</button>
+      <button type="button" class="sk" id="sk-rn" data-u="checkin panela">React Native · Expo</button>
+    </div></div>
+    <div class="layer"><span class="layer-name">Web</span><div class="sk-row">
+      <button type="button" class="sk daily" id="sk-react" data-u="summa nexasolution upespaco unistore forza">React</button>
+      <button type="button" class="sk daily" id="sk-ts" data-u="summa nexasolution bookguess maestro checkin unistore forza">TypeScript</button>
+      <button type="button" class="sk daily" id="sk-js" data-u="sentinel ecommerce catalogo algoritmo forza">JavaScript</button>
+      <button type="button" class="sk daily" id="sk-blazor" data-u="bookguess forza">Blazor · Razor</button>
+      <button type="button" class="sk" id="sk-next" data-u="bookguess maestro">Next.js</button>
+      <button type="button" class="sk" id="sk-tailwind" data-u="upespaco bookguess maestro">Tailwind</button>
+    </div></div>
+    <div class="layer"><span class="layer-name">APIs and back end</span><div class="sk-row">
+      <button type="button" class="sk daily" id="sk-csharp" data-u="panela bookguess forza" aria-pressed="true">C# · .NET</button>
+      <button type="button" class="sk daily" id="sk-aspnet" data-u="panela forza">ASP.NET Core</button>
+      <button type="button" class="sk" id="sk-go" data-u="upespaco">Go</button>
+      <button type="button" class="sk" id="sk-rust" data-u="summa nexasolution">Rust · Axum</button>
+      <button type="button" class="sk" id="sk-python" data-u="ecoscan ratos culinaria bookguess nexasolution velha farmacia crawler">Python</button>
+      <button type="button" class="sk" id="sk-fastapi" data-u="bookguess nexasolution farmacia crawler">FastAPI · Django · Flask</button>
+      <button type="button" class="sk" id="sk-node" data-u="sentinel ecommerce catalogo unistore nexasolution">Node.js · Express</button>
+      <button type="button" class="sk" id="sk-java" data-u="bragaflow">Java</button>
+    </div></div>
+    <div class="layer"><span class="layer-name">Data</span><div class="sk-row">
+      <button type="button" class="sk daily" id="sk-mysql" data-u="forza">MySQL</button>
+      <button type="button" class="sk" id="sk-pg" data-u="panela summa nexasolution upespaco bookguess ecommerce catalogo unistore">PostgreSQL</button>
+      <button type="button" class="sk" id="sk-pgvector" data-u="nexasolution bookguess">pgvector</button>
+      <button type="button" class="sk" id="sk-mongo" data-u="ecommerce bragaflow">MongoDB</button>
+      <button type="button" class="sk" id="sk-redis" data-u="bookguess">Redis</button>
+    </div></div>
+    <div class="layer"><span class="layer-name">AI and machine learning</span><div class="sk-row">
+      <button type="button" class="sk" id="sk-llm" data-u="nexasolution bookguess culinaria sentinel panela">LLMs and RAG</button>
+      <button type="button" class="sk" id="sk-langchain" data-u="nexasolution">LangChain</button>
+      <button type="button" class="sk" id="sk-tf" data-u="ecoscan velha">TensorFlow</button>
+      <button type="button" class="sk" id="sk-sklearn" data-u="ratos">scikit-learn · pandas</button>
+      <button type="button" class="sk" id="sk-n8n" data-u="culinaria">n8n</button>
+    </div></div>
+    <div class="layer"><span class="layer-name">Infra and quality</span><div class="sk-row">
+      <button type="button" class="sk" id="sk-docker" data-u="panela summa nexasolution upespaco bookguess ecommerce catalogo sentinel">Docker</button>
+      <button type="button" class="sk" id="sk-tests" data-u="panela summa nexasolution bookguess forza">Automated testing</button>
+      <button type="button" class="sk" id="sk-obs" data-u="upespaco ecommerce catalogo">Prometheus · Grafana</button>
+      <button type="button" class="sk" id="sk-kafka" data-u="ecommerce">Kafka · Kong</button>
+      <button type="button" class="sk" id="sk-nginx" data-u="bookguess panela nexasolution catalogo">Nginx · Caddy · VPS</button>
+      <button type="button" class="sk daily" id="sk-svn" data-u="forza">SVN</button>
+      <button type="button" class="sk" id="sk-git" data-u="repos">Git · GitHub</button>
+      <button type="button" class="sk" id="sk-linux" data-u="repos">Linux · Proxmox</button>
+    </div></div>
+    <div class="layer"><span class="layer-name">Software engineering</span><div class="sk-row">
+      <button type="button" class="sk" id="sk-uml" data-u="restaurante upespaco">Requirements and UML</button>
+      <button type="button" class="sk" id="sk-patterns" data-u="bragaflow upespaco">Design patterns</button>
+      <button type="button" class="sk" id="sk-clean" data-u="upespaco bookguess">Clean Architecture</button>
+      <button type="button" class="sk daily" id="sk-review" data-u="forza">Code review</button>
+    </div></div>
+    <div class="layer"><span class="layer-name">Security</span><div class="sk-row">
+      <button type="button" class="sk daily" id="sk-jwt" data-u="panela upespaco forza">JWT</button>
+      <button type="button" class="sk" id="sk-hash" data-u="summa upespaco">Argon2id · bcrypt</button>
+      <button type="button" class="sk" id="sk-hmac" data-u="summa">HMAC and 2FA</button>
+      <button type="button" class="sk" id="sk-lgpd" data-u="nexasolution panela">LGPD</button>
+    </div></div>
+  </div>
+  <div class="sk-out" id="sk-out" aria-live="polite">
+    <p class="eyebrow">Where I used it</p>
+    <p><b>C# · .NET</b></p>
+    <div class="uses"><a href="#panela">Panela</a><a href="#bookguess">BookGuess</a><a href="#forza">Work at Forza</a></div>
+  </div>
+
+  <h3 class="sub">How I work</h3>
+  <div class="soft">
+    <article><p class="ev">Army and college</p><h4>Discipline and resilience</h4><p>I served a year in the Brazilian Army and then balanced a full-time job with college.</p></article>
+    <article><p class="ev">Two years in logistics</p><h4>Organization and processes</h4><p>I handled supply and distribution operations. I bring that sense of flow and deadlines to software projects.</p></article>
+    <article><p class="ev">Up Espaço and 3Summa</p><h4>Leadership and product</h4><p>I was PO and front-end lead on a team of five, and I'm one of three co-founders of an incubated startup.</p></article>
+    <article><p class="ev">Code Race and Panela</p><h4>Focus on the user</h4><p>Our team won the best usability award at Code Race 2026. In Panela, the focus on planning before spending came from a gap in existing apps, and the user evaluation will use the SUS scale.</p></article>
+    <article><p class="ev">Teaching and research</p><h4>Communication and teaching</h4><p>I was a teaching assistant for Algorithms I, published three expanded abstracts at MICAMF and document my projects so anyone can run and understand them.</p></article>
+    <article><p class="ev">Day to day</p><h4>Quality and investigation</h4><p>I do code reviews, write automated tests and look for the root cause in the data and the version history before touching the code.</p></article>
+  </div>
+</section>
+
+<section class="wrap sec" id="trajetoria" aria-labelledby="h-traj">
+  <div class="sec-head">
+    <h2 id="h-traj">Experience and education</h2>
+  </div>
+  <ol class="timeline">
+    <li id="summa"><div class="when"><b>2026 – now</b><span>InovAMF · FOIL</span></div>
+      <div><h3>Co-founder · 3Summa</h3><p>A product for the accounting sector created by our team, Nexa Solution, and incubated at InovAMF. The idea is to take repetitive work out of the daily routine of accounting firms.</p></div></li>
+    <li id="forza"><div class="when"><b>2024 – now</b><span>Santa Maria, Brazil · on-site</span></div>
+      <div><h3>Full-stack developer · Forza Clubes</h3><p>I work end to end on a management system used by clubs, across the APIs, the web system and the mobile app. I also built the internal platform the team uses to organize knowledge and documentation.</p>
+        <div class="chips"><span class="chip">C# · .NET</span><span class="chip">ASP.NET Core</span><span class="chip">Blazor</span><span class="chip">Flutter · Dart</span><span class="chip">React · TypeScript</span><span class="chip">MySQL</span><span class="chip">JWT</span><span class="chip">SVN</span></div>
+        <p class="soft-line">Day to day: code reviews, automated tests and root cause analysis.</p></div></li>
+    <li><div class="when"><b>2022 – 2026</b><span>Antonio Meneghetti Faculdade</span></div>
+      <div><h3>Bachelor of Information Systems</h3><p>Capstone project: the Panela app, due November 2026. Teaching assistant for Algorithms I, three expanded abstracts at MICAMF and two Code Race participations, one of them with an award.</p></div></li>
+    <li class="past"><div class="when"><b>2022 – 2024</b><span>Santa Maria, Brazil</span></div>
+      <div><h3>Logistics administrator · Modo Logística</h3><p>Full-time supply and distribution operations during my first years of college.</p></div></li>
+    <li class="past"><div class="when"><b>2021 – 2022</b><span>Santa Maria, Brazil</span></div>
+      <div><h3>Brazilian Army</h3><p>A year of military service, where I built discipline and resilience.</p></div></li>
+    <li class="past"><div class="when"><b>2018 – 2019</b><span>Santa Maria, Brazil</span></div>
+      <div><h3>Young apprentice · Beltrame Supermercados</h3><p>My first job.</p></div></li>
+  </ol>
+</section>
+
+<section class="wrap sec" id="conquistas" aria-labelledby="h-conq">
+  <div class="sec-head"><h2 id="h-conq">Awards, research and courses</h2></div>
+  <div class="two">
+    <div>
+      <h3>Awards, research and teaching</h3>
+      <ul class="list">
+        <li><span class="y">2026</span><span><b>Best usability award</b><span class="d">Code Race AMF, with the Nexa Solution team</span></span></li>
+        <li><span class="y">2025</span><span><b>Expanded abstract at MICAMF</b><span class="d">VITALITY, a gamified system for digital well-being</span></span></li>
+        <li><span class="y">2024</span><span><b>Expanded abstract at MICAMF</b><span class="d">A tactile and audio device for visually impaired people</span></span></li>
+        <li><span class="y">2024</span><span><b>Expanded abstract at MICAMF</b><span class="d">Blockchain beyond cryptocurrencies</span></span></li>
+        <li><span class="y">2024</span><span><b>Competitor at the 8th Code Race AMF</b><span class="d">16-hour competition</span></span></li>
+        <li><span class="y">2023</span><span><b>Teaching assistant, Algorithms I Lab</b><span class="d">40 hours</span></span></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Courses and languages</h3>
+      <ul class="list">
+        <li><span class="y">2026</span><span><b>Introduction to Linux</b><span class="d">Alfahelix</span></span></li>
+        <li><span class="y">2025</span><span><b>Alura</b><span class="d">C programming (two courses), Figma and programming logic with JavaScript</span></span></li>
+        <li><span class="y">2025</span><span><b>Practical AI prompting</b><span class="d">Writing prompts for artificial intelligence</span></span></li>
+        <li><span class="y">2024</span><span><b>Alura</b><span class="d">C#, Java, quality assurance and bug management</span></span></li>
+        <li><span class="y">2022</span><span><b>Backend Descomplicando com C#</b><span class="d">Tech Courses AMF, 16 hours</span></span></li>
+        <li><span class="y">2022</span><span><b>JavaScript, CSS and HTML</b><span class="d">16-hour course</span></span></li>
+        <li><span class="y">Languages</span><span><b>Native Portuguese</b><span class="d">English in progress, aiming for fluency</span></span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="wrap sec" id="github" aria-labelledby="h-gh">
+  <div class="sec-head">
+    <h2 id="h-gh">On GitHub</h2>
+    <p class="sec-sub">Each square is a day with contributions over the last twelve months, private repositories included. The snake is redrawn every day by a GitHub Action.</p>
+  </div>
+  <a class="snake" href="https://github.com/BragaNux" target="_blank" rel="noopener" aria-label="Brayan Martins on GitHub">
+    <img class="only-light" src="https://raw.githubusercontent.com/BragaNux/BragaNux/output/cobrinha-site-light.svg" width="880" height="192" loading="lazy" alt="">
+    <img class="only-dark" src="https://raw.githubusercontent.com/BragaNux/BragaNux/output/cobrinha-site-dark.svg" width="880" height="192" loading="lazy" alt="">
+    <span class="snake-foot"><span>@BragaNux</span><span>View profile ↗</span></span>
+  </a>
+</section>
+
+<section class="wrap contact" id="contato" aria-labelledby="h-cont">
+  <h2 id="h-cont" aria-label="Let’s talk"><span aria-hidden="true"><span class="w"><span class="ch" style="--i:0">L</span><span class="ch" style="--i:1">e</span><span class="ch" style="--i:2">t</span><span class="ch" style="--i:3">’</span><span class="ch" style="--i:4">s</span></span> <span class="w" style="--w0:200ms"><span class="ch" style="--i:0">t</span><span class="ch" style="--i:1">a</span><span class="ch" style="--i:2">l</span><span class="ch" style="--i:3">k</span></span></span></h2>
+  <p class="big">I'm open to remote opportunities, in Brazil and abroad, on teams that value code quality, good practices and continuous learning.</p>
+  <dl class="clist">
+    <div class="crow"><dt>Email</dt><dd><span class="cval" id="mail">devbrayancomercial@gmail.com</span><button class="btn sm primary" type="button" id="copy-mail" data-copy="mail">Copy</button></dd></div>
+    <div class="crow"><dt>WhatsApp</dt><dd><span class="cval" id="fone">+55 (55) 99205-3272</span><button class="btn sm" type="button" id="copy-fone" data-copy="fone">Copy</button><a class="btn sm" href="https://wa.me/5555992053272" target="_blank" rel="noopener">Open in WhatsApp ↗</a></dd></div>
+    <div class="crow"><dt>Instagram</dt><dd><a class="cval" href="https://www.instagram.com/b.martlns/" target="_blank" rel="noopener">@b.martlns ↗</a></dd></div>
+  </dl>
+  <div class="cta" style="margin-top:4px">
+    <a class="btn" href="https://www.linkedin.com/in/bmartlns/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    <a class="btn" href="https://github.com/BragaNux" target="_blank" rel="noopener">GitHub ↗</a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap"><div class="foot"><span>Brayan Martins · Santa Maria, Brazil · 2026</span><span>Private projects are described without a link to the code.</span></div></div>
+</footer>
+
+<script>
+(function(){
+  var R=[{"n":"TCC_Panela","o":"BragaNux","d":"2026-10","p":1,"l":"Dart","t":"Capstone: Panela app (Flutter + ASP.NET Core) and thesis"},{"n":"3summa","o":"gsantos-tech","d":"2026-10","p":1,"l":"Rust","t":"3Summa: WhatsApp client service for accounting firms"},{"n":"inovacao_quinta","o":"BragaNux","d":"2026-09","p":1,"l":"HTML/CSS","t":"Pixel-art game about the history of algorithms"},{"n":"ratos-nova-york","o":"BragaNux","d":"2026-09","p":0,"l":"Python","t":"Machine learning to prioritize rat complaints in New York"},{"n":"bookguess-nextjs","o":"BragaNux","d":"2026-06","p":0,"l":"Python","t":"BookGuess in Next.js + FastAPI with RAG"},{"n":"up-espaco","o":"BragaNux","d":"2026-06","p":0,"l":"Go","t":"Up Espaço: Go API, React and observability"},{"n":"auxilio_apresentacao","o":"BragaNux","d":"2026-06","p":1,"l":"Docs","t":"Presentation guide for the microservices architecture"},{"n":"up-espaco-produto","o":"BragaNux","g":"https://github.com/BragaNux/up-espaco/tree/main/docs/produto","d":"2026-06","p":0,"l":"Docs","t":"Up Espaço: product, budget and team organization"},{"n":"bookguess-dotnet","o":"BragaNux","d":"2026-06","p":0,"l":"C#","t":"BookGuess in .NET with Clean Architecture"},{"n":"20-nexasolution","o":"gsantos-tech","d":"2026-06","p":1,"l":"Rust","t":"Agribusiness SaaS with an AI agent, by the Nexa Solution team (Code Race)"},{"n":"maestroos","o":"BragaNux","d":"2026-06","p":1,"l":"Docs","t":"Digital transformation proposal for Empório das Oliveiras"},{"n":"proposta_emporio_oliveiras","o":"BragaNux","d":"2026-05","p":1,"l":"TypeScript","t":"MaestroOS: prototype and proposal for Empório"},{"n":"assistente-culinaria","o":"BragaNux","d":"2026-05","p":0,"l":"Python","t":"Cooking assistant with RAG, Telegram and n8n"},{"n":"bragaflow","o":"BragaNux","d":"2026-05","p":0,"l":"Java","t":"BragaFlow Atlas: Java + MongoDB with design patterns"},{"n":"ecoscan","o":"BragaNux","d":"2026-04","p":0,"l":"Python","t":"EcoScan: trash sorting with computer vision"},{"n":"Sentinel-AI","o":"BragaNux","d":"2025-12","p":0,"l":"JavaScript","t":"Chrome extension that assesses content authorship and risk"},{"n":"ecommerce-microsservicos","o":"BragaNux","d":"2025-12","p":0,"l":"JavaScript","t":"Microservices e-commerce with Kafka and Kong"},{"n":"Panela_Rateio","o":"BragaNux","d":"2025-12","p":0,"l":"Docs","t":"Public documentation for the Panela app"},{"n":"ecommerce-microsservicos-v1","o":"BragaNux","d":"2025-11","p":0,"l":"JavaScript","t":"First version of the microservices, with a Postman collection"},{"n":"teste_vercel","o":"BragaNux","d":"2025-10","p":1,"l":"JavaScript","t":"React app deployed on Vercel"},{"n":"abi-event","o":"BragaNux","d":"2025-10","p":1,"l":"Docs","t":"Item proposal for an event in the game Arena Breakout"},{"n":"catalogo-observabilidade","o":"BragaNux","d":"2025-10","p":0,"l":"JavaScript","t":"Movie catalog with Docker, Prometheus and Grafana"},{"n":"checkin-evento","o":"BragaNux","d":"2025-08","p":0,"l":"TypeScript","t":"Event check-in app (Expo + TypeScript)"},{"n":"unistore","o":"BragaNux","d":"2025-06","p":0,"l":"Docs","t":"UniStore: academic e-commerce"},{"n":"ForzaTools","o":"BragaNux","d":"2025-06","p":1,"l":"C#","t":"Internal platform for the Forza team (v1)"},{"n":"pratica_proxmox_completo","o":"BragaNux","g":"https://github.com/BragaNux/estudos-faculdade/tree/main/virtualizacao/proxmox-completo","d":"2025-06","p":0,"l":"Docs","t":"Virtualization lab with Proxmox"},{"n":"exercicios_asm","o":"BragaNux","g":"https://github.com/BragaNux/estudos-faculdade/tree/main/assembly/exercicios","d":"2025-06","p":0,"l":"Assembly","t":"Assembly exercises"},{"n":"pratica_proxmox","o":"BragaNux","g":"https://github.com/BragaNux/estudos-faculdade/tree/main/virtualizacao/proxmox","d":"2025-06","p":0,"l":"Docs","t":"Proxmox installation and setup"},{"n":"TempDev1","o":"BragaNux","d":"2025-04","p":1,"l":"Docs","t":"React + TypeScript assessment (projects in branches)"},{"n":"Trabalho-Avaliativo-TypeScript","o":"BragaNux","d":"2025-03","p":1,"l":"TypeScript","t":"Graded assignment in TypeScript"},{"n":"Estudo_POO","o":"BragaNux","g":"https://github.com/BragaNux/estudos-faculdade/tree/main/orientacao-a-objetos/estudos","d":"2024-12","p":0,"l":"Java","t":"Object-oriented programming studies in Java"},{"n":"ia-jogo-da-velha","o":"BragaNux","d":"2024-12","p":0,"l":"Python","t":"AI that plays tic-tac-toe with reinforcement learning"},{"n":"noticias_ia","o":"BragaNux","d":"2024-11","p":1,"l":"Docs","t":"Weekly AI news digest"},{"n":"RoboDosRObo","o":"BragaNux","g":"https://github.com/BragaNux/estudos-faculdade/tree/main/java/robocode","d":"2024-11","p":0,"l":"Java","t":"Java exercise"},{"n":"mini-steam","o":"BragaNux","g":"https://github.com/BragaNux/estudos-faculdade/tree/main/classificacao-e-pesquisa-de-dados/mini-steam","d":"2024-11","p":0,"l":"Python","t":"Mini-Steam: game search with a binary tree"},{"n":"exer_em_aula_18_11","o":"BragaNux","g":"https://github.com/BragaNux/estudos-faculdade/tree/main/classificacao-e-pesquisa-de-dados/aula-18-11","d":"2024-11","p":0,"l":"Python","t":"Data Sorting and Searching exercises"},{"n":"exer_aula_11","o":"BragaNux","g":"https://github.com/BragaNux/estudos-faculdade/tree/main/classificacao-e-pesquisa-de-dados/aula-11","d":"2024-11","p":0,"l":"Python","t":"Data Sorting and Searching exercises"},{"n":"exer_aula_10","o":"BragaNux","g":"https://github.com/BragaNux/estudos-faculdade/tree/main/classificacao-e-pesquisa-de-dados/aula-10","d":"2024-11","p":0,"l":"Python","t":"Data Sorting and Searching exercises"},{"n":"exercicios_cpd_aula_08","o":"BragaNux","g":"https://github.com/BragaNux/estudos-faculdade/tree/main/classificacao-e-pesquisa-de-dados/aula-08","d":"2024-11","p":0,"l":"Python","t":"Data Sorting and Searching exercises"},{"n":"crawler-ecommerce","o":"BragaNux","d":"2024-10","p":0,"l":"Python","t":"E-commerce crawler with external sorting"},{"n":"especialista-farmacia","o":"BragaNux","d":"2024-10","p":0,"l":"Python","t":"Pharmacy Specialist: Flask with Whisper and CLIP"},{"n":"poo","o":"BragaNux","g":"https://github.com/BragaNux/estudos-faculdade/tree/main/orientacao-a-objetos/exercicios","d":"2024-09","p":0,"l":"Java","t":"Object-oriented programming exercises in Java"},{"n":"cpd","o":"BragaNux","g":"https://github.com/BragaNux/estudos-faculdade/tree/main/classificacao-e-pesquisa-de-dados/exercicios","d":"2024-09","p":0,"l":"Python","t":"Data Sorting and Searching"},{"n":"trab2","o":"BragaNux","g":"https://github.com/BragaNux/estudos-faculdade/tree/main/estrutura-de-dados/trabalho-em-dupla","d":"2024-06","p":0,"l":"Python","t":"Data structures assignment in pairs"},{"n":"recursividade","o":"BragaNux","g":"https://github.com/BragaNux/estudos-faculdade/tree/main/estrutura-de-dados/recursividade","d":"2024-06","p":0,"l":"Python","t":"Recursion exercises"},{"n":"exercicios_pilhas-filas","o":"BragaNux","g":"https://github.com/BragaNux/estudos-faculdade/tree/main/estrutura-de-dados/pilhas-e-filas","d":"2024-04","p":0,"l":"Python","t":"Stacks and queues exercises"},{"n":"g1-ed","o":"BragaNux","g":"https://github.com/BragaNux/estudos-faculdade/tree/main/estrutura-de-dados/avaliacao-g1","d":"2024-04","p":0,"l":"Python","t":"Data Structures midterm (G1)"},{"n":"Estrutura_de_Dados","o":"BragaNux","g":"https://github.com/BragaNux/estudos-faculdade/tree/main/estrutura-de-dados/exercicios","d":"2024-04","p":0,"l":"Python","t":"Data Structures exercises"},{"n":"Linux","o":"BragaNux","g":"https://github.com/BragaNux/estudos-faculdade/tree/main/primeiro-repositorio","d":"2022-12","p":0,"l":"Python","t":"First repository"}];
+  var LC={"C#":"--l-cs","TypeScript":"--l-ts","Dart":"--l-dart","Rust":"--l-rust","Go":"--l-go","JavaScript":"--l-js","Python":"--l-py","Java":"--l-java","HTML/CSS":"--l-html","Assembly":"--l-asm","Docs":"--l-docs"};
+  var LN={"Docs":"Documentation"};
+  var MES=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+  var ANCHOR={"TCC_Panela":"#panela","Panela_Rateio":"#panela","3summa":"#summa-produto","20-nexasolution":"#nexa-solution","up-espaco":"#up-espaco","up-espaco-produto":"#up-espaco","bookguess-dotnet":"#bookguess","bookguess-nextjs":"#bookguess","ecoscan":"#ecoscan","ratos-nova-york":"#ratos","Sentinel-AI":"#sentinel","assistente-culinaria":"#culinaria","ecommerce-microsservicos":"#ecommerce","ecommerce-microsservicos-v1":"#ecommerce","catalogo-observabilidade":"#catalogo","bragaflow":"#bragaflow","maestroos":"#maestro","proposta_emporio_oliveiras":"#maestro","checkin-evento":"#checkin","inovacao_quinta":"#algoritmo","ia-jogo-da-velha":"#velha","especialista-farmacia":"#farmacia","ForzaTools":"#forza","unistore":"#unistore","crawler-ecommerce":"#crawler"};
+  var FEAT={"TCC_Panela":1,"3summa":1,"20-nexasolution":1,"up-espaco":1,"bookguess-dotnet":1,"bookguess-nextjs":1};
+  var START=2021, MONTHS=72, NOW=(2026-START)*12+9;
+  var LANES=[
+    {t:"Brazilian Army",s:"Army",a:"2021-03",b:"2022-02"},
+    {t:"Logistics · Modo Logística",s:"Logistics",a:"2022-05",b:"2024-08"},
+    {t:"Information Systems · AMF",s:"Information Systems",a:"2022-02",b:"2026-11"},
+    {t:"Full-stack developer · Forza Clubes",s:"Forza Clubes",a:"2024-07",b:"2026-10",acc:true}
+  ];
+  var reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  function mi(s){var p=s.split("-");return (+p[0]-START)*12+(+p[1]-1);}
+  function fmt(s){var p=s.split("-");return MES[+p[1]-1]+" "+p[0];}
+  function esc(s){return String(s).replace(/[&<>"]/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c];});}
+
+  /* nome e foto sempre cabem lado a lado: reduz o tamanho do nome só se faltar espaço */
+  var heroEl=document.querySelector(".hero"), headEl=document.querySelector(".hero-head"), nameEl=document.querySelector(".name"), fr=0;
+  function fitName(){
+    heroEl.style.removeProperty("--ns");
+    var ns=parseFloat(getComputedStyle(nameEl).fontSize), w=0, sp=nameEl.children;
+    for(var i=0;i<sp.length;i++){var rg=document.createRange();rg.selectNodeContents(sp[i]);w=Math.max(w,rg.getBoundingClientRect().width);}
+    var gap=parseFloat(getComputedStyle(headEl).columnGap)||16, W=headEl.clientWidth, fit=(W-gap-4)/(w/ns+1.72);
+    if(fit<ns) heroEl.style.setProperty("--ns",fit.toFixed(1)+"px");
+  }
+  fitName();
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(fitName);
+  window.addEventListener("resize",function(){cancelAnimationFrame(fr);fr=requestAnimationFrame(fitName);});
+
+  /* navegação até um projeto */
+  function go(h){
+    var t=document.querySelector(h); if(!t) return;
+    if(t.tagName==="DETAILS"){t.open=true;}
+    if(t.closest&&t.closest("#grid")) setFilter("todos");
+    t.scrollIntoView({behavior:reduce?"auto":"smooth",block:"start"});
+    t.classList.remove("flash"); void t.offsetWidth; t.classList.add("flash");
+  }
+  document.addEventListener("click",function(e){
+    var a=e.target.closest&&e.target.closest("a[data-go]");
+    if(a){e.preventDefault();go(a.getAttribute("data-go"));}
+  });
+
+  /* gráfico */
+  var NS="http://www.w3.org/2000/svg";
+  var wrap=document.getElementById("chart"), svg=document.getElementById("chart-svg"), tip=document.getElementById("tip");
+  var cs=(reduce||!("IntersectionObserver" in window))?2:0, pinned=null, lastW=0; /* 0 espera, 1 anima, 2 pronto */
+  function el(n,at,par){var e=document.createElementNS(NS,n);for(var k in at) e.setAttribute(k,at[k]);if(par) par.appendChild(e);return e;}
+  function hide(){tip.hidden=true;tip.classList.remove("pin");}
+  function show(rp,cx,cy,pin){
+    var h="<b>"+esc(rp.n)+"</b><span class=\"m\">"+fmt(rp.d)+" · "+esc(LN[rp.l]||rp.l)+(rp.p?" · private":"")+"</span><span>"+esc(rp.t)+"</span>";
+    if(pin){
+      var l=[], a=ANCHOR[rp.n];
+      if(a) l.push("<a href=\""+a+"\" data-go=\""+a+"\">See on this page ↓</a>");
+      if(rp.g) l.push("<a href=\""+esc(rp.g)+"\" target=\"_blank\" rel=\"noopener\">"+(rp.g.indexOf("estudos-faculdade")>-1?"estudos-faculdade":"GitHub")+" ↗</a>");
+      else if(!rp.p) l.push("<a href=\"https://github.com/"+esc(rp.o)+"/"+esc(rp.n)+"\" target=\"_blank\" rel=\"noopener\">GitHub ↗</a>");
+      if(l.length) h+="<span class=\"tl\">"+l.join("")+"</span>";
+    }
+    tip.innerHTML=h; tip.hidden=false; tip.classList.toggle("pin",!!pin);
+    var sb=svg.getBoundingClientRect(), wb=wrap.getBoundingClientRect();
+    var k=sb.width/lastW, x=(sb.left-wb.left)+cx*k, y=(sb.top-wb.top)+cy*k;
+    var tw=tip.offsetWidth, th=tip.offsetHeight, left=x+14;
+    if(left+tw>wrap.clientWidth) left=x-tw-14;
+    if(left<0) left=Math.max(0,Math.min(wrap.clientWidth-tw,x-tw/2));
+    var top=y-th-12; if(top<0) top=y+14;
+    tip.style.left=left+"px"; tip.style.top=top+"px";
+  }
+  function render(){
+    var W=Math.max(280,Math.round(wrap.clientWidth)); lastW=W;
+    var narrow=W<640, bin=narrow?3:1, nb=MONTHS/bin, padL=2, padR=2, pw=W-padL-padR, bw=pw/nb;
+    function xm(m){return padL+(m/MONTHS)*pw;}
+    var r=Math.max(3.2,Math.min(6.4,bw*0.4)), step=2*r+2.2;
+    var bins={}, keys=[];
+    R.slice().sort(function(a,b){return a.d<b.d?-1:a.d>b.d?1:0;}).forEach(function(rp){var b=Math.floor(mi(rp.d)/bin);if(!bins[b]){bins[b]=[];keys.push(b);}bins[b].push(rp);});
+    var maxS=1; keys.forEach(function(b){if(bins[b].length>maxS) maxS=bins[b].length;});
+    var top=26, axisY=top+maxS*step+8, laneTop=axisY+42, laneGap=34, H=laneTop+(LANES.length-1)*laneGap+16;
+    svg.setAttribute("viewBox","0 0 "+W+" "+H); svg.setAttribute("width",W); svg.setAttribute("height",H);
+    while(svg.firstChild) svg.removeChild(svg.firstChild);
+    el("line",{x1:padL,x2:W-padR,y1:axisY,y2:axisY,"class":"axl"},svg);
+    for(var y=START;y<START+6;y++){
+      var x=xm((y-START)*12);
+      el("line",{x1:x,x2:x,y1:axisY,y2:axisY+6,"class":"axl"},svg);
+      var t=el("text",{x:x+4,y:axisY+18,"class":"ax"},svg); t.textContent=y;
+    }
+    var xn=xm(NOW+0.5);
+    var td=el("g",{"class":"tday"+(cs===0?" pre":cs===1?" in":"")},svg);
+    el("line",{x1:xn,x2:xn,y1:top-8,y2:H-4,"class":"today"},td);
+    var tt=el("text",{x:xn-5,y:top-12,"class":"ax today-t","text-anchor":"end"},td); tt.textContent="today";
+    LANES.forEach(function(L,i){
+      var ly=laneTop+i*laneGap, x1=xm(mi(L.a)), x2=xm(mi(L.b)+1);
+      var lb=el("rect",{x:x1,y:ly,width:Math.max(4,x2-x1),height:7,rx:3.5,"class":"lane-b"+(L.acc?" acc":"")+(cs===0?" pre":cs===1?" in":"")},svg);
+      lb.style.animationDelay=(150+i*130)+"ms";
+      var lt=el("text",{x:x1,y:ly-7,"class":"lane-t"},svg); lt.textContent=narrow?L.s:L.t;
+      var w=lt.getComputedTextLength(); if(x1+w>W-padR) lt.setAttribute("x",Math.max(padL,W-padR-w));
+    });
+    keys.sort(function(a,b){return a-b;});
+    var idx=0;
+    keys.forEach(function(b){
+      var cx=padL+(b+0.5)*bw;
+      bins[b].forEach(function(rp,k){
+        var cy=axisY-6-r-k*step;
+        var g=el("g",{"class":"dotg"},svg);
+        if(FEAT[rp.n]) el("circle",{cx:cx,cy:cy,r:r+2.6,"class":"ring"},g);
+        var c=el("circle",{cx:cx,cy:cy,r:r,"class":"dot"},g);
+        c.style.fill="var("+(LC[rp.l]||"--l-docs")+")";
+        if(cs===0){g.classList.add("pre");g.setAttribute("data-i",idx);}
+        else if(cs===1){g.classList.add("in");g.style.animationDelay=(idx*16)+"ms";}
+        g.addEventListener("pointerenter",function(){if(!pinned) show(rp,cx,cy,false);});
+        g.addEventListener("pointerleave",function(){if(!pinned) hide();});
+        g.addEventListener("click",function(e){e.stopPropagation();pinned=rp;show(rp,cx,cy,true);});
+        idx++;
+      });
+    });
+    if(cs===1) cs=2;
+  }
+  document.addEventListener("click",function(e){if(pinned&&!tip.contains(e.target)){pinned=null;hide();}});
+  tip.addEventListener("click",function(e){var a=e.target.closest("a[data-go]");if(a){pinned=null;hide();}});
+  render();
+  if(document.fonts&&document.fonts.ready) document.fonts.ready.then(function(){render();});
+  var raf=0;
+  if(window.ResizeObserver){new ResizeObserver(function(){cancelAnimationFrame(raf);raf=requestAnimationFrame(function(){if(Math.round(wrap.clientWidth)!==lastW){pinned=null;hide();render();}});}).observe(wrap);}
+
+  /* lista completa de repositórios */
+  var rows=document.getElementById("repo-rows"), html="";
+  R.forEach(function(rp){
+    var link=rp.g?"<a href=\""+esc(rp.g)+"\" target=\"_blank\" rel=\"noopener\">"+(rp.g.indexOf("estudos-faculdade")>-1?"estudos-faculdade":"GitHub")+" ↗</a>":rp.p?"<span class=\"muted\">private</span>":"<a href=\"https://github.com/"+esc(rp.o)+"/"+esc(rp.n)+"\" target=\"_blank\" rel=\"noopener\">GitHub ↗</a>";
+    html+="<tr><td class=\"m\">"+fmt(rp.d)+"</td><td class=\"n\">"+esc(rp.n)+"</td><td>"+esc(rp.t)+"</td><td style=\"white-space:nowrap\"><span class=\"ldot\" style=\"--c:var("+(LC[rp.l]||"--l-docs")+")\"></span>"+esc(LN[rp.l]||rp.l)+"</td><td>"+link+"</td></tr>";
+  });
+  rows.innerHTML=html;
+
+  /* filtros de mais projetos */
+  var fbtns=document.querySelectorAll(".filters button"), items=document.querySelectorAll("#grid .item");
+  function setFilter(f){
+    for(var i=0;i<fbtns.length;i++) fbtns[i].setAttribute("aria-pressed",fbtns[i].getAttribute("data-f")===f?"true":"false");
+    for(var j=0;j<items.length;j++){var a=items[j].getAttribute("data-a").split(" ");items[j].hidden=!(f==="todos"||a.indexOf(f)>-1);}
+  }
+  for(var i=0;i<fbtns.length;i++) fbtns[i].addEventListener("click",function(){setFilter(this.getAttribute("data-f"));});
+
+  /* mapa de habilidades */
+  var PROJ={panela:["Panela","#panela"],summa:["3Summa","#summa-produto"],nexasolution:["Agribusiness SaaS","#nexa-solution"],upespaco:["Up Espaço","#up-espaco"],bookguess:["BookGuess","#bookguess"],ecoscan:["EcoScan","#ecoscan"],ratos:["NYC Rat Sightings","#ratos"],sentinel:["Sentinel AI","#sentinel"],culinaria:["Cooking Assistant","#culinaria"],ecommerce:["Microservices e-commerce","#ecommerce"],catalogo:["Catalog with observability","#catalogo"],bragaflow:["BragaFlow Atlas","#bragaflow"],maestro:["MaestroOS","#maestro"],checkin:["Event Check-in","#checkin"],algoritmo:["O Algoritmo","#algoritmo"],velha:["Tic-Tac-Toe AI","#velha"],farmacia:["Pharmacy Specialist","#farmacia"],unistore:["UniStore","#unistore"],crawler:["E-commerce crawler","#crawler"],restaurante:["Restaurant Service System","#restaurante"],forza:["Work at Forza","#forza"],repos:["Repository list","#repositorios"]};
+  var sks=document.querySelectorAll(".sk"), out=document.getElementById("sk-out");
+  function pick(btn){
+    for(var i=0;i<sks.length;i++) sks[i].setAttribute("aria-pressed",sks[i]===btn?"true":"false");
+    var u=btn.getAttribute("data-u").split(" "), links=u.map(function(k){var p=PROJ[k];return "<a href=\""+p[1]+"\" data-go=\""+p[1]+"\">"+esc(p[0])+"</a>";}).join("");
+    out.innerHTML="<p class=\"eyebrow\">Where I used it</p><p><b>"+esc(btn.textContent)+"</b>"+(btn.classList.contains("daily")?" <span class=\"muted\">· daily use</span>":"")+"</p><div class=\"uses\">"+links+"</div>";
+  }
+  for(var s=0;s<sks.length;s++){if(!sks[s].hasAttribute("aria-pressed")) sks[s].setAttribute("aria-pressed","false");sks[s].addEventListener("click",function(){pick(this);});}
+  pick(document.getElementById("sk-csharp"));
+
+  /* copiar e-mail e telefone */
+  var cps=document.querySelectorAll("[data-copy]");
+  for(var c=0;c<cps.length;c++) cps[c].addEventListener("click",function(){
+    var b=this, src=document.getElementById(b.getAttribute("data-copy")), orig=b.textContent;
+    function sel(){var rg=document.createRange();rg.selectNodeContents(src);var sl=window.getSelection();sl.removeAllRanges();sl.addRange(rg);}
+    var p=(navigator.clipboard&&navigator.clipboard.writeText)?navigator.clipboard.writeText(src.textContent.trim()):Promise.reject();
+    p.then(function(){b.textContent="Copied";setTimeout(function(){b.textContent=orig;},1600);},sel);
+  });
+
+  /* abre a lista se o link vier com #repositorios */
+  if(location.hash==="#repositorios"){document.getElementById("repositorios").open=true;}
+
+  /* ---------- movimento ---------- */
+  var doc=document.documentElement, motion=doc.classList.contains("js");
+
+  /* gráfico: os pontos aparecem quando ele entra na tela */
+  if(cs===0){
+    var cio=new IntersectionObserver(function(en){
+      if(!en[0].isIntersecting) return;
+      cio.disconnect();
+      var pre=svg.querySelectorAll(".pre");
+      for(var q=0;q<pre.length;q++){var n=pre[q];n.classList.remove("pre");n.classList.add("in");if(n.hasAttribute("data-i")) n.style.animationDelay=(+n.getAttribute("data-i")*16)+"ms";}
+      cs=2;
+    },{rootMargin:"0px 0px -15% 0px"});
+    cio.observe(wrap);
+  }
+
+  /* frases sendo digitadas embaixo do nome */
+  var PH=["from the database to the mobile app","C#, .NET, Flutter and React every day","co-founder of an incubated startup","best usability award at Code Race"];
+  var typed=document.querySelector(".typed"), tx=typed&&typed.querySelector(".tx");
+  if(tx&&!reduce){
+    var pi=0, ci=0, del=false;
+    tx.textContent="";
+    var tick=function(){
+      var ph=PH[pi];
+      if(!del){
+        ci++; tx.textContent=ph.slice(0,ci); typed.classList.add("busy");
+        if(ci>=ph.length){del=true;typed.classList.remove("busy");setTimeout(tick,2400);return;}
+        setTimeout(tick,34+Math.random()*46);
+      }else{
+        ci--; tx.textContent=ph.slice(0,ci); typed.classList.add("busy");
+        if(ci<=0){del=false;pi=(pi+1)%PH.length;typed.classList.remove("busy");setTimeout(tick,520);return;}
+        setTimeout(tick,16);
+      }
+    };
+    setTimeout(tick,1150);
+  }
+
+  /* contagem dos números da abertura */
+  if(!reduce){
+    var cnt=document.querySelectorAll("[data-count]");
+    for(var ct=0;ct<cnt.length;ct++)(function(e){
+      var n=+e.getAttribute("data-count"), t0=0; e.textContent="0";
+      setTimeout(function(){requestAnimationFrame(function f(ts){if(!t0)t0=ts;var k=Math.min(1,(ts-t0)/1200);e.textContent=String(Math.round(n*(1-Math.pow(1-k,3))));if(k<1)requestAnimationFrame(f);});},1250);
+    })(cnt[ct]);
+  }
+
+  /* revelar ao rolar, com atraso em cascata entre irmãos */
+  if(motion){
+    var RV=[
+      [".sec-head",0,0],[".chart",0,0],["#dados > .legend",0,120],[".inside",0,0],["details.index",0,0],
+      [".case-meta",0,0],[".case .badges",0,60],[".case h3",0,120],[".case .pitch",0,180],[".phones .phone",90,120],[".pts li",70,0],[".case .side",0,150],
+      [".filters",0,0],["#grid .item",80,0,3],[".layer",45,0],[".sk-out",0,0],[".sub",0,0],[".soft article",80,0,3],
+      [".timeline > li",0,0],[".two h3",0,0],[".list li",45,0],[".snake",0,0],[".contact .big",0,120],[".clist",0,200],["#contato .cta",0,260]
+    ];
+    var rio=new IntersectionObserver(function(en){
+      for(var i=0;i<en.length;i++) if(en[i].isIntersecting){en[i].target.classList.add("in");rio.unobserve(en[i].target);}
+    },{rootMargin:"0px 0px -8% 0px",threshold:0});
+    RV.forEach(function(r){
+      var els=document.querySelectorAll(r[0]), seen=[];
+      for(var i=0;i<els.length;i++){
+        var e=els[i], p=e.parentElement, k=0;
+        for(var j=0;j<seen.length;j++) if(seen[j][0]===p){k=++seen[j][1];break;}
+        if(j===seen.length) seen.push([p,0]);
+        if(r[3]) k=k%r[3];
+        e.style.setProperty("--d",(r[2]+Math.min(k,8)*r[1])+"ms");
+        e.classList.add("rv"); rio.observe(e);
+      }
+    });
+    var bars=document.querySelectorAll(".bar"), flows=document.querySelectorAll(".flow");
+    for(var b=0;b<bars.length;b++){var seg=bars[b].children;for(var z=0;z<seg.length;z++) seg[z].style.setProperty("--k",z);bars[b].classList.add("rvb");rio.observe(bars[b]);}
+    for(var f=0;f<flows.length;f++){var ch=flows[f].children;for(var y=0;y<ch.length;y++) ch[y].style.setProperty("--k",y);flows[f].classList.add("rvf");rio.observe(flows[f]);}
+    var ch2=document.querySelector(".contact h2"); if(ch2){ch2.classList.add("rvl");rio.observe(ch2);}
+  }
+
+  /* barra de progresso, item ativo do menu e linha do tempo */
+  var topbar=document.querySelector(".top"), tl=document.querySelector(".timeline"), navs=document.querySelectorAll(".nav a");
+  var SEC=[["projetos","#projetos"],["mais","#projetos"],["habilidades","#habilidades"],["trajetoria","#trajetoria"],["conquistas","#trajetoria"],["github",null],["contato","#contato"]];
+  var sr=0;
+  function onScroll(){
+    var vh=window.innerHeight, max=doc.scrollHeight-vh, p=max>0?Math.min(1,window.scrollY/max):0;
+    topbar.style.setProperty("--sp",p.toFixed(4));
+    if(tl){
+      var r=tl.getBoundingClientRect(), line=vh*.62;
+      tl.style.setProperty("--tp",Math.max(0,Math.min(1,(line-r.top)/r.height)).toFixed(4));
+      for(var i=0;i<tl.children.length;i++) tl.children[i].classList.toggle("on",tl.children[i].getBoundingClientRect().top+36<line);
+    }
+    var cur=null;
+    for(var j=0;j<SEC.length;j++){var sec=document.getElementById(SEC[j][0]);if(sec&&sec.getBoundingClientRect().top<vh*.4) cur=SEC[j][1];}
+    if(max-window.scrollY<4) cur="#contato";
+    if(motion&&max-window.scrollY<80){var rest=document.querySelectorAll(".rv:not(.in),.rvb:not(.in),.rvf:not(.in),.rvl:not(.in)");for(var q=0;q<rest.length;q++) rest[q].classList.add("in");}
+    for(var k=0;k<navs.length;k++){if(navs[k].getAttribute("href")===cur) navs[k].setAttribute("aria-current","true"); else navs[k].removeAttribute("aria-current");}
+  }
+  window.addEventListener("scroll",function(){cancelAnimationFrame(sr);sr=requestAnimationFrame(onScroll);},{passive:true});
+  window.addEventListener("resize",function(){cancelAnimationFrame(sr);sr=requestAnimationFrame(onScroll);});
+  onScroll();
+
+  /* luz que segue o mouse nos cards */
+  if(window.matchMedia&&window.matchMedia("(hover:hover)").matches){
+    document.addEventListener("pointermove",function(e){
+      var t=e.target.closest&&e.target.closest(".item,.soft article"); if(!t) return;
+      var r=t.getBoundingClientRect(); t.style.setProperty("--mx",(e.clientX-r.left)+"px"); t.style.setProperty("--my",(e.clientY-r.top)+"px");
+    },{passive:true});
+  }
+})();
+</script>
+</body>
+</html>
