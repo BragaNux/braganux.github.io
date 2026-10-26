@@ -18,6 +18,7 @@ Uma página em português e a mesma página em inglês, em HTML, CSS e JavaScrip
 ```
 index.html      página inteira em português: estilos, conteúdo e scripts
 en/index.html   a mesma página em inglês
+cv/             currículo em PDF, em português e em inglês
 img/            foto, telas do Panela, ícones e as imagens de prévia para redes sociais
 ```
 
