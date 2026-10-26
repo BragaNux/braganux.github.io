@@ -5,6 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Brayan Martins</title>
 <meta name="description" content="Portfólio de Brayan Martins, desenvolvedor full-stack em Santa Maria, RS.">
+<link rel="canonical" href="https://braganux.github.io/">
+<link rel="alternate" hreflang="pt-BR" href="https://braganux.github.io/">
+<link rel="alternate" hreflang="en" href="https://braganux.github.io/en/">
+<link rel="alternate" hreflang="x-default" href="https://braganux.github.io/">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://braganux.github.io/">
 <meta property="og:title" content="Brayan Martins · Desenvolvedor full-stack">
@@ -13,6 +17,7 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:locale" content="pt_BR">
+<meta property="og:locale:alternate" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#EDEFF3" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#0D1018" media="(prefers-color-scheme: dark)">
@@ -285,6 +290,9 @@ main{counter-reset:sec}
 .nav a::after{content:"";position:absolute;left:0;right:0;bottom:1px;height:1.5px;background:var(--accent);transform:scaleX(0);transform-origin:0 50%;transition:transform .35s cubic-bezier(.2,.8,.2,1)}
 .nav a[aria-current]{color:var(--ink)}
 .nav a[aria-current]::after{transform:scaleX(1)}
+.nav a.lang{border:1px solid var(--line);border-radius:999px;padding:3px 10px;margin-block:3px;color:var(--ink);font-weight:500;letter-spacing:.04em}
+.nav a.lang:hover{border-color:var(--accent)}
+.nav a.lang::after{display:none}
 
 /* abertura: letras do nome, frase digitada, faixa de linguagens */
 .typed{display:flex;align-items:center;gap:.7ch;margin:-8px 0 0;min-height:1.7em;font-family:var(--f-mono);font-size:clamp(.78rem,3.3vw,1.08rem);color:var(--ink);white-space:nowrap;overflow:hidden}
@@ -370,6 +378,7 @@ main{counter-reset:sec}
       <a class="opt" href="#habilidades">Habilidades</a>
       <a href="#trajetoria">Trajetória</a>
       <a href="#contato">Contato</a>
+      <a class="lang" href="en/" hreflang="en" lang="en" title="Read in English" aria-label="English version">EN</a>
     </nav>
   </div>
 </header>

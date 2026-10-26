@@ -1,8 +1,8 @@
 # braganux.github.io
 
-Código do meu portfólio, no ar em **[braganux.github.io](https://braganux.github.io)**.
+Código do meu portfólio, no ar em **[braganux.github.io](https://braganux.github.io)**, com a versão em inglês em **[braganux.github.io/en](https://braganux.github.io/en/)**.
 
-Uma página só, em HTML, CSS e JavaScript puros, sem framework nem build. O tema claro e escuro segue o sistema, e todas as animações respeitam a opção de reduzir movimento.
+Uma página em português e a mesma página em inglês, em HTML, CSS e JavaScript puros, sem framework nem build. Um botão PT | EN no topo troca de idioma. O tema claro e escuro segue o sistema, e todas as animações respeitam a opção de reduzir movimento.
 
 ## O que tem na página
 
@@ -16,8 +16,9 @@ Uma página só, em HTML, CSS e JavaScript puros, sem framework nem build. O tem
 ## Estrutura
 
 ```
-index.html   página inteira: estilos, conteúdo e scripts
-img/         foto, telas do Panela, ícones e a imagem de prévia para redes sociais
+index.html      página inteira em português: estilos, conteúdo e scripts
+en/index.html   a mesma página em inglês
+img/            foto, telas do Panela, ícones e as imagens de prévia para redes sociais
 ```
 
 ## Rodar localmente
